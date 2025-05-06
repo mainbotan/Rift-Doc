@@ -1,0 +1,16 @@
+
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/fonts/mixins' as *;
+
+// Button
+
+.root {
+    @include mulish(500, normal);
+    color: var(--primary-text-color);
+    font-size: 19px;
+    display: inline-block;
+    background: red;
+}
+.md {
+    padding: 20px;
+}

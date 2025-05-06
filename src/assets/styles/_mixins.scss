@@ -1,0 +1,28 @@
+
+// global mixins
+
+@mixin block-ellisis() {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+@mixin flex-bar($side_padding: 15px, $gap: 15px) {
+    display: flex;
+    width: 100%;
+    gap: $gap;
+    padding: 0px $side_padding;
+}
+@mixin flex-box($side_padding: 15px, $min_width: 120px, $max_width: 150px) {
+    display: inline-flex;
+    min-width: $min_width;
+    max-width: $max_width;
+    padding: 0px $side_padding;
+    overflow: hidden;
+}
+@mixin flex-center() {
+    align-items: center;
+    justify-content: center;
+}

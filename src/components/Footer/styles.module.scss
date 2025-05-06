@@ -1,0 +1,30 @@
+
+// Footer
+
+.root {
+    display: block;
+    text-align: center;
+    height: 540px;
+    border-bottom: 1px solid var(--secondary-background-color);
+    background: var(--primary-background-color);
+}
+.active {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    gap: 0px;
+    padding: 0px 0px;
+    width: 100%;
+    max-width: var(--max-content-width);
+    height: 100%;
+    outline: 1px solid var(--secondary-background-color);
+}
+.section {
+    display: inline-flex;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 25px;
+    outline: 1px solid var(--secondary-background-color);
+    font-size: 18px;
+    color: var(--primary-text-color);
+}

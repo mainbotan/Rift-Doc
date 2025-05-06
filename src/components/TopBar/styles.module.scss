@@ -1,0 +1,29 @@
+
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/fonts/mixins' as *;
+
+// Header
+
+.root {
+    @include mulish(500, normal);
+    color: var(--primary-text-color);
+    font-size: 19px;
+    display: block;
+    text-align: center;
+    height: 60px;
+    border-bottom: 1px solid var(--secondary-background-color);
+    background: var(--primary-background-color);
+}
+.active {
+    display: inline-block;
+    padding: 0px 15px;
+    width: calc(100% - 30px);
+    max-width: var(--max-content-width);
+    height: 100%;
+    outline: 1px solid var(--secondary-background-color);
+    background: var(--secondary-background-color);
+    overflow-x: scroll;
+}
+.active::-webkit-scrollbar {
+    display: none;
+}

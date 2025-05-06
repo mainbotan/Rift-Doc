@@ -1,0 +1,7 @@
+
+@mixin mulish($weight: 400, $style: normal) {
+    font-family: "Mulish", sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+  }
+  

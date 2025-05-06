@@ -1,14 +1,41 @@
 
-// Base styles
-
-html, body,  #root {
-    width: 100vw;
-    min-height: 100vh;
-    padding: 0px;
-    margin: 0px;
-}
-
+@use '../fonts/_mixins' as *;
 
 :root {
     --primary-background-color: #000000;
+    --primary-text-color: #eee;
+    --secondary-background-color: #222222;
+    --ph-color: #ffa31a;
+
+    --max-content-width: 1400px;
+}
+
+html, body,  #root {
+    @include mulish(600, normal);
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+#root {
+    overflow: hidden;
+}
+
+
+::-webkit-scrollbar {
+    width: 14px; 
+} 
+::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+}
+::-webkit-scrollbar-thumb {
+    background-color: #444; 
+    border-radius: 0px;
+    border: 1px solid #1a1a1a; 
+    transition: background-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
 }

@@ -26,3 +26,11 @@
     align-items: center;
     justify-content: center;
 }
+@mixin flex-column($gap: 0px 0px) {
+    flex-flow: column nowrap;
+    gap: $gap;
+}
+@mixin flex-row($gap: 0px 0px) {
+    flex-flow: row nowrap;
+    gap: $gap;
+}

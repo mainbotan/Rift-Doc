@@ -2,6 +2,7 @@
 // Header
 
 import styles from './styles.module.scss';
+import { Button } from '../../ui-kit/Button'; // <- button from ui-kit
 
 export const AppHeader = () => (
   <div className={styles.root}>
@@ -17,6 +18,9 @@ export const AppHeader = () => (
         </div>
         <div className={styles.bar}>
             // search component
+        </div>
+        <div className={styles.section}>
+            <Button text='Sign in' size='bg' color='default'/>
         </div>
     </div>
   </div>

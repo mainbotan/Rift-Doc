@@ -11,26 +11,22 @@
     display: block;
     text-align: center;
     height: 60px;
-    border-bottom: 1px solid var(--secondary-background-color);
-    background: var(--primary-background-color);
+    background: var(--ternary-background-color);
 }
 .active {
     display: inline-flex;
     flex-flow: row nowrap;
-    gap: 15px;
-    padding: 0px 15px;
-    width: calc(100% - 30px);
+    width: 100%;
     max-width: var(--max-content-width);
     height: 100%;
-    outline: 1px solid var(--secondary-background-color);
     // background: var(--secondary-background-color);
 }
 .section {
     @include flex-box(25px, 120px, 150px);
     @include flex-center();
-    outline: 1px solid var(--secondary-background-color);
     font-size: 18px;
     color: var(--primary-text-color);
+    outline: 1px solid var(--secondary-background-color);
 }
 .logo {
     @include mulish(600, normal);
@@ -48,7 +44,6 @@
 .bar {
     @include flex-bar(25px, 15px);
     @include flex-center();
-    outline: 1px solid var(--secondary-background-color);
     font-size: 18px;
     color: var(--primary-text-color);
 }

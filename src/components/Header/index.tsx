@@ -19,7 +19,7 @@ export const AppHeader = () => (
         <div className={styles.bar}>
             // search component
         </div>
-        <div className={styles.section}>
+        <div className={styles.section} style={{ alignItems: 'end' }}>
             <Button text='Sign in' size='bg' color='default'/>
         </div>
     </div>

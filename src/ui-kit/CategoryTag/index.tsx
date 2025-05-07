@@ -24,7 +24,7 @@ export const CategoryTag = ({
     styles[color],
     styles[size]
     )}>
-    <div className={styles.imgArea} style={{ backgroundImage: `url(${img})` }}></div>
+    <div className={styles.imgArea} style={{ backgroundImage: `url('${ img }')` }}></div>
     <div className={styles.textArea}><div className={styles.text}>{ text }</div></div>
   </div>
 );

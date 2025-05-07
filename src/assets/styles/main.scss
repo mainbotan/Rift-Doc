@@ -5,6 +5,7 @@
     --primary-background-color: #000000;
     --primary-text-color: #eee;
     --secondary-background-color: #222222;
+    --ternary-background-color: #0e0e0e;
     --ph-color: #ffa31a;
     
     --max-content-width: 1400px;
@@ -14,12 +15,8 @@ html, body,  #root {
     @include mulish(600, normal);
     padding: 0px;
     margin: 0px;
-    overflow-x: hidden;
+    background: var(--primary-background-color);
 }
-#root {
-    overflow: hidden;
-}
-
 
 ::-webkit-scrollbar {
     width: 14px; 

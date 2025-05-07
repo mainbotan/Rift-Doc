@@ -10,23 +10,41 @@
     font-size: 19px;
     display: block;
     text-align: center;
-    outline: 1px solid var(--secondary-background-color);
-    background: var(--primary-background-color);
+    background: var(--ternary-background-color);
     padding-top: 6px;
-
-    // нужно, чтобы оставался наверху
+  
     position: sticky;
+    top: 0; 
     z-index: 500;
-}
+}  
 .active {
     display: inline-block;
     height: 100%;
-    padding: 0px 15px;
-    width: calc(100% - 30px);
+    padding: 10px 0px 7px 0px;
+    width: calc(100% - 0px);
     max-width: var(--max-content-width);
     white-space: nowrap;
     overflow-x: scroll;
 }
 .active::-webkit-scrollbar {
     display: none;
+}
+.item{
+    display: inline-block;
+    margin: 0px 5px;
+    transition: all 0.1s ease;
+}
+.first_item {
+    display: inline-block;
+    margin: 0px 5px;
+    transition: all 0.1s ease;
+    animation: show_item 0.3s forwards;
+}
+@keyframes show_item {
+    0% {
+        margin-right: 100px;
+    }
+    100%{
+        margin-right: 5px;
+    }
 }

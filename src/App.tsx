@@ -1,17 +1,20 @@
 
 // App entrypoint 
 
-// styles
+// global styles
 import './assets/fonts/index.scss'; // <- font
 import './assets/styles/main.scss'; // <- base styles
 
-// components
+// layouts
 import { AppLayout } from './layouts/App/index.tsx';
+
+// pages
+import { MainPage } from './pages/Main/index.tsx'; // <- main page
 
 function App() {
   return (
     <AppLayout>
-      <div></div>
+      <MainPage />
     </AppLayout>
   );
 }

@@ -1,9 +1,9 @@
 
-// schema
-import { PornstarSchema } from "./schema";
+// scheme
+import { PornstarScheme } from "./scheme";
 
 export const Pornstars = [
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'julie-jess',
         full_name: 'Julie Jess',
         avatar: 'https://ei.phncdn.com/(m=bLWsSeKlbyaT)(mh=wOE8EHapaw2sjGxT)1958f3f3-e3df-4af2-918a-6857a8f042ca.jpg',
@@ -36,7 +36,7 @@ export const Pornstars = [
         videos_watched: 1084,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'eva-elfie',
         full_name: 'Eva Elfie',
         avatar: 'https://ei.phncdn.com/pics/users/683/394/291/avatar1551823518/(m=ewILGCjadOf)(mh=uboK_cDkUfwM9mYu)200x200.jpg',
@@ -69,7 +69,7 @@ export const Pornstars = [
         videos_watched: 349,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'riley-reid',
         full_name: 'Riley Reid',
         avatar: 'https://ei.phncdn.com/pics/users/181/451/091/avatar1469126376/(m=ewILGCjadOf)(mh=3b3r_X7aCI8H28sK)200x200.jpg',
@@ -102,7 +102,7 @@ export const Pornstars = [
         videos_watched: 22,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'adriana-chechik',
         full_name: 'Adriana Chechik',
         avatar: 'https://ei.phncdn.com/pics/users/427/889/762/avatar1515599794/(m=ewILGCjadOf)(mh=x2l22qqS0aJhi79_)200x200.jpg',
@@ -135,7 +135,7 @@ export const Pornstars = [
         videos_watched: 22,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'sara-diamante',
         full_name: 'Sara Diamante',
         avatar: 'https://ei.phncdn.com/(m=bLWsSeKlbyaT)(mh=lYH8nEB1pgRDZJPC)6fe21c31-4816-4e08-ae2a-40a094553c96.jpg',
@@ -168,7 +168,7 @@ export const Pornstars = [
         videos_watched: 22,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'dillion-harper',
         full_name: 'Dillion Harper',
         avatar: 'https://ei.phncdn.com/pics/users/721/512/091/avatar1629488863/(m=ewILGCjadOf)(mh=LmK9axstuYATsIU4)200x200.jpg',
@@ -201,7 +201,7 @@ export const Pornstars = [
         videos_watched: 22,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'sophie-dee',
         full_name: 'Sophie Dee',
         avatar: 'https://ei.phncdn.com/(m=bLWsSeKlbyaT)(mh=NCxd7oNTq2Y3U2fr)b51a063d-64ab-4544-9fcf-dba0607cca65.jpg',
@@ -234,7 +234,7 @@ export const Pornstars = [
         videos_watched: 22,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'mini-diva',
         full_name: 'Mini Diva',
         avatar: 'https://ei.phncdn.com/pics/users/587/676/961/avatar1598785651/(m=ewILGCjadOf)(mh=vWMfOIfsKiTz88_1)200x200.jpg',
@@ -267,7 +267,7 @@ export const Pornstars = [
         videos_watched: 22,
         subscribers: 556000
     }),
-    PornstarSchema.parse({
+    PornstarScheme.parse({
         id_name: 'riley-reign',
         full_name: 'Riley Reign',
         avatar: 'https://ei.phncdn.com/(m=ewILGCjadOf)(mh=QR7x0DqOABMHLXGN)e30b6fe1-235d-47c1-b176-a6a9adac3a62.jpg',

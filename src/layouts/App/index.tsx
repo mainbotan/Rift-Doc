@@ -16,7 +16,9 @@ export const AppLayout = ({ children }: Props) => (
     <AppHeader />
     <TopBar />
     <div className={styles.root}>
-      {children}
+      <div className={styles.active}>
+        {children}
+      </div>
     </div>
     <AppFooter />
   </>

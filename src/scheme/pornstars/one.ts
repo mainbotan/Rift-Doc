@@ -1,8 +1,8 @@
 
-// schema
-import { PornstarSchema } from "./schema";
+// scheme
+import { PornstarScheme } from "./scheme";
 
-export const Pornstar = PornstarSchema.parse({
+export const Pornstar = PornstarScheme.parse({
     id_name: 'julie-jess',
     full_name: 'Julie Jess',
     avatar: 'https://ei.phncdn.com/(m=bLWsSeKlbyaT)(mh=wOE8EHapaw2sjGxT)1958f3f3-e3df-4af2-918a-6857a8f042ca.jpg',

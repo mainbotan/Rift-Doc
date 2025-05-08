@@ -1,7 +1,10 @@
 
 // global mixins
 
-@mixin block-ellisis() {
+@mixin ease-animation($time: 0.1s) {
+  transition: all $time ease;
+}
+@mixin block-ellipsis() {
     display: block;
     width: 100%;
     overflow: hidden;
@@ -34,3 +37,41 @@
     flex-flow: row nowrap;
     gap: $gap;
 }
+@mixin truncate-multiline($lines: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin skeleton-shimmer($color: #e0e0e0, $opacity: 0.2, $angle: 120deg) {
+    position: relative;
+    overflow: hidden;
+    background-color: $color;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        $angle,
+        rgba($color, $opacity) 0%,
+        rgba($color, $opacity * 2) 20%,
+        rgba($color, $opacity) 40%,
+        rgba($color, $opacity) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.2s infinite;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  

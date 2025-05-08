@@ -2,7 +2,18 @@
 // App layout
 
 .root {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--primary-background-color);
     min-height: 100vh;
-    background-color: var(--primary-background-color);
+}
+.active {
+    display: inline-flex;
+    flex-flow: row nowrap;
     gap: 0px;
+    padding: 0px 0px;
+    width: 100%;
+    max-width: var(--max-content-width);
+    min-height: 100vh;
 }

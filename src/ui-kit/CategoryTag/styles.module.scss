@@ -39,7 +39,7 @@
     align-items: center;
 }
 .text {
-    @include block-ellisis();
+    @include block-ellipsis();
     text-align: left;
 }
 

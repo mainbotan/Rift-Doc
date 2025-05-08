@@ -38,7 +38,7 @@
     white-space: nowrap;
 }
 .title {
-    @include block-ellisis();
+    @include block-ellipsis();
 }
 
 .bar {

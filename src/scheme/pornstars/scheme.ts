@@ -1,7 +1,7 @@
 
 import { z } from 'zod';
 
-export const PornstarSchema = z.object({
+export const PornstarScheme = z.object({
   id_name: z.string(),
   full_name: z.string(),
   avatar: z.string().url(),
@@ -35,4 +35,4 @@ export const PornstarSchema = z.object({
   subscribers: z.number(),
 });
 
-export type Pornstar = z.infer<typeof PornstarSchema>;
+export type Pornstar = z.infer<typeof PornstarScheme>;

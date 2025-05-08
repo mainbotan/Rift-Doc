@@ -1,0 +1,123 @@
+
+@use '../variables' as *;
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/fonts/mixins' as *;
+
+// Video Card
+
+.root {
+    @include mulish(400, normal);
+    color: $ui-primary-color;
+    outline: none;
+    border: none;
+    transition: all 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+
+    // preview area
+    .img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: center;
+        background-color: $ui-default-color;
+    }
+
+    // info area
+    .info {
+        display: block;
+        line-height: 1.2;
+        padding: 15px 2px;
+        width: 100%;
+        background-color: $ui-primary-background-color;
+        text-align: left;
+        height: 100%;
+
+        // author info etc
+        .ad {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 10px;
+            margin-bottom: 8px;
+
+            .bar {
+                display: flex;
+                width: 100%;
+                overflow: hidden;
+                align-items: center;
+                justify-content: start;
+            }
+            .box {
+                display: inline-flex;
+                overflow: hidden;
+                align-items: center;
+                justify-content: start;
+                min-width: 30%;
+                background-color: $ui-default-color;
+            }
+            .text {
+                @include block-ellipsis();
+                @include ease-animation();
+            }
+            .text:hover {
+                color: $ui-contrast-color;
+            }
+        }
+
+        // title
+        .title {
+            @include truncate-multiline(4);
+        }    
+    }
+}
+
+
+// modifiers
+
+// sizes
+.bg {
+    .title {
+        font-size: 20px;
+    }
+    .ad {
+        .text {
+            font-size: 19px;
+        }
+    }
+}
+.md {
+    .title {
+        font-size: 17px;
+    }
+    .ad {
+        .text {
+            font-size: 16px;
+        }
+    }
+}
+.sm {
+    .title {
+        font-size: 15px;
+    }
+    .ad {
+        .text {
+            font-size: 13px;
+        }
+    }
+}
+
+// colors
+.contrast {
+    background: $ui-contrast-color;
+    color: $ui-contrast-color-text;
+}
+.default {
+    background: $ui-default-color;
+    color: $ui-default-color-text;
+}
+.empty {
+    background: transparent;
+    border: 1px solid $ui-default-color;
+}

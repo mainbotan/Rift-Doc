@@ -1,0 +1,18 @@
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/fonts/mixins' as *;
+
+// Category Tag
+
+.root {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--primary-background-color);
+    min-height: 100vh;
+    transition: all 0.1s ease;
+}
+.videosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+}

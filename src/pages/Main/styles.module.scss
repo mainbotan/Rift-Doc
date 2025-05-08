@@ -11,6 +11,22 @@
     min-height: 100vh;
     transition: all 0.1s ease;
 }
+.pornstarsGrid {
+    display: block;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding: 20px 0px;
+    margin-bottom: 12px;
+
+    .item {
+        display: inline-block;
+        margin: 0px 15px 0px 0px;
+        width: 170px;
+    }
+}
+.pornstarsGrid::-webkit-scrollbar {
+    display: none;
+}
 .videosGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

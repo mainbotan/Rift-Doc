@@ -21,21 +21,11 @@ export const VideoCard = ({
     color = 'default',
     size = 'md'
  }: Props) => {
-    const [loaded, setLoaded] = useState(false);
-
-    useEffect(() => {
-        if (img) {
-            const image = new Image();
-            image.src = img;
-            image.onload = () => setLoaded(true);
-        }
-    }, [img]);
-
     return (
         <div className={clsx(styles.root, styles[color], styles[size])}>
             <div
-                className={clsx(styles.img, { [styles.loaded]: loaded })}
-                style={loaded ? { backgroundImage: `url(${img})` } : {}}
+                className={styles.img}
+                style={{ backgroundImage: `url('${ img }')` }}
             ></div>
             <div className={styles.info}>
                 <div className={styles.ad}>

@@ -2,7 +2,7 @@
 // TopBar - reccomendation tags
 
 import styles from './styles.module.scss';
-import { CategoryTag } from '../../ui-kit/CategoryTag'; // <- category tag
+import { ModelTag } from '../../ui-kit/ModelTag'; // <- model tag from ui-kit
 
 // Data from scheme
 import { Pornstars } from '../../scheme/pornstars/list';
@@ -11,18 +11,13 @@ import { Pornstars } from '../../scheme/pornstars/list';
 export const TopBar = () => (
   <div className={styles.root}>
     <div className={styles.active}>
-        {
-          Pornstars.map(pornstar => (
-            <div className={ styles.item }>
-              <CategoryTag 
-                text={pornstar.full_name}
-                img={pornstar.avatar} 
-                color='default' 
-                size='md' 
-              />    
-            </div>
-          ))
-        }
+        <div className={styles.item}><div className={styles.text}>Главная страница</div></div>
+        <div className={styles.item}><div className={styles.text}>Видео</div></div>
+        <div className={styles.item}><div className={styles.text}>Категории</div></div>
+        <div className={styles.item}><div className={styles.text}>LIVE CAMS</div></div>
+        <div className={styles.item}><div className={styles.text}>Порнозвёзды</div></div>
+        <div className={styles.item}><div className={styles.text}>Сообщество</div></div>
+        <div className={styles.item}><div className={styles.text}>Фото и гифки</div></div>
     </div>
   </div>
 );

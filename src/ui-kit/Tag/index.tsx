@@ -6,15 +6,13 @@ import styles from './styles.module.scss';
 
 type Props = {
     text: string,
-    img?: string,
     color?: 'contrast' | 'primary' | 'default' | 'empty',
     size?: 'sm' | 'md' | 'bg' 
 };
 
 // Принимаем всё нужное
-export const CategoryTag = ({ 
+export const Tag = ({ 
     text = 'unknown',
-    img = '',
     color = 'default',
     size = 'md'
  }: Props) => (
@@ -24,7 +22,6 @@ export const CategoryTag = ({
     styles[color],
     styles[size]
     )}>
-    <div className={styles.imgArea} style={{ backgroundImage: `url('${ img }')` }}></div>
-    <div className={styles.textArea}><div className={styles.text}>{ text }</div></div>
+    {text}
   </div>
 );

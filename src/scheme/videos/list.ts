@@ -55,7 +55,7 @@ export const Videos = [
         title: 'Сводная Сестра Будит Минетом с Утра Сводного Брата',
         creator: {
             id_name: 'spirite-moon',
-            full_name: 'Spitite Moon',
+            full_name: 'Spirite Moon',
             type: 'pornstar'
         }
     }),

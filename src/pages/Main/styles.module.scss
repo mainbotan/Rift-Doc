@@ -27,8 +27,26 @@
 .pornstarsGrid::-webkit-scrollbar {
     display: none;
 }
+
 .videosGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 16px;
+}
+
+.tagsGrid {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px 10px;
+    padding: 20px 0px;
+
+    .item {
+        display: inline-flex;
+    }
+}
+
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px 10px;
 }

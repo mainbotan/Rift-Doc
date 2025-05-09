@@ -5,9 +5,9 @@
 // Top Bar
 
 .root {
-    @include mulish(500, normal);
+    @include mulish(600, normal);
     color: var(--primary-text-color);
-    font-size: 19px;
+    font-size: 16px;
     display: block;
     text-align: center;
     background: var(--ternary-background-color);
@@ -16,30 +16,41 @@
     position: sticky;
     top: 0; 
     z-index: 500;
+
+    // active area
+    .active {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        height: 100%;
+        width: calc(100% - 0px);
+        max-width: var(--max-content-width);
+        white-space: nowrap;
+
+        .item {
+            @include ease-animation(0.1s);
+            cursor: pointer;
+            display: inline-flex;
+            flex: 1 1 0;
+            overflow: hidden;
+            padding: 13px 20px;
+            color: var(--primary-text-color);
+            border: 1px solid transparent;
+            padding-bottom: 15px;
+
+            .text {
+                @include block-ellipsis();
+            }
+        }
+        .item:hover {
+            background-color: var(--secondary-background-color);
+            border: 1px solid var(--ternary-background-color);
+        }
+        .item::after {
+            border: 2px solid var(--ph-color);
+        }
+    }
 }  
-.active {
-    display: inline-block;
-    height: 100%;
-    padding: 10px 0px 7px 0px;
-    width: calc(100% - 0px);
-    max-width: var(--max-content-width);
-    white-space: nowrap;
-    overflow-x: scroll;
-}
-.active::-webkit-scrollbar {
-    display: none;
-}
-.item{
-    display: inline-block;
-    margin: 0px 5px;
-    transition: all 0.1s ease;
-}
-.first_item {
-    display: inline-block;
-    margin: 0px 5px;
-    transition: all 0.1s ease;
-    animation: show_item 0.3s forwards;
-}
+
 @keyframes show_item {
     0% {
         margin-right: 100px;

@@ -12,13 +12,12 @@
     border: none;
     transition: all 0.1s ease;
     display: flex;
-    flex-direction: column;
+    width: 100%;
     height: 100%;
     cursor: pointer;
 
     // preview area
     .img {
-        width: 100%;
         aspect-ratio: 16 / 9;
         background-size: cover;
         background-position: center;
@@ -30,10 +29,11 @@
         display: block;
         line-height: 1.2;
         padding: 15px 2px;
-        width: 100%;
+        height: calc(100% - 30px);
+        width: calc(100% - 4px);
         background-color: $ui-primary-background-color;
         text-align: left;
-        height: 100%;
+        overflow: hidden;
 
         // author info etc
         .ad {
@@ -68,7 +68,7 @@
 
         // title
         .title {
-            @include truncate-multiline(4);
+            @include truncate-multiline(3);
         }    
     }
 }
@@ -78,6 +78,7 @@
 
 // sizes
 .bg {
+    flex-flow: column nowrap;
     .title {
         font-size: 20px;
     }
@@ -88,6 +89,7 @@
     }
 }
 .md {
+    flex-flow: column nowrap;
     .title {
         font-size: 17px;
     }
@@ -98,12 +100,23 @@
     }
 }
 .sm {
-    .title {
-        font-size: 15px;
+    flex-flow: row nowrap;
+    gap: 10px;
+
+    .img {
+        flex: 1;
+        border-radius: 14px;
     }
-    .ad {
-        .text {
-            font-size: 13px;
+    .info {
+        flex: 1.2;
+        .title {
+            font-size: 16px;
+        }
+        .ad {
+            margin-bottom: 12px;
+            .text {
+                font-size: 15px;
+            }
         }
     }
 }
@@ -114,7 +127,7 @@
     color: $ui-contrast-color-text;
 }
 .default {
-    background: $ui-default-color;
+    // background: $ui-default-color;
     color: $ui-default-color-text;
 }
 .empty {

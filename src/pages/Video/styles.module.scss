@@ -1,0 +1,53 @@
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/fonts/mixins' as *;
+
+// Video Page
+
+.root {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    background: var(--primary-background-color);
+    min-height: 100vh;
+    transition: all 0.1s ease;
+    flex-flow: row nowrap;
+    gap: 20px;
+    padding-top: 2%;
+
+    @media (max-width: 720px) {
+        flex-flow: column nowrap;
+    }
+
+    * {
+        // outline: 1px solid var(--secondary-background-color);
+    }
+
+    // info & player
+    .info {
+        display: block;
+        flex: 1.7;
+
+        .playerArea {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--secondary-background-color);
+            border-radius: 14px;
+        }
+    }
+
+    .recommendations {
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1;
+        gap: 14px;
+
+        .item {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

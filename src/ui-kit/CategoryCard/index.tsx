@@ -1,12 +1,10 @@
 import clsx from 'clsx';
 import styles from './styles.module.scss';
-import { useEffect, useState } from 'react';
 
 type Props = {
-    view_key: string,
     title: string,
     img?: string,
-    description?: string
+    description?: string | number
     color?: 'contrast' | 'primary' | 'default' | 'empty',
     size?: 'sm' | 'md' | 'bg' 
 };
@@ -19,9 +17,12 @@ export const CategoryCard = ({
     color = 'default'
  }: Props) => {
     return (
-        <div className={clsx(styles.root, styles[color], styles[size])}>
-            <div className={styles.img} style={{ backgroundImage: `url('${ img }')` }}>
-                
+        <div className={clsx(styles.root, styles[color], styles[size])} style={{ backgroundImage: `url('${ img }')` }}>
+            <div className={styles.info}>
+                <div className={styles.text}>
+                    <div className={styles.title}>{title}</div>
+                    <div className={styles.description}>{description}</div>
+                </div>
             </div>
         </div>
     );

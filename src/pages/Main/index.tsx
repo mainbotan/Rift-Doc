@@ -1,11 +1,13 @@
 
 // Main Page
 
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
-import { VideoCard } from '../../ui-kit/VideoCard'; // <!- video card from ui-
-import { ModelCard } from '../../ui-kit/ModelCard'; // <!- model card from ui-kit
-import { Tag } from '../../ui-kit/Tag'; // <!- tag from ui-kit
+import { VideoCard } from '../../ui-kit/VideoCard'; // <- video card from ui-
+import { ModelCard } from '../../ui-kit/ModelCard'; // <- model card from ui-kit
+import { Tag } from '../../ui-kit/Tag'; // <- tag from ui-kit
+import { CategoryCard } from '../../ui-kit/CategoryCard'; // <- category card from ui-kit
 
 type Props = {
   // здесь как-то принимаем оффест и лимит -> делаем запрос на получение рекомендаций
@@ -41,14 +43,16 @@ export const MainPage = ({ }: Props) => (
     <div className={ styles.videosGrid }>
       {
         Videos.map(video => (
-          <VideoCard 
-            view_key={ video.view_key } 
-            title={ video.title } 
-            creator_name={ video.creator.full_name } 
-            img={ video.img } 
-            size='md' 
-            color='default' 
-          />
+          <Link to={`/video/${video.view_key}`} >
+            <VideoCard 
+              view_key={ video.view_key } 
+              title={ video.title } 
+              creator_name={ video.creator.full_name } 
+              img={ video.img } 
+              size='md' 
+              color='default' 
+            />
+          </Link>
         ))
       }
     </div>
@@ -64,7 +68,17 @@ export const MainPage = ({ }: Props) => (
       }
     </div>
     <div className={ styles.categoriesGrid }>
-      
+      {
+        Categories.map(cateogory => (
+          <CategoryCard
+            title={cateogory.name}
+            description={cateogory.videos_count}
+            img={cateogory.img}
+            size='md'
+            color='default'
+          />
+        ))
+      }
     </div>
   </div>
 );

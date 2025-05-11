@@ -12,38 +12,51 @@
     text-align: center;
     height: 60px;
     background: var(--ternary-background-color);
-}
-.active {
-    display: inline-flex;
-    flex-flow: row nowrap;
-    width: 100%;
-    max-width: var(--max-content-width);
-    height: 100%;
-    // background: var(--secondary-background-color);
-}
-.section {
-    @include flex-box(25px, 120px, 150px);
-    @include flex-center();
-    font-size: 18px;
-    color: var(--primary-text-color);
-    outline: 1px solid var(--secondary-background-color);
-}
-.logo {
-    @include mulish(600, normal);
-    @include flex-box(25px, 120px, 300px);
-    @include flex-center();
-    outline: 1px solid var(--secondary-background-color);
-    font-size: 22px;
-    color: var(--primary-text-color);
-    white-space: nowrap;
-}
-.title {
-    @include block-ellipsis();
-}
+    gap: 10px;
 
-.bar {
-    @include flex-bar(25px, 15px);
-    @include flex-center();
-    font-size: 18px;
-    color: var(--primary-text-color);
+    .active {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        max-width: var(--max-content-width);
+        height: 100%;
+        // background: var(--secondary-background-color);
+
+        .section {
+            @include flex-center();
+            display: inline-flex;
+            min-width: 120px;
+            max-width: 150px;
+            font-size: 18px;
+            color: var(--primary-text-color);
+            outline: 1px solid var(--secondary-background-color);
+
+            .title {
+                @include block-ellipsis();
+            }
+        }
+
+        // sections modifierы
+        .notNecessary {
+            @media (max-width: 720px) {
+                display: none;
+            }
+        }
+        .logo {
+            @include mulish(600, normal);
+            outline: 1px solid var(--secondary-background-color);
+            font-size: 22px;
+            color: var(--primary-text-color);
+            white-space: nowrap;
+        }
+
+        .bar {
+            @include flex-center();
+            display: flex;
+            flex: 1;
+            font-size: 18px;
+            color: var(--primary-text-color);
+            padding: 0px 15px;
+        }
+    }
 }

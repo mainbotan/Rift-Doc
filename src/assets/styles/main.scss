@@ -11,6 +11,7 @@
     --max-content-width: 1400px;
 }
 
+
 html, body,  #root {
     @include mulish(600, normal);
     padding: 0px;
@@ -35,4 +36,8 @@ html, body,  #root {
 }
 ::-webkit-scrollbar-corner {
     background: transparent;
+}
+
+a {
+    text-decoration: none;
 }

@@ -24,9 +24,12 @@
 
     // info & player
     .info {
-        display: block;
+        display: flex;
+        flex-flow: column nowrap;
         flex: 1.7;
+        gap: 20px 20px;
 
+        // video player
         .playerArea {
             display: block;
             width: 100%;
@@ -35,6 +38,122 @@
             background-position: center;
             background-color: var(--secondary-background-color);
             border-radius: 14px;
+        }
+
+        // video information
+        .videoInfoArea {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 20px 20px;
+
+            .titleArea {
+                @include truncate-multiline(10);
+                @include mulish(700, normal);
+                line-height: 1.2;
+                display: block;
+                flex: 1;
+                font-size: 25px;
+                color: var(--primary-text-color);
+                text-align: left;
+            }
+            .actionArea {
+                display: inline-flex;
+                flex-flow: row nowrap;
+                gap: 10px;
+                
+                .item {
+                    @include flex-center();
+                    display: inline-flex;
+                }
+            }
+        }
+
+        // video creator
+        .creatorArea {
+            display: flex;
+            width: 100%;
+            flex-flow: row nowrap;
+            gap: 20px;
+            border-bottom: 1px solid var(--secondary-background-color);
+            border-top: 1px solid var(--secondary-background-color);
+
+            .avatarArea {
+                @include flex-center();
+                display: inline-flex;
+                width: 80px;
+                max-width: 80px;
+                height: 80px;
+                padding: 14px 0px;
+
+                .avatar {
+                    display: inline-flex;
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                    background-color: var(--secondary-background-color);
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 50%;
+                }
+            }
+            .infoArea {
+                @include flex-center();
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 4px 4px;
+                flex: 1;
+                text-align: left;
+
+                .name {
+                    @include truncate-multiline(1);
+                    display: block;
+                    width: 100%;
+                    font-size: 23px;
+                    color: var(--primary-text-color);
+                }   
+                .description {
+                    @include truncate-multiline(3);
+                    display: block;
+                    width: 100%;
+                    font-size: 18px;
+                    color: var(--secondary-text-color);
+                }
+            }
+            .actionArea {
+                display: inline-flex;
+                flex-flow: row nowrap;
+                gap: 10px;
+                
+                .item {
+                    @include flex-center();
+                    display: inline-flex;
+                }
+            }
+        }
+
+        // video tags
+        .tagsArea {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 10px 10px;
+
+            .item {
+                display: inline-flex;
+            }
+        }
+
+        // video featured
+        .featuredArea {
+            display: block;
+            overflow-x: hidden;
+            text-align: left;
+
+            .item {
+                display: inline-block;
+                width: 140px;
+            }
+        }
+        .featuredArea::-webkit-scrollbar {
+            display: none;
         }
     }
 

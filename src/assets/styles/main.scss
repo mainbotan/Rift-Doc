@@ -2,14 +2,14 @@
 @use '../fonts/_mixins' as *;
 
 :root {
-    --primary-background-color: #000000;
+    --primary-background-color: #ececec;
     --primary-text-color: #eee;
     --secondary-background-color: #222222;
     --secondary-text-color: grey;
     --ternary-background-color: #0e0e0e;
-    --ph-color: #ffa31a;
+    --rift-color: #e73030;
     
-    --max-content-width: 1400px;
+    --max-content-width: 1200px;
 }
 
 
@@ -18,6 +18,10 @@ html, body,  #root {
     padding: 0px;
     margin: 0px;
     background: var(--primary-background-color);
+    overflow-x: hidden;
+}
+#root {
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {

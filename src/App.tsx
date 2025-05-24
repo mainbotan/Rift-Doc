@@ -12,15 +12,12 @@ import { AppLayout } from './layouts/App/index.tsx';
 
 // pages
 import { MainPage } from './pages/Main/index.tsx'; // <- main page
-import { VideoPage } from './pages/Video/index.tsx'; // <- video page
 
 function App() {
   return (
       <Routes>
         <Route path='/' element={<AppLayout />}>
           <Route index element={<MainPage />}/>
-          <Route path='video/:id' element={<VideoPage />}/>
-          <Route path='model/:id' element={<VideoPage />}/>
         </Route>
       </Routes>
   );
@@ -28,3 +25,6 @@ function App() {
 
 
 export default App
+
+
+// <Route path='video/:id' element={<VideoPage />}/>

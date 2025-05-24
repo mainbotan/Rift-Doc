@@ -1,6 +1,7 @@
 
 @mixin mulish($weight: 400, $style: normal) {
-    font-family: "Mulish", sans-serif;
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
     font-weight: $weight;
     font-style: $style;
   }

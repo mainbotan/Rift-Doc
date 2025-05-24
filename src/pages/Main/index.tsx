@@ -1,84 +1,90 @@
-
-// Main Page
-
-import { Link } from 'react-router-dom';
-import clsx from 'clsx';
+import { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
-import { VideoCard } from '../../ui-kit/VideoCard'; // <- video card from ui-
-import { ModelCard } from '../../ui-kit/ModelCard'; // <- model card from ui-kit
-import { Tag } from '../../ui-kit/Tag'; // <- tag from ui-kit
-import { CategoryCard } from '../../ui-kit/CategoryCard'; // <- category card from ui-kit
+import { Button } from '../../ui-kit/Button';
 
-type Props = {
-  // здесь как-то принимаем оффест и лимит -> делаем запрос на получение рекомендаций
-};
+export const MainPage = () => {
+  const labelRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
-// Data from scheme
-import { Videos } from '../../scheme/videos/list';
-import { Pornstars } from '../../scheme/pornstars/list';
-import { Tags } from '../../scheme/tags/list';
-import { Categories } from '../../scheme/categories/list';
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const container = labelRef.current;
+    if (!canvas || !container) return;
 
+    const ctx = canvas.getContext('2d')!;
+    let width = container.offsetWidth;
+    let height = container.offsetHeight;
 
-// Utils
-import { capitalizeWords } from '../../utils/string'; // <!- string's utils 
+    canvas.width = width;
+    canvas.height = height;
 
-export const MainPage = ({ }: Props) => (
-    
-  <div className={ styles.root }>
-    <div className={ styles.pornstarsGrid }>
-      {
-        Pornstars.map(pornstar => (
-          <div className={ styles.item }>
-            <ModelCard 
-              name={pornstar.full_name}
-              img={pornstar.avatar} 
-              color='empty' 
-              size='md' 
-            />    
+    const drawGrid = () => {
+      ctx.clearRect(0, 0, width, height);
+      ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+      ctx.lineWidth = 1;
+      const spacing = 40;
+
+      for (let x = 0; x < width; x += spacing) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+      }
+
+      for (let y = 0; y < height; y += spacing) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+      }
+    };
+
+    let offset = 0;
+    const animate = () => {
+      offset += 0.3;
+      ctx.setTransform(1, 0, 0, 1, -offset, -offset);
+      drawGrid();
+    };
+
+    animate();
+
+    const handleMove = (e: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      if (glowRef.current) {
+        glowRef.current.style.left = `${x}px`;
+        glowRef.current.style.top = `${y}px`;
+      }
+    };
+
+    container.addEventListener('mousemove', handleMove);
+    return () => container.removeEventListener('mousemove', handleMove);
+  }, []);
+
+  return (
+    <div className={styles.root}>
+      <div ref={labelRef} className={styles.topLabel}>
+        <canvas ref={canvasRef} className={styles.canvas} />
+        <div ref={glowRef} className={styles.glow} />
+        <div className={styles.active}>
+          <div className={styles.block}>
+            <div className={styles.title}>Rift</div>
+            <div className={styles.underTitle}>
+              <div className={styles.description}>Multitenant PHP framework</div>
+              <div className={styles.actions}>
+                <div className={styles.action}>
+                  <Button color='primary' size='md' text='Examples' />
+                </div>
+                <div className={styles.action}>
+                  <Button color='contrast' size='md' text='Documentation' />
+                </div>
+              </div>
+            </div>
           </div>
-        ))
-      }
+        </div>
+      </div>
     </div>
-    <div className={ styles.videosGrid }>
-      {
-        Videos.map(video => (
-          <Link to={`/video/${video.view_key}`} >
-            <VideoCard 
-              view_key={ video.view_key } 
-              title={ video.title } 
-              creator_name={ video.creator.full_name } 
-              img={ video.img } 
-              size='md' 
-              color='default' 
-            />
-          </Link>
-        ))
-      }
-    </div>
-    <div className={ styles.tagsGrid }>
-      {
-        Tags.map(tag => (
-          <Tag 
-            text={capitalizeWords(tag.name)}
-            size='md'
-            color='default'
-          />
-        ))
-      }
-    </div>
-    <div className={ styles.categoriesGrid }>
-      {
-        Categories.map(cateogory => (
-          <CategoryCard
-            title={cateogory.name}
-            description={cateogory.videos_count}
-            img={cateogory.img}
-            size='md'
-            color='default'
-          />
-        ))
-      }
-    </div>
-  </div>
-);
+  );
+};

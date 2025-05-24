@@ -6,7 +6,7 @@
     text-align: center;
     height: 540px;
     border-bottom: 1px solid var(--secondary-background-color);
-    background: var(--primary-background-color);
+    background: #000000;
 }
 .active {
     display: inline-flex;
@@ -16,7 +16,6 @@
     width: 100%;
     max-width: var(--max-content-width);
     height: 100%;
-    outline: 1px solid var(--secondary-background-color);
 }
 .section {
     display: inline-flex;

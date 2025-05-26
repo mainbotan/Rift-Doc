@@ -1,6 +1,11 @@
 import { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import { Button } from '../../ui-kit/Button';
+import CodeBlock from '../../components/CodeBlock';
+import clsx from 'clsx';
+
+// test data
+import { ExampleCode } from '../../scheme/code';
 
 export const MainPage = () => {
   const labelRef = useRef<HTMLDivElement>(null);
@@ -84,6 +89,16 @@ export const MainPage = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={clsx(styles.slide, styles.slide_1)}>
+        <div className={styles.title}>High-complexity B2B applications with maximum data isolation.</div>
+        <div className={styles.text}>
+          Allow yourself to focus on the business logic of a particular tenant. Use Rift to isolate tenant schemes, create configuration repositories, lightning-fast initialization of new tenants, assign tariff plans, SLA support, and complete system diagnostics.
+        </div>
+        {/* <CodeBlock
+          code={ExampleCode}
+          language="php"
+        /> */}
       </div>
     </div>
   );

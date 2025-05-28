@@ -1,4 +1,6 @@
 @use '../../assets/styles/main.scss' as *;
+@use '../../assets/fonts/mixins' as *;
+@use '../../assets/styles/mixins' as *;
 
 
 // Api Docs layout
@@ -7,7 +9,7 @@
     display: block;
     width: 100%;
     text-align: center;
-    background: var(--primary-background-color);
+    background: #0d0d10;
     min-height: 100vh;
 }
 .active {
@@ -20,20 +22,77 @@
     min-height: 100vh;
     padding-bottom: 0px;
     
-    * {
-        border: 1px solid red;
-    }
-
     @media (max-width: #{$small-screen-max-width}) {
         flex-flow: column nowrap;
     }
 
     .sidePanel {
         display: inline-flex;
-        flex: 1;
+        flex-flow: column nowrap;
+        gap: 10px;
+        padding: 20px 20px;
+        overflow: hidden;
+        flex: 0.6;
+        padding-top: 30px;
+
+        @media (max-width: #{$small-screen-max-width}) {
+            flex: 0;
+        }
+
+        .section {
+            display: block;
+            text-align: left;
+            width: 100%;
+            line-height: 1.2;
+
+            .title {
+                @include ease-animation(0.1s);
+                @include block-ellipsis();
+                @include mulish(600, normal);
+                font-size: 21px;
+                color: var(--primary-text-color);
+                padding: 14px 0px;
+                cursor: pointer;
+
+                @media (max-width: #{$small-screen-max-width}) {
+                    cursor: none;
+                }
+
+                .tag {
+                    display: inline-block;
+                    margin-right: 5px;
+                    color: var(--rift-color);
+                }
+            }
+            .title:hover {
+                color: var(--rift-color);
+            }
+
+            .chapters {
+                display: block;
+                padding-left: 20px;
+                border-left: 4px solid var(--rift-color);
+
+                .title {
+                    @include mulish(500, normal);
+                    @include ease-animation(0.2);
+                    font-size: 18px;
+                    color: var(--primary-text-color);
+                    padding: 5px 0px;
+                }
+                .title:hover {
+                    color: var(--rift-color);
+                }
+            }
+        }
     }
     .mainArea {
-        display: flex;
+        @include mulish(500, normal);
+        color: var(--primary-text-color);
+        display: block;
+        text-align: left;
         flex: 3;
+        padding: 38px 20px;
+        line-height: 1.2;
     }
 }

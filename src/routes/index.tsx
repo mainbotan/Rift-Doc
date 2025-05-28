@@ -5,7 +5,7 @@ import { MainPage } from '../pages/Main';
 
 // Api
 import { DocsLayout } from '../layouts/Docs/index';
-import { IntroductionPage } from '../pages/Docs/v1/Introduction/index';
+import { IntroductionPage } from '../pages/Docs/Introduction/index';
 
 
 export const routes = [
@@ -15,7 +15,7 @@ export const routes = [
     children: [{ index: true, element: <MainPage /> }],
   },
   {
-    path: 'docs/v1',
+    path: 'docs/:version',
     element: <DocsLayout />,
     children: [
       { index: true, path: 'introduction', element: <IntroductionPage /> }

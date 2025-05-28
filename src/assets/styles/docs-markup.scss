@@ -1,0 +1,29 @@
+@use '../../assets/styles/main.scss' as *;
+@use '../../assets/fonts/mixins' as *;
+@use '../../assets/styles/mixins' as *;
+
+// Docs Markup
+
+.docs-markup {
+    .title {
+        @include mulish(700, normal);
+        font-size: 36px;
+
+        .tag {
+            color: var(--rift-color);
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+    .text {
+        @include mulish(500, normal);
+        padding: 15px;
+        background:  #070709;
+        border-radius: 15px;
+        line-height: 1.4;
+        font-size: 16px;
+    }
+    .text.contrast {
+        border: 2px solid var(--rift-color);
+    }
+}

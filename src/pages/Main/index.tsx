@@ -95,7 +95,7 @@ export const MainPage = () => {
                   <Button color='primary' size='md' text='Examples' />
                 </div>
                 <div className={styles.action}>
-                  <Link to='/docs/v1'><Button color='contrast' size='md' text='Documentation' /></Link>
+                  <Link to='/docs/v1/introduction'><Button color='contrast' size='md' text='Documentation' /></Link>
                 </div>
               </div>
             </div>

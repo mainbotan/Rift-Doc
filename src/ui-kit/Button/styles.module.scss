@@ -7,6 +7,7 @@
 
 .root {
     @include mulish(600, normal);
+    @include block-ellipsis();
     color: $ui-primary-color;
     display: inline-block;
     cursor: pointer;

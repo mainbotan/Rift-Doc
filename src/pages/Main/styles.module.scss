@@ -2,6 +2,8 @@
 @use '../../assets/fonts/mixins' as *;
 @use '../../assets/styles/main.scss' as *;
 
+// Specific mixins
+
 // Main Page
 
 .root {
@@ -22,7 +24,7 @@
         right: 50%; 
         margin-left: -50vw; 
         margin-right: -50vw;
-        background-color: #000;
+        background-color: #000000;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -61,7 +63,7 @@
         }
 
         .active {
-            display: inline-flex;
+            display: inline-block;
             align-items: end;
             justify-content: start;
             width: 100%;
@@ -120,9 +122,8 @@
         text-align: left;
         padding: 60px 30px;
         border-left: 3px solid rgb(199, 197, 197);
-    }
-    .slide_1 {
-        min-height: 50vh;
+        padding-bottom: 30vh;
+
 
         .title {
             @include mulish(600, normal);
@@ -146,7 +147,202 @@
             }
         }
     }
+    .slide_2 {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10vh;
 
+        .wrapper {
+            display: block;
+            padding: 0px 20px;
+            width: calc(100% - 40px);
+            text-align: left;
+            
+            .title {
+                font-size: 60px;
+
+                @media (max-width: #{$small-screen-max-width}) {
+                    font-size: 40px;
+                }
+            }
+        }
+        .examples_grid {
+            margin: 40px 0px 50px 0px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 10px 20px;
+
+            @media (max-width: #{$small-screen-max-width}) {
+                flex-flow: column wrap;
+                margin-top: 40px;
+            }
+            .example {
+                display: inline-block;
+                text-align: left;
+            }
+        }
+        
+    }
+    .slide_3 {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .title {
+            font-size: 60px;
+
+            @media (max-width: #{$small-screen-max-width}) {
+                font-size: 40px;
+            }
+        }
+        .text {
+            margin-top: 10px;
+        }
+
+        .adaptive_column_grid {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 20px 30px;
+            min-height: 100px;
+
+            @media (max-width: #{$small-screen-max-width}) {
+                flex-flow: column nowrap;
+            }
+
+            .wrapper {
+                display: block;
+                text-align: left;
+                width: 100%;
+            }
+            .main_area {
+                display: flex;
+                flex: 4;
+                align-items: start;
+                justify-content: start;
+
+                .wrapper {
+                    padding: 0px 20px;
+                    width: calc(100% - 40px);
+                }
+            }
+            .addition_area {
+                display: flex;
+                flex: 1;
+                align-items: center;
+            }
+        }
+    }
+
+    // Slides-All Width Areas
+
+    .area {
+        display: block;
+        width: 100vw; 
+        position: relative; 
+        z-index: 1;
+        left: 50%; 
+        right: 50%; 
+        margin-left: -50vw; 
+        margin-right: -50vw;
+        background-color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .active {
+            display: inline-flex;
+            align-items: end;
+            justify-content: start;
+            width: 100%;
+            max-width: var(--max-content-width);
+
+            .block {
+                display: block;
+                text-align: left;
+                width: calc(100% - 60px);
+                padding: 60px 30px;
+                padding-bottom: 30vh;
+            }
+        }
+    }
+    .area_1 {
+        .title {
+            @include mulish(600, normal);
+            font-size: 55px;
+            line-height: 1.1;
+            color: var(--rift-color);
+
+            @media (max-width: #{$small-screen-max-width}) {
+                font-size: 40px;
+            }
+        }
+        .architecture_grid {
+            margin: 90px 0px 50px 0px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px 60px;
+
+            @media (max-width: #{$small-screen-max-width}) {
+                flex-flow: column wrap;
+                margin-top: 40px;
+            }
+
+            .section {
+                display: inline-block;
+                text-align: left;
+                cursor: pointer;
+
+                @media (max-width: #{$small-screen-max-width}) {
+                    display: block;
+                    cursor: none;
+                }
+                .ico {
+                    width: 60px;
+                    height: 60px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                    border-radius: 17px;
+                    background: #222222;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .title {
+                    @include mulish(600, normal);
+                    font-size: 30px;
+                    line-height: 1.1;
+                    color: var(--primary-text-color);
+                }
+                .title.contrast {
+                    padding-bottom: 5px;
+                    border-bottom: 5px solid var(--rift-color);
+                }
+                .text {
+                    @include mulish(500, normal);
+                    margin-top: 10px;
+                    font-size: 18px;
+                    line-height: 1.2;
+                    color: var(--secondary-text-color);
+
+                    @media (max-width: #{$small-screen-max-width}) {
+                        font-size: 15px;
+                    }
+                }
+            }
+            .section.addition {
+                border-left: 2px solid grey;
+                .title {
+                    font-size: 20px;
+                }
+                .text {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
 
 
 

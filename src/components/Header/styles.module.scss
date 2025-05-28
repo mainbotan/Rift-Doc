@@ -1,6 +1,7 @@
 
 @use '../../assets/styles/mixins' as *;
 @use '../../assets/fonts/mixins' as *;
+@use '../../assets/styles/main.scss' as *;
 
 // Header
 
@@ -12,16 +13,19 @@
     text-align: center;
     height: 60px;
     background: #000000;
-    gap: 10px;
 
     .active {
         position: relative;
         display: inline-flex;
         flex-flow: row nowrap;
+        gap: 15px;
         width: 100%;
         max-width: var(--max-content-width);
         height: 100%;
-        // background: var(--secondary-background-color);
+
+        @media (max-width: #{$small-screen-max-width}) {
+            gap: 0px 8px;
+        }
 
         .modalLine {
             position: absolute;
@@ -35,40 +39,44 @@
         }
 
         .section {
-            @include flex-center();
             display: inline-flex;
-            min-width: 120px;
-            max-width: 150px;
-            font-size: 18px;
-            color: var(--primary-text-color);
-            outline: 1px solid var(--secondary-background-color);
+            align-items: center;
+            justify-content: center;
+            padding: 0px 20px;
+            cursor: pointer;
+            
+            @media (max-width: #{$small-screen-max-width}) {
+                padding: 0px 10px;
+                cursor: none;
+            }
 
-            .title {
-                @include block-ellipsis();
+            .wrapper {
+                .title {
+                    @include ease-animation(0.1s);
+                    @include mulish(500, normal);
+                    @include block-ellipsis();
+                    font-size: 18px;
+                    color: var(--primary-text-color);
+                }
+                .title:hover {
+                    color: var(--rift-color);
+                }
             }
         }
-
-        // sections modifierы
-        .notNecessary {
-            @media (max-width: 720px) {
-                display: none;
+        .section.logoSection {
+            padding-left: 20px;
+            
+            .wrapper {
+                @include mulish(800, normal);
+                font-size: 40px;
+                color: var(--non-contrast-rift-color);
             }
         }
-        .logo {
-            @include mulish(600, normal);
-            outline: 1px solid var(--secondary-background-color);
-            font-size: 22px;
-            color: var(--primary-text-color);
-            white-space: nowrap;
-        }
-
-        .bar {
-            @include flex-center();
+        .barSection {
             display: flex;
-            flex: 1;
-            font-size: 18px;
-            color: var(--primary-text-color);
-            padding: 0px 15px;
+            align-items: center;
+            justify-content: center;
+            flex-basis: 100%;
         }
     }
 }

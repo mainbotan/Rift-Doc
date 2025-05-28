@@ -2,12 +2,14 @@
 @use '../fonts/_mixins' as *;
 
 :root {
+    --primary-docs-background-color: #0c0c0c;
     --primary-background-color: #ececec;
     --primary-text-color: #eee;
     --secondary-background-color: #222222;
     --secondary-text-color: grey;
     --ternary-background-color: #0e0e0e;
     --rift-color: #ef3a3a;
+    --non-contrast-rift-color: #ef3a3ac8;
     
     --max-content-width: 1200px;
     --max-mobile-width: 768px;
@@ -50,6 +52,7 @@ html, body,  #root {
     background: transparent;
 }
 
-a {
+a,a:-webkit-any-link {
     text-decoration: none;
+    color: none;
 }

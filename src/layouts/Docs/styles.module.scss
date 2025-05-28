@@ -1,0 +1,39 @@
+@use '../../assets/styles/main.scss' as *;
+
+
+// Api Docs layout
+
+.root {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--primary-background-color);
+    min-height: 100vh;
+}
+.active {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    padding: 0px 0px;
+    width: 100%;
+    max-width: var(--max-content-width);
+    min-height: 100vh;
+    padding-bottom: 0px;
+    
+    * {
+        border: 1px solid red;
+    }
+
+    @media (max-width: #{$small-screen-max-width}) {
+        flex-flow: column nowrap;
+    }
+
+    .sidePanel {
+        display: inline-flex;
+        flex: 1;
+    }
+    .mainArea {
+        display: flex;
+        flex: 3;
+    }
+}

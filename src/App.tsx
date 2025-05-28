@@ -5,20 +5,27 @@ import { Routes, Route } from 'react-router-dom';
 
 // global styles
 import './assets/fonts/index.scss'; // <- font
-import './assets/styles/main.scss'; // <- base styles
+import './assets/styles/main.scss'; // <- base 
+import './assets/styles/custom-prism.scss'; // global prism
 
-// layouts
-import { AppLayout } from './layouts/App/index.tsx';
-
-// pages
-import { MainPage } from './pages/Main/index.tsx'; // <- main page
+// routes
+import { routes } from './routes/index';
 
 function App() {
   return (
       <Routes>
-        <Route path='/' element={<AppLayout />}>
-          <Route index element={<MainPage />}/>
-        </Route>
+        {routes.map((route, i) => (
+          <Route key={i} path={route.path} element={route.element}>
+            {route.children?.map((child, j) => (
+              <Route
+                key={j}
+                index={'index' in child ? child.index : undefined}
+                path={'path' in child ? child.path : undefined}
+                element={child.element}
+              />
+            ))}
+          </Route>
+        ))}
       </Routes>
   );
 }

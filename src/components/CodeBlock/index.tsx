@@ -6,7 +6,6 @@ import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-markup';
-import 'prismjs/themes/prism-tomorrow.css';
 
 type CodeBlockProps = {
   code: string;

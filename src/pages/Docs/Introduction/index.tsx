@@ -5,16 +5,26 @@ export const IntroductionPage = () => {
     const { version } = useParams();
     return (
         <>
-            <div className='title'><div className='tag'>#</div>Introduction</div>
+            <div className='title'><div className='tag'>/</div>Introduction</div>
             <br />
-            <div className='text'>
-                Allow yourself to focus on the business logic of a particular tenant. Use Rift to isolate tenant schemes, create configuration repositories, lightning-fast initialization of new tenants, assign tariff plans, SLA support, and complete system diagnostics.
-            </div>
-            <br />
-            <CodeBlock
-                code='json'
-                language='php'
-            />
+            Rift is far from Laravel for quick and easy MVP creation. If you are used to controllers (which in most cases grow into divine objects), ORM and server rendering - run away.
+            If you don't want to get out of the habit using Blade, close this documentation. If you are not ready for the pain, the unlearning of exceptions, and a clear contract between the layers, close the tab. If your goal is to create
+            landing page for the company, run away even faster. If you work in a team that is used to a ton of legacy shit (we will often use this scientific term in this documentation), run.
+            <br /><br />
+            But if you have decided to stay, after you understand the basic concept, the Rift should give you real pleasure. Due to the specifics of architecture and contractuality, your application can turn into an easily readable and predictable
+            structure ready for smooth scaling. 
+            <br /><br />
+            First of all, Rift was conceived as a means to write API gateways that provide only data without templates. Keep this fact in mind. In addition, due to the abandonment of controllers in favor of 
+            minimalistic and atomic UseCases, you can easily reuse the code, thereby breaking all the logic into small independent parts. 
+            <br /><br />
+            The Rift is also focused on multi-tenancy. That is why we have long considered Postgres to be the preferred database (however, for fans of the classical approach, you can easily use MySQL). 
+            We deliberately abandoned the ORM layer in favor of maximum developer control. Rift Configurators will help with the deployment of your projects and make initializing new tenants even easier.
+            <br /><br />
+            If you are still here, we have news for you. Thanks to a single contract for all layers, Rift applications can be used not only on top of HTTP. Queues, CLIs, and other vagaries will become easier.
+            <br /><br />
+            Thus, Rift is a rough, uncouth and obviously losing out in many aspects of its framework. But it is he who gives you maximum control over the architecture, strict contractuality and reusability.
+            <br /><br />
+            God bless us!
         </>
     );
 }

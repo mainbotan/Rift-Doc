@@ -6,6 +6,8 @@ import { MainPage } from '../pages/Main';
 // Api
 import { DocsLayout } from '../layouts/Docs/index';
 import { IntroductionPage } from '../pages/Docs/Introduction/index';
+import { ArchitectureMainPage } from '../pages/Docs/Architecture/main';
+import { ArchitectureContractPage } from '../pages/Docs/Architecture/contract';
 
 
 export const routes = [
@@ -18,7 +20,9 @@ export const routes = [
     path: 'docs/:version',
     element: <DocsLayout />,
     children: [
-      { index: true, path: 'introduction', element: <IntroductionPage /> }
+      { index: true, path: 'introduction', element: <IntroductionPage /> },
+      { path: 'architecture', element: <ArchitectureMainPage /> },
+      { path: 'architecture/contract', element: <ArchitectureContractPage /> }
     ],
   }
 ];

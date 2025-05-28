@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import styles from './styles.module.scss'; // <- layout styles
 import { AppHeader } from '../../components/Header'; // <- header
 import { AppFooter } from '../../components/Footer'; // <- footer
+import { SideBar } from './SideBar';
 
 
 export const DocsLayout = () => {
@@ -17,19 +18,7 @@ export const DocsLayout = () => {
       <AppHeader />
       <div className={styles.root}>
         <div className={styles.active}>
-          <div className={styles.sidePanel}>
-            <div className={styles.section}>
-              <Link to='/docs/v1/introduction'><div className={styles.title}><div className={styles.tag}>/</div>Introduction</div></Link>
-            </div>
-            <div className={styles.section}>
-              <div className={styles.title}>Routing</div>
-              <div className={styles.chapters}>
-                <div className={styles.title}>RESTful router</div>
-                <div className={styles.title}>Middlewares</div>
-                <div className={styles.title}>Headers</div>
-              </div>
-            </div>
-          </div>
+          <SideBar />
           <div className={clsx(styles.mainArea, 'docs-markup')}>
             <Outlet />
           </div>

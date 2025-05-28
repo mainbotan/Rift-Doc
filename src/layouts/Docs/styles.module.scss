@@ -44,6 +44,7 @@
             text-align: left;
             width: 100%;
             line-height: 1.2;
+            margin: 2px 0px;
 
             .title {
                 @include ease-animation(0.1s);
@@ -51,7 +52,7 @@
                 @include mulish(600, normal);
                 font-size: 21px;
                 color: var(--primary-text-color);
-                padding: 14px 0px;
+                padding: 0px 0px;
                 cursor: pointer;
 
                 @media (max-width: #{$small-screen-max-width}) {
@@ -69,6 +70,7 @@
             }
 
             .chapters {
+                margin-top: 15px;
                 display: block;
                 padding-left: 20px;
                 border-left: 4px solid var(--rift-color);
@@ -87,12 +89,10 @@
         }
     }
     .mainArea {
-        @include mulish(500, normal);
         color: var(--primary-text-color);
         display: block;
         text-align: left;
         flex: 3;
         padding: 38px 20px;
-        line-height: 1.2;
     }
 }

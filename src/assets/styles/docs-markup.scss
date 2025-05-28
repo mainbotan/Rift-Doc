@@ -5,9 +5,15 @@
 // Docs Markup
 
 .docs-markup {
+    @include mulish(400, normal);
+    line-height: 1.4;
+    font-size: 16px;
+    color: var(--primary-text-color);
+
     .title {
         @include mulish(700, normal);
         font-size: 36px;
+        line-height: 1.2;
 
         .tag {
             color: var(--rift-color);
@@ -15,15 +21,24 @@
             margin-right: 10px;
         }
     }
+    .title.middle {
+        font-size: 25px;
+    }
     .text {
-        @include mulish(500, normal);
         padding: 15px;
         background:  #070709;
         border-radius: 15px;
-        line-height: 1.4;
-        font-size: 16px;
     }
     .text.contrast {
         border: 2px solid var(--rift-color);
+    }
+    .code-tag {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        padding: 2px 8px;
+        border-radius: 5px;
+        background: #070709;
+        display: inline-block;
+        margin: 2px 0px;
     }
 }

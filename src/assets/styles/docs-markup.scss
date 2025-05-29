@@ -28,17 +28,22 @@
         padding: 15px;
         background:  #070709;
         border-radius: 15px;
+        border: 1px solid var(--rift-color);
     }
     .text.contrast {
         border: 2px solid var(--rift-color);
     }
     .code-tag {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 400;
         font-size: 16px;
         padding: 2px 8px;
         border-radius: 5px;
-        background: #070709;
+        background: #212127;
         display: inline-block;
         margin: 2px 0px;
+    }
+    .code-tag.contrast {
+        background: #212127;
     }
 }

@@ -4,10 +4,10 @@ export const docsNav = [
     path: 'introduction',
   },
   {
-    title: "Architecture",
-    path: "architecture",
+    title: "Basic Сoncepts",
+    path: "basic-concepts",
     children: [
-     { title: "Contract", path: "architecture/contract" } 
+     { title: "Contract", path: "basic-concepts/contract" } 
     ]
   }
 ];

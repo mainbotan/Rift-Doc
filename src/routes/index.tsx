@@ -5,9 +5,9 @@ import { MainPage } from '../pages/Main';
 
 // Api
 import { DocsLayout } from '../layouts/Docs/index';
-import { IntroductionPage } from '../pages/Docs/Introduction/index';
-import { ArchitectureMainPage } from '../pages/Docs/Architecture/main';
-import { ArchitectureContractPage } from '../pages/Docs/Architecture/contract';
+import { IntroductionPage } from '../pages/Docs/introduction/index';
+import { BasicConceptsMainPage } from '../pages/Docs/basic-concepts/main';
+import { BasicConceptsContractPage } from '../pages/Docs/basic-concepts/contract';
 
 
 export const routes = [
@@ -20,9 +20,9 @@ export const routes = [
     path: 'docs/:version',
     element: <DocsLayout />,
     children: [
-      { index: true, path: 'introduction', element: <IntroductionPage /> },
-      { path: 'architecture', element: <ArchitectureMainPage /> },
-      { path: 'architecture/contract', element: <ArchitectureContractPage /> }
+      { path: 'introduction', element: <IntroductionPage /> },
+      { path: 'basic-concepts', element: <BasicConceptsMainPage /> },
+      { path: 'basic-concepts/contract', element: <BasicConceptsContractPage /> }
     ],
   }
 ];

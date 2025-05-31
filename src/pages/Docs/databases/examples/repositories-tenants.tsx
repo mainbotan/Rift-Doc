@@ -1,5 +1,4 @@
-export const RepositoriesTenantsExample = `
-<?php
+export const RepositoriesTenantsExample = `<?php
 
 namespace App\\Repositories\\System;
 
@@ -12,8 +11,8 @@ class TenantsRepository extends AbstractRepository
 {
     public function selectById(int $tenantId): ResponseDTO {
         $stmt = $this->pdo->prepare("
-            SELECT * FROM `tenants` 
-            WHERE `id` = :id
+            SELECT * FROM \`tenants\` 
+            WHERE \`id\` = :id
         ");
 
         $stmt->bindValue(':id', $tenantId, PDO::PARAM_INT);
@@ -23,7 +22,7 @@ class TenantsRepository extends AbstractRepository
     public function selectAll(int $limit = 10, int $offset = 0): ResponseDTO
     {
         $stmt = $this->pdo->prepare("
-            SELECT * FROM `tenants` 
+            SELECT * FROM \`tenants\` 
             LIMIT :limit 
             OFFSET :offset
         ");

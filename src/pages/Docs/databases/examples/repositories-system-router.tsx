@@ -16,8 +16,8 @@ class Router extends AbstractRouter {
      */
     protected array $repositories = [
         'tenants.repo' => [
-            'class' => \App\Repositories\System\TenantsRepository::class,
-            'model' => \App\Models\System\Tenants::class
+            'class' => \\App\\Repositories\\System\\TenantsRepository::class,
+            'model' => \\App\\Models\\System\\Tenants::class
         ]
     ];
 }

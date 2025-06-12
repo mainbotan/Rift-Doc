@@ -19,7 +19,7 @@ export const AppFooter = () => (
       </div>
       <div className={clsx(styles.section, styles.description_section)}>
         <div className={styles.title}>Core Components</div>
-        <div className={styles.point}>Response Contract</div>
+        <div className={styles.point}>Operation Contract</div>
         <div className={styles.point}>Router</div>
         <div className={styles.point}>Validator</div>
         <div className={styles.point}>UseCases</div>

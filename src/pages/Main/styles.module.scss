@@ -63,18 +63,49 @@
         }
 
         .active {
+            position: relative;
             display: inline-block;
             align-items: end;
             justify-content: start;
             width: 100%;
             max-width: var(--max-content-width);
-            min-height: 360px;
+            min-height: 440px;
+            overflow: hidden;
+
+            .modalCode {
+                display: flex;
+                position: absolute;
+                height: 90%;
+                width: 55%;
+                align-items: end;
+                justify-self: center;
+                right: 0px;
+                bottom: -20px;
+
+                @media (max-width: #{$small-screen-max-width}) {
+                    display: none;
+                }
+
+                pre {
+                    width: 100%;
+                    background: #0d0d0d;
+                    box-shadow: 0 0 40px #0a0a0a;
+                    padding: 30px;
+                    overflow: hidden;
+                    text-align: left;
+                }
+            }
 
             .block {
                 display: block;
                 text-align: left;
                 width: calc(100% - 60px);
-                padding: 100px 30px 50px 30px;
+                padding: 180px 30px 90px 30px;
+
+                @media (max-width: #{$small-screen-max-width}) {
+                    padding-top: 150px;
+                    padding-bottom: 50px;
+                }
 
                 .title {
                     @include mulish(800, normal);
@@ -118,11 +149,13 @@
     // Slides
     
     .slide {
+        position: relative;
         display: block;
         text-align: left;
         padding: 60px 30px;
         border-left: 3px solid rgb(199, 197, 197);
         padding-bottom: 30vh;
+        overflow: hidden;
 
 
         .title {
@@ -145,6 +178,31 @@
             @media (max-width: #{$small-screen-max-width}) {
                 font-size: 17px;
             }
+        }
+    }
+    .slide.slide_1 {
+        padding-bottom: 180px;
+        .square {
+            position: absolute;
+            z-index: 10;
+            left: -40px;
+            bottom: -40px;
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            background: var(--rift-color);
+            transform: rotate(-45deg);
+        }
+        .square2 {
+            position: absolute;
+            z-index: 10;
+            left: 60px;
+            bottom: -60px;
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            background: #000000;
+            transform: rotate(-45deg);
         }
     }
     .slide_2 {
@@ -264,7 +322,54 @@
             }
         }
     }
-    .area_1 {
+    .area.area_0 {
+        background-color: #0d0d0d;
+
+        .block {
+            padding-top: 90px;
+            padding-bottom: 70px;
+
+            .tag {
+                display: inline-block;
+                padding: 6px 13px;
+                border-radius: 12px;
+                text-decoration: none;
+                background-color: #0a0a0a;
+            }
+            .title {
+                @include mulish(600, normal);
+                line-height: 1.1;
+                font-size: 60px;
+                color: var(--primary-text-color);
+
+                @media (max-width: #{$small-screen-max-width}) {
+                    font-size: 40px;
+                }
+            }
+            .description {
+                @include mulish(500, normal);
+                line-height: 1.2;
+                font-size: 20px;
+                color: grey;
+                margin: 20px 0px;
+            }
+            .interTitle {
+                @include mulish(600, normal);
+                line-height: 1.1;
+                font-size: 40px;
+                color: var(--rift-color);
+
+                @media (max-width: #{$small-screen-max-width}) {
+                    font-size: 30px;
+                }
+            }
+            .link {
+                color: var(--rift-color);
+            }
+        }
+    }
+
+    .area.area_1 {
         .title {
             @include mulish(600, normal);
             font-size: 55px;

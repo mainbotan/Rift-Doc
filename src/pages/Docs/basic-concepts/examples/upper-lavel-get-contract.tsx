@@ -2,12 +2,12 @@
 export const UpperLavelGetContract = `
 // upper layer
 
-use Rift\\Core\\Contracts\\Response; // response wrapper
-use Rift\\Core\\Contracts\\ResponseDTO; // response object
+use Rift\\Core\\Contracts\\Operation; // response wrapper
+use Rift\\Core\\Contracts\\OperationOutcome; // response object
 
-class UpperLayer extends Response {
+class UpperLayer extends Operation {
 
-    public function execute(array $data): ResponseDTO {
+    public function execute(array $data): OperationOutcome {
         
         $request = $useCase->execute($data);
         
@@ -21,7 +21,7 @@ class UpperLayer extends Response {
             return $request;     
         }
 
-        // built-in ResponseDTO method
+        // built-in OperationOutcome method
         if ($request->isSuccess()) {
 
             $requestResult = $request->result;

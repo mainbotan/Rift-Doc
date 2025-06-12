@@ -7,11 +7,11 @@ export const ValidatorPage = () => {
         <>
             <div className='title'><div className='tag'>/</div>Rift Validator</div>
             <br />
-            So, you are interested in a simple and at the same time flexible validator that perfectly integrates with the <div className='code-tag'>Response Contract</div>.
+            So, you are interested in a simple and at the same time flexible validator that perfectly integrates with the <div className='code-tag'>Operation Contract</div>.
             Rift offers it to you. The main concept of the validation module (embedded in the core of the Rift) is to make it possible to validate anything that comes to the input of your application, whether it's nested arrays,
             prime numbers, strings, or something else, getting rid of raw exceptions and getting only a clear answer according to the contract.
             <br /><br />
-            <div className='text contrast'>If you are not familiar with the concepts <div className='code-tag'>ResponseDTO</div>, we strongly recommend that you return
+            <div className='text contrast'>If you are not familiar with the concepts <div className='code-tag'>OperationOutcome</div>, we strongly recommend that you return
             to <Link to='../basic-concepts/contract'>Basic Concepts/Contract</Link>.
             </div>
             <br />

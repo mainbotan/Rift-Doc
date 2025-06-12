@@ -1,9 +1,9 @@
-export const ResponseCodes = `
-// Response Codes - use it via self::
+export const OperationCodes = `
+// Operation Codes - use it via self::
 
 namespace Rift\\Core\\Contracts;
 
-trait ResponseTrait {
+trait OperationTrait {
     const HTTP_OK = 200; // it is considered a positive response in the method ->isSuccess
     const HTTP_CREATED = 201; // it is considered a positive response in the method ->isSuccess
     const HTTP_ACCEPTED = 202; // it is considered a positive response in the method ->isSuccess

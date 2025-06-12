@@ -1,4 +1,4 @@
-export const PDOResponsesExample = `
+export const PDOOperationsExample = `
 // Connection received successfully
 {
     code: 200,

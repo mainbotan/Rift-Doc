@@ -6,13 +6,13 @@ public static function checkRange(
     int $min,
     int $max,
     string $fieldName = 'value'
-): ResponseDTO ...
+): OperationOutcome ...
 
 // Is positive number
 
 public static function isPositive(
     int $value, 
     string $fieldName = 'value'
-): ResponseDTO ...
+): OperationOutcome ...
 
 `;

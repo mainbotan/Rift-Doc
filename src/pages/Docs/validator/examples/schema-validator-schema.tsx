@@ -67,12 +67,12 @@ $schema = [
     'custom_code' => [
         'type' => 'int',
 
-        // Custom validator must return ResponseDTO — here it checks for even numbers
+        // Custom validator must return OperationOutcome — here it checks for even numbers
         'validate' => function ($value, $all) {
             if ($value % 2 !== 0) {
-                return Response::error(Response::HTTP_BAD_REQUEST, 'custom_code must be even');
+                return Operation::error(Operation::HTTP_BAD_REQUEST, 'custom_code must be even');
             }
-            return Response::success(null);
+            return Operation::success(null);
         }
     ]
 ];

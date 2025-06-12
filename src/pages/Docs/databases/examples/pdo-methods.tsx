@@ -7,15 +7,15 @@ export const PDOMethodsExample = `
  * Be careful, this method returns a global
  * Database connection and has access to all schemas.
 */
-public static function adminPdo(): ResponseDTO;
+public static function adminPdo(): OperationOutcome;
 
 /**
  * Connecting to a specific schema
  * /
-public static function getPdoForSchema(string $schema): ResponseDTO;
+public static function getPdoForSchema(string $schema): OperationOutcome;
 
 /**
  * Connection to the system schema
  * /
-public static function systemPdo(): ResponseDTO;
+public static function systemPdo(): OperationOutcome;
 `;

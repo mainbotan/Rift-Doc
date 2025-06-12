@@ -12,11 +12,13 @@ import RouterIco from '../../assets/images/split.png';
 import MiddlewaresIco from '../../assets/images/milestone.png';
 import UseCaseIco from '../../assets/images/heart.png';
 import RepositoryIco from '../../assets/images/database.png';
+import BoxIco from '../../assets/images/box.png';
 import { ExampleValidator } from '../../scheme/validator/example-validator';
 import { ContractShortDescription } from '../../scheme/contract/short-description.tsx';
 import { ValidatorShortDescription } from '../../scheme/validator/short-description.tsx';
 import { ExampleRepoRequest } from '../../scheme/contract/examples/repo-request-example.tsx';
 import { ExampleRepoAnswer } from '../../scheme/contract/examples/repo-request-answer-example.tsx';
+import { ContractChunk1 } from '../../scheme/chunks/01-contract-chunk.tsx';
 
 
 export const MainPage = () => {
@@ -86,26 +88,55 @@ export const MainPage = () => {
         <canvas ref={canvasRef} className={styles.canvas} />
         <div ref={glowRef} className={styles.glow} />
         <div className={styles.active}>
+          <div className={styles.modalCode}><CodeBlock code={ContractChunk1} language='php'/></div>
+
           <div className={styles.block}>
             <div className={styles.title}>Rift</div>
             <div className={styles.underTitle}>
-              <div className={styles.description}>Multitenant PHP framework</div>
+              <div className={styles.description}>Multitenant PHP miniframework</div>
               <div className={styles.actions}>
                 <div className={styles.action}>
                   <Button color='primary' size='md' text='Examples' />
                 </div>
                 <div className={styles.action}>
-                  <Link to='/docs/v1/introduction'><Button color='contrast' size='md' text='Documentation' /></Link>
+                  <Link onClick={() => window.scrollTo(0, 0)} to='/docs/v1/introduction'><Button color='contrast' size='md' text='Documentation' /></Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className={clsx(styles.slide, styles.slide_1)}>
+        <div className={styles.square}></div>
+        <div className={styles.square2}></div>
         <div className={styles.title}>High-complexity B2B applications with maximum data isolation.</div>
         <div className={styles.text}>
           Allow yourself to focus on the business logic of a particular tenant. Use Rift to isolate tenant schemes, create configuration repositories, lightning-fast initialization of new tenants, assign tariff plans, SLA support, and complete system diagnostics.
+          <br /><br />
+          Rift was conceived as a microframe for API gateways in the context of multi-tenant applications. This means that we do not consider using tools like Twig or other template engines for SSR. You also won't find the usual Laravel-like controllers here. Rift is a set of tools, as well as a separate philosophy for developing complex API gateways, and offers a contractual approach to writing business logic.
+        </div>
+      </div>
+
+      <div className={clsx(styles.area, styles.area_0)}>
+        <div className={styles.active}>
+          <div  className={styles.block}>
+            <div className={styles.title}>Strict contractual execution of the query chain.</div>
+            <div className={styles.description}>
+              Rift is built around the idea of a standardized response contract for all layers of the application.
+              We are well aware of the importance of an explicit chain of application requests in matters related to complex logic.
+            </div>
+            <br />
+            <div className={styles.interTitle}>OperationOutcome</div>
+            <div className={styles.description}>
+              Object for transferring data between different layers of the application. Imagine that you don't have to write a ton of exceptions and handle them.
+              If you have deals with Rust, Java, Kotlin ... with their Result types, you'll find them clearly similar to OperationOutcome.
+              <br /><br />
+              If you are familiar with the promises of JS or with functional programming in general, you will like the built-in methods for working with OperationOutcome. With their help, you can rely on explicit error handling and logical chain building.
+              <br /><br /><br />
+              <Link to='docs/v1/basic-concepts/contract'><div className={styles.link}>/ read in the documentation</div></Link>
+            </div>
+          </div>
         </div>
       </div>
       <div className={clsx(styles.area, styles.area_1)}>
@@ -117,7 +148,7 @@ export const MainPage = () => {
                 <div className={styles.ico}><img src={RouterIco} alt={RouterIco} /></div>
                 <div className={styles.title}>Router Layer</div>
                 <div className={styles.text}>Routing endpoints based on RESTFul principles based on array-configuration routes.</div>
-              </div>
+              </div> 
               <div className={styles.section}>
                 <div className={styles.ico}><img src={MiddlewaresIco} alt={MiddlewaresIco} /></div>
                 <div className={styles.title}>Middlewares</div>
@@ -141,16 +172,6 @@ export const MainPage = () => {
           </div>
         </div>
       </div>
-      <div className={clsx(styles.slide, styles.slide_2)}>
-        <div className={styles.wrapper}>
-          <div className={styles.title}>Rift Response Contract</div>
-          <div className={styles.text}>{ContractShortDescription}</div>
-        </div>
-        <div className={styles.examples_grid}>
-          <div className={styles.example}><CodeBlock code={ExampleRepoRequest} language='php' /></div>
-          <div className={styles.example}><CodeBlock code={ExampleRepoAnswer} language='json' /></div>
-        </div>
-      </div>
       <div className={clsx(styles.slide, styles.slide_3)}>
         <div className={styles.adaptive_column_grid}>
           <div className={styles.main_area}>
@@ -172,3 +193,4 @@ export const MainPage = () => {
     </div>
   );
 };
+

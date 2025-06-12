@@ -2,12 +2,12 @@
 export const UseContractWrapperExample = `
 // somewhere in your app
 
-use Rift\\Core\\Contracts\\Response; // response wrapper
-use Rift\\Core\\Contracts\\ResponseDTO; // response object
+use Rift\\Core\\Contracts\\Operation; // response wrapper
+use Rift\\Core\\Contracts\\OperationOutcome; // response object
 
-class YourUseCase extends Response {
+class YourUseCase extends Operation {
 
-    public function execute(array $data): ResponseDTO {
+    public function execute(array $data): OperationOutcome {
     
         // the general version
         return self::response($result, self::HTTP_OK);

@@ -3,35 +3,34 @@ import styles from './styles.module.scss';
 import { docsNav } from './navigation';
 
 export const SideBar = () => {
-  const { version = 'v1' } = useParams(); // fallback на v1
+  const { version = 'v1' } = useParams();
+
+  const renderItem = (item, parentPath = '') => {
+    const fullPath = parentPath ? `${parentPath}/${item.path}` : item.path;
+
+    return (
+      <div key={fullPath}>
+        <Link to={`/docs/${version}/${fullPath}`} className={styles.link}>
+          <div className={styles.title}>
+            <div className={styles.tag}>{item.sign ?? '/'}</div>
+            {item.title}
+          </div>
+        </Link>
+
+        {item.children && (
+          <div className={styles.childrens}>
+            {item.children.map(child => renderItem(child, fullPath))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className={styles.sidePanel}>
-      {docsNav.map((section, i) => (
-        <div className={styles.section} key={i}>
-          {section.path ? (
-            <Link to={`/docs/${version}/${section.path}`}>
-              <div className={styles.title}>
-                <div className={styles.tag}>/</div>
-                {section.title}
-              </div>
-            </Link>
-          ) : (
-            <div className={styles.title}>
-              <div className={styles.tag}>/</div>
-              {section.title}
-            </div>
-          )}
-
-          {section.children && (
-            <div className={styles.chapters}>
-              {section.children.map((child, j) => (
-                <Link to={`/docs/${version}/${child.path}`} key={j}>
-                  <div className={styles.title}>{child.title}</div>
-                </Link>
-              ))}
-            </div>
-          )}
+      {docsNav.map(section => (
+        <div className={styles.section} key={section.path}>
+          {renderItem(section)}
         </div>
       ))}
     </div>

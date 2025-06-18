@@ -26,7 +26,6 @@ class UseCase implements HandlerInterface {
                         return array_merge($user, ['stats' => $stats]);
                     });
             })
-            ->addDebugData('ahuenno', 'yes')
 
             ->withMetric('end_time', microtime(true));
     } 

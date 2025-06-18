@@ -13,12 +13,15 @@ import MiddlewaresIco from '../../assets/images/milestone.png';
 import UseCaseIco from '../../assets/images/heart.png';
 import RepositoryIco from '../../assets/images/database.png';
 import BoxIco from '../../assets/images/box.png';
+import GithubIco from '../../assets/images/logos/github-mark-white.svg';
+
 import { ExampleValidator } from '../../scheme/validator/example-validator';
 import { ContractShortDescription } from '../../scheme/contract/short-description.tsx';
 import { ValidatorShortDescription } from '../../scheme/validator/short-description.tsx';
 import { ExampleRepoRequest } from '../../scheme/contract/examples/repo-request-example.tsx';
 import { ExampleRepoAnswer } from '../../scheme/contract/examples/repo-request-answer-example.tsx';
 import { ContractChunk1 } from '../../scheme/chunks/01-contract-chunk.tsx';
+import thunder from '../../assets/images/thunder.png';
 
 
 export const MainPage = () => {
@@ -89,14 +92,13 @@ export const MainPage = () => {
         <div ref={glowRef} className={styles.glow} />
         <div className={styles.active}>
           <div className={styles.modalCode}><CodeBlock code={ContractChunk1} language='php'/></div>
-
           <div className={styles.block}>
             <div className={styles.title}>Rift</div>
             <div className={styles.underTitle}>
               <div className={styles.description}>Multitenant PHP miniframework</div>
               <div className={styles.actions}>
                 <div className={styles.action}>
-                  <Button color='primary' size='md' text='Examples' />
+                  <Link to='https://github.com/mainbotan/Rift'><Button color='default' size='md' text='Sources' ico={GithubIco}/></Link>
                 </div>
                 <div className={styles.action}>
                   <Link onClick={() => window.scrollTo(0, 0)} to='/docs/v1/introduction'><Button color='contrast' size='md' text='Documentation' /></Link>
@@ -108,6 +110,8 @@ export const MainPage = () => {
       </div>
 
       <div className={clsx(styles.slide, styles.slide_1)}>
+        <div className={styles.square3}></div>
+        <div className={styles.square4}></div>
         <div className={styles.square}></div>
         <div className={styles.square2}></div>
         <div className={styles.title}>High-complexity B2B applications with maximum data isolation.</div>
@@ -190,6 +194,7 @@ export const MainPage = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

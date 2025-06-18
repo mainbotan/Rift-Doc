@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import CodeBlock from '../../../components/CodeBlock';
+import CodeBlock from '../../../../components/CodeBlock';
 import { OperationOutcomeExample } from './examples/response-dto-1';
 import { UseContractWrapperExample } from './examples/use-contract-wrapper';
 import { UpperLavelGetContract } from './examples/upper-lavel-get-contract';
@@ -9,7 +9,7 @@ export const BasicConceptsContractPage = () => {
     const { version } = useParams();
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Operation Contract</div>
+            <div className='title'><div className='tag'>/</div>Contract</div>
             <br />
             Compliance with the contract in all layers of the application is the main principle of building an application using Rift. 
             You may find using custom exceptions much more convenient, and yes, in some cases they are really
@@ -19,6 +19,19 @@ export const BasicConceptsContractPage = () => {
             <br /> The main rule is that each layer, regardless
             of its content, must return a <div className='code-tag'>OperationOutcome</div>
             <br /><br />
+            <div className='title middle'><div className='tag'>#</div>Why?</div>
+            <br />
+            If you've dealt with any php project, you're most likely used to exceptions as program execution interrupts in case of unexpected events. 
+            Usually, a centralized function for handling all thrown exceptions is used in the application's bootstrap, which "eats" all error messages and converts them
+            to the desired format. This approach is really convenient, especially since in controllers you can rely on the "ideal" case when all requests returned what they needed. 
+            But even in this approach, there is one main disadvantage: you lose the clarity of executing the query chain. <br /><br />
+            Rift suggests making errors and any meta information part of the return type, as implemented in Rust, Haskell, and other languages. <br /><br />
+            This is not about changing syntaxis from <div className='code-tag'>try...catch</div> to <div className='code-tag'>if...else</div>. It's about implementing methods to create query chains
+            by analogy with functional programming (<div className='code-tag'>then</div> <div className='code-tag'>map</div> <div className='code-tag'>catch</div>...)<br/><br />
+            But first, let's look at the structure of the response contract.
+            <br /><br />
+            <div className='title middle'><div className='tag'>#</div>Structure</div>
+            <br />
             In Rift, it is an object with parameters: code, result, error, meta.
             <br /><br />
             <div className='code-tag'>code</div> - is the status of the response, it can be used to check for the success<br />

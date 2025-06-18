@@ -1,6 +1,7 @@
 @use '../../assets/styles/mixins' as *;
 @use '../../assets/fonts/mixins' as *;
 @use '../../assets/styles/main.scss' as *;
+@use '../../assets//styles/animations' as *;
 
 // Specific mixins
 
@@ -109,7 +110,7 @@
 
                 .title {
                     @include mulish(800, normal);
-                    font-size: 200px;
+                    font-size: 220px;
                     color: var(--rift-color);
 
                     @media (max-width: #{$small-screen-max-width}) {
@@ -157,6 +158,10 @@
         padding-bottom: 30vh;
         overflow: hidden;
 
+        @media (max-width: #{$small-screen-max-width}) {
+            border-left: 0px;
+        }
+
 
         .title {
             @include mulish(600, normal);
@@ -181,6 +186,7 @@
         }
     }
     .slide.slide_1 {
+        padding-top: 70px;
         padding-bottom: 180px;
         .square {
             position: absolute;
@@ -202,6 +208,28 @@
             height: 120px;
             border-radius: 12px;
             background: #000000;
+            transform: rotate(-45deg);
+        }
+        .square3 {
+            position: absolute;
+            z-index: 10;
+            left: 30px;
+            top: -60px;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            background: #000000;
+            transform: rotate(-110deg);
+        }
+        .square4 {
+            position: absolute;
+            z-index: 20;
+            left: 90px;
+            top: -60px;
+            width: 90px;
+            height: 90px;
+            border-radius: 12px;
+            background: var(--rift-color);
             transform: rotate(-45deg);
         }
     }
@@ -368,7 +396,6 @@
             }
         }
     }
-
     .area.area_1 {
         .title {
             @include mulish(600, normal);

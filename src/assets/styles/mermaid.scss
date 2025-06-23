@@ -1,0 +1,124 @@
+.mermaid-viewer {
+  --bg-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --border-color: #3a3a3a;
+  --control-bg: #252526;
+  --control-active: #333;
+  --error-bg: #2d1a1a;
+  --error-text: #ff6b6b;
+
+  background: var(--bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0;
+
+  &[data-theme="light"] {
+    --bg-color: #f8f8f8;
+    --text-color: #333;
+    --border-color: #ddd;
+    --control-bg: #f0f0f0;
+    --control-active: #e0e0e0;
+    --error-bg: #ffebee;
+    --error-text: #d32f2f;
+  }
+
+  .mermaid-controls {
+    display: flex;
+    background: var(--control-bg);
+    padding: 4px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .control-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 6px 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.7;
+    transition: all 0.2s;
+
+    &[aria-selected="true"] {
+      background: var(--control-active);
+      opacity: 1;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      opacity: 0.8;
+    }
+  }
+
+  .mermaid-code-editor {
+    width: 100%;
+    min-height: 150px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  .mermaid-diagram {
+    padding: 16px;
+    overflow: auto;
+    max-width: 100%;
+
+    svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    &[data-chart-type="flowchart"],
+    &[data-chart-type="graph"] {
+      .node rect {
+        fill: #3a4b5b;
+        stroke: #4a90d9;
+      }
+
+      .edgePath path {
+        stroke: #4a90d9;
+      }
+    }
+  }
+
+  .mermaid-error {
+    padding: 16px;
+    background: var(--error-bg);
+    color: var(--error-text);
+
+    .error-message {
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .error-definition {
+      white-space: pre-wrap;
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 12px;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+  }
+}

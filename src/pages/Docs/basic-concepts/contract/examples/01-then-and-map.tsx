@@ -1,5 +1,5 @@
-export const ThenExample01 = `
-public static function demoThen(): OperationOutcome
+export const ThenAndMapExample01 = `
+public static function demoThenAndMap(): OperationOutcome
 {
     return Operation::success(['id' => 1, 'name' => 'Alice'])
         /**
@@ -10,6 +10,13 @@ public static function demoThen(): OperationOutcome
                 'user' => $data,
                 'timestamp' => time()
             ]);
+        })
+        /**
+         * Just converting the data
+         */
+        ->map(function($data) {
+            $data['user']['name'] = strtoupper($data['user']['name']);
+            return $data;
         });
 }
 `;

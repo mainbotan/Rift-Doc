@@ -12,10 +12,12 @@ export const docsNav = [
      { 
       title: "Contract", 
       path: "contract", 
+      sign: "",
       children: [
         { 
           title: "Methods", 
           path: "methods",
+          sign: "",
           children: [
             { title: "then", path: "then", sign: "@" },
             { title: "map", path: "map", sign: "@" },
@@ -25,31 +27,85 @@ export const docsNav = [
             { title: "merge", path: "merge", sign: "@" }     
           ]
         },
-        { title: "Chains", path: "chains" } 
+        { title: "Chains", path: "chains", sign: "", }, 
+        { title: "Benchmark", path: "benchmark", sign: "{}", } 
       ]
     },
     ]
   },
   {
-    title: "Databases",
-    path: "databases",
-    sign: '/',
+    title: "Architecture",
+    path: "architecture",
     children: [
-     { title: "PDO", path: "pdo" },
-     { title: "Models", path: "models" },
-     { title: "Repositories", path: "repositories" },
-     { title: "Configurators", path: "configurators" },
+      {
+        title: "Entrypoint",
+        path: "entrypoint",
+        sign: ''
+      },
+      {
+        title: "Routing",
+        path: "routing",
+        sign: '',
+        children: [
+          { title: "Request Object", path: "request-object", sign: "#", },
+          { title: "Routes Configuration", path: "routes-configuration", sign: "#" },
+          { title: "Middlewares", path: "middlewares", sign: "#" }
+        ]
+      },
+      {
+        title: "Logic Layer",
+        path: "handlers",
+        sign: '',
+        children: [
+          { title: "UseCases", path: "use-cases", sign: "#" },
+          { title: "Dependency Injection", path: "di", sign: "#" }
+        ]
+      },
+      {
+        title: "Databases",
+        path: "databases",
+        sign: '',
+        children: [
+        { title: "Connection", path: "connection", sign: "" },
+        { 
+          title: "Models", 
+          path: "models",
+          sign: "",
+          children: [
+            { title: "Schema", path: "schema", sign: "#" },
+            { title: "Keys", path: "keys", sign: "#" },
+            { title: "Validation Rules", path: "validation-rules", sign: "i" }
+          ]
+        },
+        { 
+          title: "Repositories", 
+          path: "repositories", 
+          sign: "",
+          children: [
+            { title: "Router", path: "router", sign: "#" },
+            { title: "Repository Structure", path: "repository-structure", sign: "#" }
+          ]
+        },
+        { title: "Configurators", path: "configurators", sign: "" },
+        ]
+      },
     ]
   },
   {
-    title: 'Validator',
-    path: 'validator',
-    sign: "/",
+    title: "Modules",
+    path: "modules",
     children: [
-     { title: "Int Utils", path: "int-utils" },
-     { title: "String Utils", path: "string-utils" },
-     { title: "Schema Validator", path: "schema-validator" },
-     { title: "Interface", path: "interface" },
+      {
+        title: 'Validator',
+        path: 'validator',
+        sign: "",
+        children: [
+        { title: "Int Utils", path: "int-utils", sign: "#" },
+        { title: "String Utils", path: "string-utils", sign: "#" },
+        { title: "Schema Validator", path: "schema-validator", sign: "#" },
+        { title: "Interface", path: "interface", sign: "#" },
+        ]
+      },
     ]
-  },
+  }
 ];

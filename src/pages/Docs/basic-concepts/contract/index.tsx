@@ -4,6 +4,8 @@ import { OperationOutcomeExample } from './examples/response-dto-1';
 import { UseContractWrapperExample } from './examples/use-contract-wrapper';
 import { UpperLavelGetContract } from './examples/upper-lavel-get-contract';
 import { OperationCodes } from './examples/response-codes';
+import { MermaidViewer } from '../../../../components/Mermaid';
+import { ContractMermaExample01 } from './examples/01-contract-merma';
 
 export const BasicConceptsContractPage = () => {
     const { version } = useParams();
@@ -25,7 +27,7 @@ export const BasicConceptsContractPage = () => {
             Usually, a centralized function for handling all thrown exceptions is used in the application's bootstrap, which "eats" all error messages and converts them
             to the desired format. This approach is really convenient, especially since in controllers you can rely on the "ideal" case when all requests returned what they needed. 
             But even in this approach, there is one main disadvantage: you lose the clarity of executing the query chain. <br /><br />
-            Rift suggests making errors and any meta information part of the return type, as implemented in Rust, Haskell, and other languages. <br /><br />
+            Rift suggests making errors and any meta information part of the return type, akin to Result in Rust or Either in Haskell, and other languages. <br /><br />
             This is not about changing syntaxis from <div className='code-tag'>try...catch</div> to <div className='code-tag'>if...else</div>. It's about implementing methods to create query chains
             by analogy with functional programming (<div className='code-tag'>then</div> <div className='code-tag'>map</div> <div className='code-tag'>catch</div>...)<br/><br />
             But first, let's look at the structure of the response contract.
@@ -39,6 +41,9 @@ export const BasicConceptsContractPage = () => {
             <div className='code-tag'>error</div> - error message if available.<br />
             <div className='code-tag'>meta</div> - all your additional wishlist (metrics, debug information...)
             <br /><br />
+            The structure of the response object. All methods will be discussed later:
+            <MermaidViewer definition={ContractMermaExample01} initialMode='code'/>
+            Possible type of response object:
             <CodeBlock code={OperationOutcomeExample} language='json'/>
             <br />
             <div className='title middle'><div className='tag'>#</div>Operation Wrapper</div>
@@ -58,7 +63,7 @@ export const BasicConceptsContractPage = () => {
             <div className='title middle'><div className='tag'>#</div>Operation codes</div>
             <br />
             <div className='text'>
-                We strongly recommend against using numeric HTTP codes directly in the code of each layer.  Use <div className='code-tag'>self::HTTP_</div> to specify the desired response status.
+                We strongly recommend against using numeric HTTP codes directly in the code of each layer.  Use <div className='code-tag'>Operation::HTTP_</div> to specify the desired response status.
                 This approach will save you from hemorrhoids in the future. The Rift provides a number of standard HTTP codes stored in the <div className='code-tag'>OperationTrait</div> in the Rift core.
             </div>
             <br />

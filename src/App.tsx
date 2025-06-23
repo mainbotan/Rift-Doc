@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import './assets/fonts/index.scss'; // <- font
 import './assets/styles/main.scss'; // <- base 
 import './assets/styles/custom-prism.scss'; // <- global prism
-import './assets/styles/docs-markup.scss' // <- docs markup
+import './assets/styles/docs-markup.scss'; // <- docs markup
 
 // routes
 import { routes } from './routes/index';

@@ -108,7 +108,8 @@
                 border-left: 1px solid #222222;
 
                 .title {
-                    font-size: 18px;
+                    @include mulish(500, normal);
+                    font-size: 16px;
                 }
 
                 .children {
@@ -120,10 +121,11 @@
                 @include ease-animation(0.1s);
                 @include block-ellipsis();
                 @include mulish(600, normal);
-                font-size: 21px;
+                font-size: 18px;
                 color: var(--primary-text-color);
                 padding: 0px 0px;
                 cursor: pointer;
+                margin-bottom: 5px;
 
                 @media (max-width: #{$small-screen-max-width}) {
                     cursor: none;
@@ -134,7 +136,6 @@
                     margin-right: 5px;
                     color: var(--rift-color);
                 }
-                margin-bottom: 5px;
             }
             .title:hover {
                 color: var(--rift-color);
@@ -151,6 +152,8 @@
         
         @media (max-width: #{$small-screen-max-width}) {
             padding-top: 10px;
+            font-size: 17px;
+            line-height: 1.4;
         }
     }
 }

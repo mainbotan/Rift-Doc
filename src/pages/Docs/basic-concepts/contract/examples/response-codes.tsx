@@ -1,5 +1,5 @@
 export const OperationCodes = `
-// Operation Codes - use it via self::
+// Operation Codes - use it via Operation:: or self::
 
 namespace Rift\\Core\\Contracts;
 

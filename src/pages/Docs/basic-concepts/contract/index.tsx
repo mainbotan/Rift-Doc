@@ -54,11 +54,8 @@ export const BasicConceptsContractPage = () => {
             However, you can easily create your own wrapper class and inherit from it wherever needed. 
             In short, let's take an example of a layer in your application that returns <div className='code-tag'>OperationOutcome</div>
             <CodeBlock code={UseContractWrapperExample} language='php' />
-            <br /><br />
+            <br />
             In all these cases, the layer returns a single <div className='code-tag'>Operation DTO</div>, ready for verification for a successful result and further logic.
-            Here is a possible scenario for getting a response in the upper layer.
-            <br /><br />
-            <CodeBlock code={UpperLavelGetContract} language='php'/>
             <br /><br />
             <div className='title middle'><div className='tag'>#</div>Operation codes</div>
             <br />

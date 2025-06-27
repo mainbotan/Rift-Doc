@@ -24,11 +24,12 @@ export const docsNav = [
             { title: "catch", path: "catch", sign: "@" },
             { title: "tap", path: "tap", sign: "@" },
             { title: "ensure", path: "ensure", sign: "@" },
-            { title: "merge", path: "merge", sign: "@" }     
+            { title: "merge", path: "merge", sign: "@" }
           ]
         },
-        { title: "Chains", path: "chains", sign: "", }, 
-        { title: "Benchmark", path: "benchmark", sign: "{}", } 
+        { title: "Metadata", path: "metadata", sign: "" },         
+        { title: "Serialize", path: "serialize", sign: "" },
+        { title: "Benchmark", path: "benchmark", sign: "", } 
       ]
     },
     ]
@@ -54,7 +55,7 @@ export const docsNav = [
       },
       {
         title: "Logic Layer",
-        path: "handlers",
+        path: "logic-layer",
         sign: '',
         children: [
           { title: "UseCases", path: "use-cases", sign: "#" },

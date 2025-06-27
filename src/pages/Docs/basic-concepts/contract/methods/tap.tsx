@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { TapExample01 } from '../examples/01-tap';
 import { TapResponseExample01 } from '../examples/01-tap-response';
+import { MermaidViewer } from '../../../../../components/Mermaid';
+import { TapMermaExample01 } from '../examples/01-tap-merma';
 
 export const ContractTapMethodPage = () => {
     const { version } = useParams();
@@ -17,6 +19,9 @@ export const ContractTapMethodPage = () => {
             response:
             <br />
             <CodeBlock code={TapResponseExample01} language='json' />
+            <br />
+            flow:
+            <MermaidViewer definition={TapMermaExample01} initialMode='code' />
         </>
     )
 }

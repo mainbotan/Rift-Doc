@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { CatchExample01 } from '../examples/01-catch';
 import { CatchResponseExample01 } from '../examples/01-catch-response';
+import { MermaidViewer } from '../../../../../components/Mermaid';
+import { CatchMemraExample01 } from '../examples/01-catch-memra';
 
 export const ContractCatchMethodPage = () => {
     const { version } = useParams();
@@ -17,6 +19,9 @@ export const ContractCatchMethodPage = () => {
             response:
             <br />
             <CodeBlock code={CatchResponseExample01} language='json' />
+            <br />
+            flow:
+            <MermaidViewer definition={CatchMemraExample01} initialMode='code' />
             Using <div className='code-tag'>catch</div>, you can catch the error of a previous operation and generate a new response object based on it.
         </>
     )

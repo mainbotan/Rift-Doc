@@ -68,6 +68,7 @@
 }
 .active {
     display: inline-flex;
+    position: relative;
     flex-flow: row nowrap;
     gap: 20px;
     padding: 0px 0px;
@@ -82,16 +83,29 @@
     }
 
     .sidePanel {
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+
         display: inline-flex;
         flex-flow: column nowrap;
         gap: 10px;
         padding: 20px 20px;
-        overflow: hidden;
         flex: 0.6;
         padding-top: 30px;
 
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
 
         @media (max-width: #{$small-screen-max-width}) {
+            position: static; // На мобильных убираем sticky
+            height: auto;
+            overflow: visible;
             flex: 0;
         }
 
@@ -149,11 +163,38 @@
         flex: 3;
         padding: 38px 20px;
         overflow-x: hidden;
+        height: 100vh;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
         
         @media (max-width: #{$small-screen-max-width}) {
             padding-top: 10px;
             font-size: 17px;
             line-height: 1.4;
         }
+    }
+}
+
+.autoScroll {
+    &:hover {
+        overflow-y: auto;
+    }
+    
+    // Скрываем скроллбар когда не наводим
+    &::-webkit-scrollbar {
+        width: 5px;
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 5px;
+    }
+    
+    &:hover::-webkit-scrollbar-thumb {
+        background: #555;
     }
 }

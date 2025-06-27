@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { docsNav } from './navigation';
+import clsx from 'clsx';
 
 export const SideBar = () => {
   const { version = 'v1' } = useParams();

@@ -39,6 +39,11 @@ export const docsNav = [
     path: "architecture",
     children: [
       {
+        title: "Directory Structure",
+        path: "directory-structure",
+        sign: ''
+      },
+      {
         title: "Entrypoint",
         path: "entrypoint",
         sign: ''

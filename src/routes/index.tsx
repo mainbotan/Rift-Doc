@@ -42,6 +42,7 @@ import { DatabasesRepositoriesRouterPage } from '../pages/Docs/architecture/data
 import { DatabasesRepositoriesRepositoryPage } from '../pages/Docs/architecture/databases/repositories/repository';
 import { DatabasesMainPage } from '../pages/Docs/architecture/databases';
 import { DatabasesConfiguratorsPage } from '../pages/Docs/architecture/databases/configurators';
+import { DirectoryStructurePage } from '../pages/Docs/architecture/directory-structure';
 
 
 export const routes = [
@@ -72,6 +73,7 @@ export const routes = [
 
       // Architecture
       { path: 'architecture', element: <ArchitectureMainPage /> },
+      { path: 'architecture/directory-structure', element: <DirectoryStructurePage /> },
       { path: 'architecture/entrypoint', element: <EntrypointPage /> },
       { path: 'architecture/routing', element: <RoutingMainPage /> },
       { path: 'architecture/routing/request-object', element: <RoutingRequestObjectPage /> },

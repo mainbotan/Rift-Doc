@@ -15,6 +15,7 @@ export const RoutingMainPage = () => {
             All these tasks are taken over by the routing layer. In this section, we will analyze the request object itself and the capabilities it provides, the router, the route configuration, the middleware execution chain
             and a request to <div className='code-tag'>handler</div>
             <br /><br />
+            <div className='title middle'><div className='tag'>#</div>Routing flow</div>
             <MermaidViewer definition={MermaRoutingExample01} initialMode='code' />
         </>
     );

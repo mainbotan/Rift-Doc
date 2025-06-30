@@ -26,9 +26,9 @@ import { ContractBenchmarkPage } from '../pages/Docs/basic-concepts/contract/ben
 import { ArchitectureMainPage } from '../pages/Docs/architecture';
 import { EntrypointPage } from '../pages/Docs/architecture/entrypoint';
 import { RoutingMainPage } from '../pages/Docs/architecture/routing';
-import { RoutingRequestObjectPage } from '../pages/Docs/architecture/routing/middlewares';
-import { RoutingRoutesConfigPage } from '../pages/Docs/architecture/routing/request-object';
-import { RoutingMiddlewaresPage } from '../pages/Docs/architecture/routing/routes-config';
+import { RoutingRequestObjectPage } from '../pages/Docs/architecture/routing/request-object';
+import { RoutingRoutesConfigPage } from '../pages/Docs/architecture/routing/routes-config';
+import { RoutingMiddlewaresPage } from '../pages/Docs/architecture/routing/middlewares';
 import { LogicLayerMainPage } from '../pages/Docs/architecture/logic-layer';
 import { LogicLayerUseCasesPage } from '../pages/Docs/architecture/logic-layer/use-cases';
 import { LogicLayerDIPage } from '../pages/Docs/architecture/logic-layer/di';

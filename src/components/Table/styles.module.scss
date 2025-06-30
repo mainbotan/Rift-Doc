@@ -1,0 +1,12 @@
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/fonts/mixins' as *;
+@use '../../assets/styles/main.scss' as *;
+
+// Table
+
+.root {
+    @include mulish(500, normal);
+    color: var(--primary-text-color);
+    font-size: 19px;
+    display: flex;
+}

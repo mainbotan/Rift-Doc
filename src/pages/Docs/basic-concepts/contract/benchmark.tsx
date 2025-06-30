@@ -9,7 +9,7 @@ export const ContractBenchmarkPage = () => {
             <div className='title'><div className='tag'>/</div>Benchmark</div>
             <br />
             In order to visually compare the speed and cost of using <div className='code-tag'>OperationOutcome</div> / <div className='code-tag'>Exceptions</div> in simple scenarios
-            A small speed test of these two options is presented.
+            a small speed test of these two options is presented.
             <br /><br />
             We specifically do not consider complex logical chains in order to show a clear difference in simple cases.
             <br />

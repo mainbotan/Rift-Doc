@@ -25,6 +25,11 @@ export const RoutingRoutesConfigPage = () => {
             <br />
             <div className='code-tag'>middlewares</div> - array of links to middlewares;
             <br /><br />
+            <div className='text'>
+                Before specifying links to middleware, controllers, or any other classes, do not forget to change the configuration <div className='code-tag'>configs/di.php </div>, for example like this:
+                <CodeBlock code='\App\UseCases\*::class => autowire()       # + line in di.php config array' language='php' />
+            </div>
+            <br />
             Rift offers you two ways to configure routes:<br /><br />
             <div className='title middle'><div className='tag'>#</div>A clean array</div>
             <br />

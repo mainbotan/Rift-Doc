@@ -2,6 +2,9 @@ import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../components/CodeBlock';
 import { MiddlewareExample01 } from './example/01-middleware';
 import { RoutesConfigBoxExample02 } from './example/02-routes-config-box';
+import { ComplexMiddlewareExample01 } from './example/01-complex-middleware';
+import { ComplexMiddlewareExample01DiConfig } from './example/01-complex-middleware/di-config';
+import { ComplexMiddlewareExample01RoutesConfigs } from './example/01-complex-middleware/routes-config';
 
 export const RoutingMiddlewaresPage = () => {
     const { version } = useParams();
@@ -25,10 +28,26 @@ export const RoutingMiddlewaresPage = () => {
             Registration in <div className='code-tag'>configs/di.php</div>:<br/>
             <CodeBlock code='App\Middlewares\CheckHeader::class => autowire()' language='php' />
             Or:<br/>
-            <CodeBlock code='App\Middlewares*::class => autowire()' language='php' />
+            <CodeBlock code='App\Middlewares*::class => autowire()      # PHP-DI 6.0+' language='php' />
             <br />
             If the first middleware of the route returned a positive <div className='code-tag'>OperationOutcome</div>, but with an empty field <div className='code-tag'>result</div>, the next middleware (if any) will be passed the original request object received in the router. 
             If the previous middleware returned a positive contract with <div className='code-tag'>result</div> as a modified <div className='code-tag'>resultObject</div>, the new request object will be passed to the next middleware.
+            <br /><br />
+            <div className='title middle'><div className='tag'>#</div>Dependencies</div>
+            <br />
+            Logically, your middleware may require additional services or auxiliary classes. Rift also allows you to reuse application logic in the form of created <div className='code-tag'>UseCases</div> directly in middleware. 
+            <br /><br />
+            This is what a middleware using an auxiliary service and a <div className='code-tag'>UseCase</div> might look like:
+            <br />
+            <CodeBlock code={ComplexMiddlewareExample01} language='php' />
+            in <div className='code-tag'>configs/di.php</div>:
+            <br />
+            <CodeBlock code={ComplexMiddlewareExample01DiConfig} language='php' />
+            in <div className='code-tag'>configs/routes.php</div>:
+            <br />
+            <CodeBlock code={ComplexMiddlewareExample01RoutesConfigs} language='php' />
+            Thus, we encapsulated the token verification logic in <div className='code-tag'>AuthByTokenService</div>. It may include a request to the repository for information about token and his ttl.
+            At the same time, the middleware remains clean, and the token verification logic can be reused. <div className='code-tag'>PHP-DI</div> solves the headache of injecting the service into middleware.
         </>
     );
 }

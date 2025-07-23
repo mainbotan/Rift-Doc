@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 type Props = {
     text: string,
-    color?: 'contrast' | 'primary' | 'default' | 'empty',
+    color?: 'contrast' | 'primary' | 'default' | 'empty' | 'dark',
     size?: 'sm' | 'md' | 'bg',
     ico?: string
 };

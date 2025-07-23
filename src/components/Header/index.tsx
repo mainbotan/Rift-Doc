@@ -19,9 +19,9 @@ export const AppHeader = () => (
         <div className={styles.barSection}></div>
         <div className={styles.section}>
           <div className={styles.wrapper}>
-            <Link to='/docs/v1/introduction'><Button color='contrast' size='md' text='Get started' /></Link>
+            <Link to='/docs/v1/introduction'><Button color='dark' size='md' text='Get started' /></Link>
           </div>
         </div>
     </div>
   </div>
-);
+); 

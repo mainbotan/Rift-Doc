@@ -13,6 +13,7 @@
     text-align: center;
     height: 60px;
     background: #000000;
+    background: var(--rift-color);
 
     .active {
         position: relative;
@@ -33,7 +34,7 @@
             bottom: 0px;
             left: 0px;
             width: 100%;
-            height: 3px;
+            height: 0px;
             background: #E73030;
             background: linear-gradient(90deg, rgba(0, 0, 0, 0.21) 0%, rgba(107, 22, 22, 1) 54%, rgba(0, 0, 0, 0.21) 100%);
         }
@@ -56,10 +57,10 @@
                     @include mulish(500, normal);
                     @include block-ellipsis();
                     font-size: 18px;
-                    color: var(--primary-text-color);
+                    color: #ffffff;
                 }
                 .title:hover {
-                    color: var(--rift-color);
+                    color: #000000;
                 }
             }
         }
@@ -68,8 +69,8 @@
             
             .wrapper {
                 @include mulish(800, normal);
-                font-size: 40px;
-                color: var(--non-contrast-rift-color);
+                font-size: 44px;
+                color: #000000;
             }
         }
         .barSection {

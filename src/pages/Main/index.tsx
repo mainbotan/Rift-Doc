@@ -91,17 +91,39 @@ export const MainPage = () => {
         <canvas ref={canvasRef} className={styles.canvas} />
         <div ref={glowRef} className={styles.glow} />
         <div className={styles.active}>
-          <div className={styles.modalCode}><CodeBlock code={ContractChunk1} language='php'/></div>
-          <div className={styles.block}>
-            <div className={styles.title}>Rift</div>
-            <div className={styles.underTitle}>
-              <div className={styles.description}>Multitenant PHP miniframework</div>
-              <div className={styles.actions}>
-                <div className={styles.action}>
-                  <Link to='https://github.com/mainbotan/Rift'><Button color='default' size='md' text='Sources' ico={GithubIco}/></Link>
+          <div className={styles.flex}>
+            <div className={styles.brandSection}>
+              <div className={styles.block}>
+                <div className={styles.title}>Rift</div>
+                <div className={styles.underTitle}>
+                  <div className={styles.description}>Multitenant PHP miniframework</div>
+                  <div className={styles.actions}>
+                    <div className={styles.action}>
+                      <Link to='https://github.com/mainbotan/Rift'><Button color='default' size='md' text='Sources' ico={GithubIco}/></Link>
+                    </div>
+                    <div className={styles.action}>
+                      <Link onClick={() => window.scrollTo(0, 0)} to='/docs/v1/introduction'><Button color='contrast' size='md' text='Documentation' /></Link>
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.action}>
-                  <Link onClick={() => window.scrollTo(0, 0)} to='/docs/v1/introduction'><Button color='contrast' size='md' text='Documentation' /></Link>
+              </div>
+            </div>
+            <div className={styles.previewSection}>
+              <div className={styles.focus}>
+                <div className={styles.tags}>
+                  <div className={styles.tag}><div className={styles.s1}>PHP</div><div className={styles.s2}>Reference</div></div>
+                  <div className={styles.tag}><div className={styles.s1}>API</div><div className={styles.s2}>Gateway</div></div>
+                  <div className={styles.tag}><div className={styles.s1}>Multitenancy</div><div className={styles.s2}>First</div></div>
+                  <div className={styles.tag}><div className={styles.s1}>No-ORM</div><div className={styles.s2}>Raw SQL</div></div>
+                  <div className={styles.tag}><div className={styles.s1}>Scalability</div><div className={styles.s2}>Performance</div></div>
+                  <div className={styles.tag}><div className={styles.s1}>PSR</div><div className={styles.s2}>Compatibility</div></div>
+                  <div className={styles.tag}><div className={styles.s1}>Metrics</div><div className={styles.s2}>Debug</div></div>
+                  <div className={styles.tag}><div className={styles.s1}>Repository</div><div className={styles.s2}>Pattern</div></div>
+                </div>
+                <div className={styles.makeBy}>
+                  <div className={styles.s2}>Made with</div>
+                  <div className={styles.s1}><img src={UseCaseIco} /></div>
+                  <div className={styles.s2}>by steel balls.</div>
                 </div>
               </div>
             </div>
@@ -122,6 +144,13 @@ export const MainPage = () => {
         </div>
       </div>
 
+      <div className={clsx(styles.area, styles.area_01)}>
+        <div className={styles.active}>
+          <div  className={styles.block}>
+            
+          </div>
+        </div>
+      </div>
       <div className={clsx(styles.area, styles.area_0)}>
         <div className={styles.active}>
           <div  className={styles.block}>

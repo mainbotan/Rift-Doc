@@ -44,7 +44,7 @@ export default function CodeExample() {
   return (
     <div className={styles.block}>
       <div className={styles.codeTitle}>
-        <div className={styles.title}>So fucking <div className={styles.contrast}>clean...</div></div>
+        <div className={styles.title}>So fucking <div className={styles.contrast}>clean..</div></div>
         <div className={styles.quote}>
           The immutability of the chain of operations.
         </div>

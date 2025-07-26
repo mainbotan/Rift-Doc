@@ -385,16 +385,55 @@
         background-color: #040404;
         
         .active {
+            position: relative;
             display: inline-flex;
             align-items: end;
             justify-content: start;
             width: 100%;
             max-width: var(--max-content-width);
 
+            .modalCross1 {
+                position: absolute;
+                z-index: 10;
+                display: inline-block;
+                right: 20px;
+                top: 20px;
+            }
+            .modalCross2 {
+                position: absolute;
+                z-index: 10;
+                display: inline-block;
+                right: 40px;
+                top: 35px;
+            }
+
             .block {
                 padding-left: 15px;
                 padding-right: 15px;
                 width: calc(100% - 30px);
+
+                .codeTitle {
+                    .title {
+                        @include mulish(600, normal);
+                        font-size: 36px;
+                        color: #eee;
+
+                        .contrast {
+                            display: inline-block;
+                            color: var(--rift-color);
+                        }
+                    }
+                    .quote {
+                        @include mulish(500, normal);
+                        font-size: 15px;
+                        color: grey;
+                        border-left: 2px solid grey;
+                        padding: 10px 14px;
+                        margin: 4px 2px;
+                        line-height: 1.1;
+                    }
+                    margin-bottom: 20px;
+                }
                 
                 .codeBlockControl {
                     display: flex;
@@ -448,12 +487,12 @@
                         }
                         .source {
                             display: flex;
-                            width: 66%;
+                            flex: 1.7;
                             overflow: hidden;
                         }
                         .response {
                             display: flex;
-                            width: 34%;
+                            flex: 1;
                             overflow: hidden;
                         }
                     }
@@ -462,7 +501,7 @@
                     }
                     pre {
                         width: 100%;
-                        overflow: hidden;
+                        overflow-x: scroll;
                     }
                 }
             }

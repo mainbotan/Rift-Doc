@@ -37,6 +37,12 @@ export default function CodeExample() {
 
   return (
     <div className={styles.block}>
+      <div className={styles.codeTitle}>
+        <div className={styles.title}>So fucking <div className={styles.contrast}>clean</div></div>
+        <div className={styles.quote}>
+          The immutability of the chain of operations.
+        </div>
+      </div>
       <div className={styles.codeBlockControl}>
         <div className={`${styles.button} ${activeTab === 'authorization' ? styles.activeButton : ''}`} onClick={() => setActiveTab('authorization')}>Auth</div>
         <div className={`${styles.button} ${activeTab === 'registration' ? styles.activeButton : ''}`} onClick={() => setActiveTab('registration')}>Registration</div>

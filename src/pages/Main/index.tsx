@@ -18,6 +18,7 @@ import GithubIco from '../../assets/images/logos/github-mark-white.svg';
 import { ExampleValidator } from '../../scheme/validator/example-validator';
 import { ValidatorShortDescription } from '../../scheme/validator/short-description.tsx';
 import CodeExample from './code-example.tsx';
+import { Cross } from '../../components/Elements/Cross/index.tsx';
 
 
 export const MainPage = () => {
@@ -150,6 +151,8 @@ export const MainPage = () => {
 
       <div className={clsx(styles.area, styles.area_01)}>
         <div className={styles.active}>
+          <div className={styles.modalCross1}><Cross size='md' color='white' /></div>
+          <div className={styles.modalCross2}><Cross size='sm' /></div>
           <CodeExample />
         </div>
       </div>

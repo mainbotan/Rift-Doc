@@ -1,0 +1,57 @@
+
+@use '../../../assets/styles/mixins' as *;
+@use '../../../assets/fonts/mixins' as *;
+@use '../../../assets/styles/main.scss' as *;
+
+// Cross
+
+$color: rgb(49, 48, 48);
+
+.root.white {
+    $color: rgb(198, 198, 198);
+}
+
+.root {
+    @include mulish(600, normal);
+    @include block-ellipsis();
+    
+    display: inline-flex;
+    width: 24px;
+    flex-flow: row wrap;
+
+    .box {
+        display: inline-flex;
+        width: 10px;
+        height: 10px;
+    }
+
+    .b1 {
+        border-bottom: 1px solid $color;
+        border-right: 1px solid $color;
+    }
+    .b2 {
+        border-bottom: 1px solid $color;
+        border-left: 1px solid $color;
+    }
+    .b3 {
+        border-top: 1px solid $color;
+        border-right: 1px solid $color;
+    }
+    .b4 {
+        border-top: 1px solid $color;
+        border-left: 1px solid $color;
+    }
+}
+.root:hover {
+    transform: scale(1.03);
+}
+
+.root.sm {
+    width: 18px;
+
+    .box {
+        display: inline-flex;
+        width: 7px;
+        height: 7px;
+    }
+}

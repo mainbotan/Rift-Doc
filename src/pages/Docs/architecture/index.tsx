@@ -1,10 +1,7 @@
-import { useParams } from 'react-router-dom';
-import CodeBlock from '../../../components/CodeBlock';
 import { MermaidViewer } from '../../../components/Mermaid';
 import { MermaArchitectureExample01 } from './examples/01-merma-architecture';
 
 export const ArchitectureMainPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Architecture</div>

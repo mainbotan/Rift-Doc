@@ -1,9 +1,7 @@
-import { useParams } from 'react-router-dom';
 import { MermaidViewer } from '../../../../../components/Mermaid';
 import { ContractProcessingMermaExample01 } from '../examples/01-contract-processing-merma';
 
 export const BasicConceptsContractMethodsPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Contract's Methods</div>

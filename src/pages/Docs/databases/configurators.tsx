@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../components/CodeBlock';
 import { ConfiguratorsStructureExample } from './examples/configurators-structure';
 import { ConfiguratorsSystemExample } from './examples/configurators-system';
@@ -9,7 +8,6 @@ import { ConfiguratorsTenantInitExample } from './examples/configurators-tenant-
 import { ConfiguratorsTenantInitAnswersExample } from './examples/configurators-tenant-init-answers';
 
 export const DatabasesConfiguratorsPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Configurators</div>

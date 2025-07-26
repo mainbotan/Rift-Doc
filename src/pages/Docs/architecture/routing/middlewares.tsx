@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../components/CodeBlock';
 import { MiddlewareExample01 } from './example/01-middleware';
 import { RoutesConfigBoxExample02 } from './example/02-routes-config-box';
@@ -7,7 +6,6 @@ import { ComplexMiddlewareExample01DiConfig } from './example/01-complex-middlew
 import { ComplexMiddlewareExample01RoutesConfigs } from './example/01-complex-middleware/routes-config';
 
 export const RoutingMiddlewaresPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Middlewares</div>

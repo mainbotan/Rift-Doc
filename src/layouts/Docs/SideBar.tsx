@@ -1,12 +1,18 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { docsNav } from './navigation';
-import clsx from 'clsx';
 
 export const SideBar = () => {
   const { version = 'v1' } = useParams();
 
-  const renderItem = (item, parentPath = '') => {
+  type NavItem = {
+    path: string;
+    title: string;
+    sign?: string;
+    children?: NavItem[];
+  };
+
+  const renderItem = (item: NavItem, parentPath = '') => {
     const fullPath = parentPath ? `${parentPath}/${item.path}` : item.path;
 
     return (

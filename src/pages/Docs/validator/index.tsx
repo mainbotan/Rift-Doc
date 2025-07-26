@@ -1,8 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
-import CodeBlock from '../../../components/CodeBlock';
-
+import { Link } from 'react-router-dom';
 export const ValidatorPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Rift Validator</div>

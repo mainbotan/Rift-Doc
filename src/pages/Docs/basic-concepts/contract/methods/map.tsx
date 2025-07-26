@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { MapExample01 } from './../examples/01-map';
 import { MapResponseExample01 } from '../examples/01-map-response';
@@ -8,7 +7,6 @@ import { MermaidViewer } from '../../../../../components/Mermaid';
 import { ThenAndMapMermaExample01 } from '../examples/01-then-and-map-merma';
 
 export const ContractMapMethodPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>@</div>map</div>

@@ -1,10 +1,8 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { EnsureExample01 } from '../examples/01-ensure';
 import { EnsureResponseExample01 } from '../examples/01-ensure-response';
 
 export const ContractEnsureMethodPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>@</div>ensure</div>

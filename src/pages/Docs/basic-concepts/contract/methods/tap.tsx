@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { TapExample01 } from '../examples/01-tap';
 import { TapResponseExample01 } from '../examples/01-tap-response';
@@ -6,7 +5,6 @@ import { MermaidViewer } from '../../../../../components/Mermaid';
 import { TapMermaExample01 } from '../examples/01-tap-merma';
 
 export const ContractTapMethodPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>@</div>tap</div>

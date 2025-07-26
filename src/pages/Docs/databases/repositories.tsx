@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../components/CodeBlock';
 import { RepositoriesStructureExample } from './examples/repositories-structure';
 import { RepositoriesSystemRouterExample } from './examples/repositories-system-router';
@@ -9,7 +8,6 @@ import { RepositoriesTenantRouterExample } from './examples/repositories-tenant-
 import { RepositoriesTenantUsersRequestExample } from './examples/repositories-tenant-users-request';
 
 export const DatabasesRepositoriesPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Repositories</div>

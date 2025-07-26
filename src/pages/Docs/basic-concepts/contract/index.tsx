@@ -1,14 +1,11 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../components/CodeBlock';
 import { OperationOutcomeExample } from './examples/response-dto-1';
 import { UseContractWrapperExample } from './examples/use-contract-wrapper';
-import { UpperLavelGetContract } from './examples/upper-lavel-get-contract';
 import { OperationCodes } from './examples/response-codes';
 import { MermaidViewer } from '../../../../components/Mermaid';
 import { ContractMermaExample01 } from './examples/01-contract-merma';
 
 export const BasicConceptsContractPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Contract</div>

@@ -1,4 +1,3 @@
-import { useParams, Link } from 'react-router-dom';
 import CodeBlock from '../../../components/CodeBlock';
 import { SchemaValidatorConnectExample } from './examples/schema-validator-connect';
 import { SchemaValidatorSchemaExample } from './examples/schema-validator-schema';
@@ -6,7 +5,6 @@ import { SchemaValidatorCorrectDataExample } from './examples/schema-validator-c
 import { SchemaValidatorCallingExample } from './examples/schema-validator-calling';
 
 export const ValidatorSchemaValidatorPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Schema Validator</div>

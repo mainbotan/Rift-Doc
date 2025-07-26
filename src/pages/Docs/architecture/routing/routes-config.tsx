@@ -1,10 +1,8 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../components/CodeBlock';
 import { RoutesConfigListExample01 } from './example/01-routes-config-list';
 import { RoutesConfigBoxExample01 } from './example/01-routes-config-box';
 
 export const RoutingRoutesConfigPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Routes Configuration</div>

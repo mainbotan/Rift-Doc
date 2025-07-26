@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { MergeExample01 } from '../examples/01-merge';
 import { MergeResponseExample01 } from '../examples/01-merge-response';
@@ -6,7 +5,6 @@ import { MermaidViewer } from '../../../../../components/Mermaid';
 import { MergeMermaExample01 } from '../examples/01-merge-merma';
 
 export const ContractMergeMethodPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>@</div>merge</div>

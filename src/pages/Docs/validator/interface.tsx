@@ -1,9 +1,7 @@
-import { useParams, Link } from 'react-router-dom';
 import CodeBlock from '../../../components/CodeBlock';
 import { ValidatorExample } from './examples/validator';
 
 export const ValidatorInterfacePage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Validator Interface</div>

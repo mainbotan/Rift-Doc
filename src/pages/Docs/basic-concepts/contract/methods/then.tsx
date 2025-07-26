@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { ThenExample01 } from './../examples/01-then';
 import { ThenResponseExample01 } from './../examples/01-then-response';
@@ -8,7 +7,6 @@ import { MermaidViewer } from '../../../../../components/Mermaid';
 import { ThenMermaExample02 } from '../examples/02-then-merma';
 
 export const ContractThenMethodPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>@</div>then</div>

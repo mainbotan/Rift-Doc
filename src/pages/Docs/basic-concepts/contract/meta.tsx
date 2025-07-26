@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../components/CodeBlock';
 import { MetricsAndDebugExample01 } from './examples/01-metrics-and-debug.tsx';
 import { MetricsAndDebugResponseExample01 } from './examples/01-metrics-and-debug-response.tsx';
@@ -6,7 +5,6 @@ import { MermaidViewer } from '../../../../components/Mermaid/index.tsx';
 import { MetricsAndDebugMermaExample01 } from './examples/01-metrics-and-debug-merma.tsx';
 
 export const ContractMetaPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Metadata</div>

@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../../components/CodeBlock';
 import { CatchExample01 } from '../examples/01-catch';
 import { CatchResponseExample01 } from '../examples/01-catch-response';
@@ -6,7 +5,6 @@ import { MermaidViewer } from '../../../../../components/Mermaid';
 import { CatchMemraExample01 } from '../examples/01-catch-memra';
 
 export const ContractCatchMethodPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>@</div>catch</div>

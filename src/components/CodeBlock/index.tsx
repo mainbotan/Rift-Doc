@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import 'prismjs';
+import Prism from 'prismjs';
 import 'prismjs/components/prism-markup-templating';
 import 'prismjs/components/prism-php';
 import 'prismjs/components/prism-bash';

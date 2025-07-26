@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CodeBlock from '../../../components/CodeBlock';
 import { PDOConnectExample } from './examples/pdo-connect';
 import { PDOMethodsExample } from './examples/pdo-methods';
@@ -8,7 +8,6 @@ import { EnvPostgresExample } from './examples/env-postgres';
 import { EnvMysqlExample } from './examples/env-mysql';
 
 export const DatabasesPDOPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>PDO Connection</div>

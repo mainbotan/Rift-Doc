@@ -1,9 +1,4 @@
-import { useParams } from 'react-router-dom';
-import CodeBlock from '../../../components/CodeBlock';
-import { ContractMermaExample01 } from './contract/examples/01-contract-merma';
-
 export const BasicConceptsMainPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Basic Concepts</div>

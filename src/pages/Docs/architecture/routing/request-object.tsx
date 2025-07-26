@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../components/CodeBlock';
 import { RequestObjectFormationExample01 } from './example/01-request-object-formation';
 import { InitRequestObjectExample01 } from '../examples/01-init-request-object';
@@ -6,7 +5,6 @@ import { InitRequestObjectMethodsExample01 } from './example/01-init-request-obj
 import { InitRequestObjectMethodsResponseExample01 } from './example/01-init-request-object-methods-response';
 
 export const RoutingRequestObjectPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Request Object</div>

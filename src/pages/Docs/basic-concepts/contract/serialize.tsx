@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import CodeBlock from '../../../../components/CodeBlock';
 import { SerializeObjectExample01 } from './examples/01-serialize-object';
 import { SerializeActionExample01 } from './examples/01-serialize-action';
@@ -7,7 +6,6 @@ import { SerializeActionExample02 } from './examples/02-serialize-action';
 import { SerializedObjectExample02 } from './examples/02-seriaized-object';
 
 export const ContractSerializePage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Serialize</div>

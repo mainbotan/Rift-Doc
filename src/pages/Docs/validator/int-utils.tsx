@@ -1,4 +1,3 @@
-import { useParams, Link } from 'react-router-dom';
 import CodeBlock from '../../../components/CodeBlock';
 import { IntUtilsMethodsExample } from './examples/int-utils-methods';
 import { IntUtilsAnswerExample } from './examples/int-utils-answer';
@@ -6,7 +5,6 @@ import { IntUtilsRequestExample } from './examples/int-utils-request';
 import { IntUtilsConnectExample } from './examples/int-utils-connect';
 
 export const ValidatorIntUtilsPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Int Utils</div>

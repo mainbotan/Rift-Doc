@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CodeBlock from '../../../components/CodeBlock';
 import { ModelsStructureExample } from './examples/models-structure';
 import { ModelsUseExample } from './examples/models-use';
@@ -8,7 +8,6 @@ import { ModelsTenantRequestExample } from './examples/models-tenant-reqeust';
 import { ModelsAnswersExample } from './examples/models-answers';
 
 export const DatabasesModelsPage = () => {
-    const { version } = useParams();
     return (
         <>
             <div className='title'><div className='tag'>/</div>Models</div>

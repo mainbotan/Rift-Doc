@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 // styles ui-kit
 import styles from './styles.module.scss';
+import squares from './squares.module.scss';
 import { Button } from '../../ui-kit/Button';
 import CodeBlock from '../../components/CodeBlock';
 
@@ -12,16 +13,11 @@ import RouterIco from '../../assets/images/split.png';
 import MiddlewaresIco from '../../assets/images/milestone.png';
 import UseCaseIco from '../../assets/images/heart.png';
 import RepositoryIco from '../../assets/images/database.png';
-import BoxIco from '../../assets/images/box.png';
 import GithubIco from '../../assets/images/logos/github-mark-white.svg';
 
 import { ExampleValidator } from '../../scheme/validator/example-validator';
-import { ContractShortDescription } from '../../scheme/contract/short-description.tsx';
 import { ValidatorShortDescription } from '../../scheme/validator/short-description.tsx';
-import { ExampleRepoRequest } from '../../scheme/contract/examples/repo-request-example.tsx';
-import { ExampleRepoAnswer } from '../../scheme/contract/examples/repo-request-answer-example.tsx';
-import { ContractChunk1 } from '../../scheme/chunks/01-contract-chunk.tsx';
-import thunder from '../../assets/images/thunder.png';
+import CodeExample from './code-example.tsx';
 
 
 export const MainPage = () => {
@@ -131,11 +127,19 @@ export const MainPage = () => {
         </div>
       </div>
 
-      <div className={clsx(styles.slide, styles.slide_1)}>
-        <div className={styles.square3}></div>
-        <div className={styles.square4}></div>
-        <div className={styles.square}></div>
-        <div className={styles.square2}></div>
+      <div className={clsx(styles.slide, styles.slide_1, squares.slide, squares.slide_1)}>
+        <div className={clsx(squares.square, squares.square01)}></div>
+        <div className={clsx(squares.square, squares.square02)}></div>
+        <div className={clsx(squares.square, squares.square03)}></div>
+        <div className={clsx(squares.square, squares.square04)}></div>
+        <div className={clsx(squares.square, squares.square1)}></div>
+        <div className={clsx(squares.square, squares.square2)}></div>
+        <div className={clsx(squares.square, squares.square3)}></div>
+        <div className={clsx(squares.square, squares.square4)}></div>
+        <div className={clsx(squares.square, squares.square5)}></div>
+        <div className={clsx(squares.square, squares.square6)}></div>
+        <div className={clsx(squares.square, squares.square7)}></div>
+        <div className={clsx(squares.square, squares.square8)}></div>
         <div className={styles.title}>High-complexity B2B applications with maximum data isolation.</div>
         <div className={styles.text}>
           Allow yourself to focus on the business logic of a particular tenant. Use Rift to isolate tenant schemes, create configuration repositories, lightning-fast initialization of new tenants, assign tariff plans, SLA support, and complete system diagnostics.
@@ -146,11 +150,11 @@ export const MainPage = () => {
 
       <div className={clsx(styles.area, styles.area_01)}>
         <div className={styles.active}>
-          <div  className={styles.block}>
-            
-          </div>
+          <CodeExample />
         </div>
       </div>
+
+
       <div className={clsx(styles.area, styles.area_0)}>
         <div className={styles.active}>
           <div  className={styles.block}>

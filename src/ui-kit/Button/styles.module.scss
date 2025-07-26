@@ -2,6 +2,7 @@
 @use '../variables' as *;
 @use '../../assets/styles/mixins' as *;
 @use '../../assets/fonts/mixins' as *;
+@use '../../assets/styles/main.scss' as *;
 
 // Button
 
@@ -75,7 +76,7 @@
 
 // colors
 .contrast {
-    background: $ui-contrast-color;
+    background: var(--rift-color);
     color: $ui-contrast-color-text;
 }
 .primary {

@@ -8,7 +8,7 @@
     --secondary-background-color: #222222;
     --secondary-text-color: grey;
     --ternary-background-color: #0e0e0e;
-    --rift-color: #ef3a3a;
+    --rift-color: #ef3a3d;
     --non-contrast-rift-color: #ef3a3ac8;
     
     --max-content-width: 1200px;
@@ -55,4 +55,8 @@ html, body,  #root {
 a,a:-webkit-any-link {
     text-decoration: none;
     color: none;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
 }

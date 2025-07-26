@@ -1,6 +1,14 @@
 
+@use './main.scss' as *;
+
 // global mixins
 
+@mixin pointer() {
+  cursor: pointer;
+  @media (max-width: #{$small-screen-max-width}) {
+    cursor: none;
+  }
+}
 @mixin ease-animation($time: 0.1s) {
   transition: all $time ease;
 }

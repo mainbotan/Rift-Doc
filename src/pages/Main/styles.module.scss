@@ -263,50 +263,6 @@
     .slide.slide_1 {
         padding-top: 70px;
         padding-bottom: 180px;
-        .square {
-            position: absolute;
-            z-index: 10;
-            left: -40px;
-            bottom: -40px;
-            width: 150px;
-            height: 150px;
-            border-radius: 12px;
-            background: var(--rift-color);
-            transform: rotate(-45deg);
-        }
-        .square2 {
-            position: absolute;
-            z-index: 10;
-            left: 60px;
-            bottom: -60px;
-            width: 120px;
-            height: 120px;
-            border-radius: 12px;
-            background: #000000;
-            transform: rotate(-45deg);
-        }
-        .square3 {
-            position: absolute;
-            z-index: 10;
-            left: 30px;
-            top: -60px;
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            background: #000000;
-            transform: rotate(-110deg);
-        }
-        .square4 {
-            position: absolute;
-            z-index: 20;
-            left: 90px;
-            top: -60px;
-            width: 90px;
-            height: 90px;
-            border-radius: 12px;
-            background: var(--rift-color);
-            transform: rotate(-45deg);
-        }
     }
     .slide_2 {
         padding-left: 10px;
@@ -426,7 +382,6 @@
         }
     }
     .area.area_01 {
-        min-height: 90vh;
         background-color: #040404;
         
         .active {
@@ -436,10 +391,80 @@
             width: 100%;
             max-width: var(--max-content-width);
 
-            .flex {
-                display: flex;
-                flex-flow: row nowrap;
-                gap: 10px;
+            .block {
+                padding-left: 15px;
+                padding-right: 15px;
+                width: calc(100% - 30px);
+                
+                .codeBlockControl {
+                    display: flex;
+                    flex-flow: row wrap;
+                    gap: 10px;
+                    margin: 0;
+                    padding: 0;
+
+                    .button {
+                        @include mulish(500, normal);
+                        @include pointer();
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 13px 18px;
+                        margin: 0;
+                        font-size: 16px;
+                        color: #eee;
+                        background-color: #1d1d1d;
+                        border-radius: 5px;
+                        
+                        &:active {
+                            transform: scale(0.97) translateZ(0);
+                        }
+                        
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    
+                    .button.activeButton {
+                        background-color: var(--rift-color);
+                        transform: scale(1) translateZ(0);
+                    }
+                    
+                    .button:hover:not(.activeButton) {
+                        background-color: var(--rift-color);
+                        transform: scale(1.02) translateZ(0);
+                    }
+                }
+                .codeBlock {
+                    display: block;
+
+                    .main {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        gap: 0px 10px;
+
+                        @media (max-width: #{$small-screen-max-width}) {
+                            flex-flow: column nowrap;
+                        }
+                        .source {
+                            display: flex;
+                            width: 66%;
+                            overflow: hidden;
+                        }
+                        .response {
+                            display: flex;
+                            width: 34%;
+                            overflow: hidden;
+                        }
+                    }
+                    .structure {
+                        display: block;
+                    }
+                    pre {
+                        width: 100%;
+                        overflow: hidden;
+                    }
+                }
             }
         }
     }

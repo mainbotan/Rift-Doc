@@ -13,7 +13,6 @@ import RouterIco from '../../assets/images/split.png';
 import MiddlewaresIco from '../../assets/images/milestone.png';
 import UseCaseIco from '../../assets/images/heart.png';
 import RepositoryIco from '../../assets/images/database.png';
-import GithubIco from '../../assets/images/logos/github-mark-white.svg';
 
 import { ExampleValidator } from '../../scheme/validator/example-validator';
 import { ValidatorShortDescription } from '../../scheme/validator/short-description.tsx';

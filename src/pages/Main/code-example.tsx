@@ -8,14 +8,18 @@ import { MermaidViewer } from '../../components/Mermaid';
 import CodeBlock from '../../components/CodeBlock';
 import { RegistrationModuleResponseExample01 } from './sources/registration/01-registration-module-response';
 import { RegistrationModuleStructureExample01 } from './sources/registration/01-registration-module-structure';
+import { VerificationModuleExample01 } from './sources/verification/01-verification-module';
+import { VerificationModuleResponseExample01 } from './sources/verification/01-verification-module-response';
+import { VerificationModuleStructureExample01 } from './sources/verification/01-verification-module-structure';
 
 export default function CodeExample() {
   // Состояние для активной вкладки
-  const [activeTab, setActiveTab] = useState<'authorization' | 'registration'>('authorization');
+  const [activeTab, setActiveTab] = useState<'authorization' | 'registration' | 'verification'>('authorization');
 
   // Функции для получения актуальных данных
   const getActiveCode = () => {
     switch (activeTab) {
+        case 'verification': return VerificationModuleExample01;
         case 'registration': return RegistrationModuleExample01;
         default: return AuthorizationModuleExample01;
     }
@@ -23,6 +27,7 @@ export default function CodeExample() {
 
   const getActiveResponse = () => {
     switch (activeTab) {
+        case 'verification': return VerificationModuleResponseExample01;
         case 'registration': return RegistrationModuleResponseExample01;
         default: return AuthorizationModuleResponseExample01;
     }
@@ -30,6 +35,7 @@ export default function CodeExample() {
 
   const getActiveStructure = () => {
     switch (activeTab) {
+        case 'verification': return VerificationModuleStructureExample01;
         case 'registration': return RegistrationModuleStructureExample01;
         default: return AuthorizationModuleStructureExample01;
     }
@@ -38,7 +44,7 @@ export default function CodeExample() {
   return (
     <div className={styles.block}>
       <div className={styles.codeTitle}>
-        <div className={styles.title}>So fucking <div className={styles.contrast}>clean</div></div>
+        <div className={styles.title}>So fucking <div className={styles.contrast}>clean...</div></div>
         <div className={styles.quote}>
           The immutability of the chain of operations.
         </div>
@@ -46,6 +52,7 @@ export default function CodeExample() {
       <div className={styles.codeBlockControl}>
         <div className={`${styles.button} ${activeTab === 'authorization' ? styles.activeButton : ''}`} onClick={() => setActiveTab('authorization')}>Auth</div>
         <div className={`${styles.button} ${activeTab === 'registration' ? styles.activeButton : ''}`} onClick={() => setActiveTab('registration')}>Registration</div>
+        <div className={`${styles.button} ${activeTab === 'verification' ? styles.activeButton : ''}`} onClick={() => setActiveTab('verification')}>Verification</div>
       </div>
       
       <div className={styles.codeBlock}>

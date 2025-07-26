@@ -96,7 +96,7 @@ export const MainPage = () => {
                   <div className={styles.description}>Multitenant PHP miniframework</div>
                   <div className={styles.actions}>
                     <div className={styles.action}>
-                      <Link to='https://github.com/mainbotan/Rift'><Button color='default' size='md' text='Sources' ico={GithubIco}/></Link>
+                      <Link to='https://github.com/mainbotan/Rift'><Button color='default' size='md' text='Sources' /></Link>
                     </div>
                     <div className={styles.action}>
                       <Link onClick={() => window.scrollTo(0, 0)} to='/docs/v1/introduction'><Button color='contrast' size='md' text='Documentation' /></Link>

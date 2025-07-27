@@ -1,6 +1,7 @@
 export const CheckJwtExample01 = `
 /**
- * Intermediate for checking Bearer token 
+ * Intermediate for checking Bearer token
+ * [Authorization: Bearer token]
  * @version 0.0.1
  */
 class CheckJwtWithUid implements MiddlewareInterface 

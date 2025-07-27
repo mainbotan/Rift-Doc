@@ -1,4 +1,8 @@
 export const AuthorizationModuleExample01 = `
+/**
+ * Standard email + password authorization
+ * @version 0.0.1
+ */
 class AuthByEmail implements HandlerInterface 
 {
     const AUTH_TOKEN_TTL = 3600;

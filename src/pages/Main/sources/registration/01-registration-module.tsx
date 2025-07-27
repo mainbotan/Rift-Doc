@@ -1,4 +1,8 @@
 export const RegistrationModuleExample01 = `
+/**
+ * 2FA registration. Confirmation code via email.
+ * @version 0.0.1
+ */
 class RegistrateByEmail implements HandlerInterface 
 {
     const AUTH_TOKEN_TTL = 3600 * 24;

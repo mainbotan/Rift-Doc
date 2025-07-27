@@ -168,15 +168,18 @@
           @include mulish(500, normal);
           @include ease-animation(0.1s);
           @include pointer();
-          display: flex;
-          justify-content: start;
-          padding: 10px 0px;
+          display: block;
+          text-align: left;
+          padding: 4px 0px;
           font-size: 14px;
           color: var(--primary-text-color);
           
           &:hover {
             color: #ffffff;
           }
+        }
+        .versionMark {
+            color: grey;
         }
 
         .block {

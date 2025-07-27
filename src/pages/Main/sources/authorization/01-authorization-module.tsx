@@ -26,6 +26,7 @@ class AuthByEmail implements HandlerInterface
         $this->stopwatch->start(self::TIMER_TOTAL);
         $requestBody = $request->getParsedBody();
 
+        $this->startTimer(self::TIMER_VALIDATION);
         return $this->validator->validate($requestBody)
             ->tap(fn() => $this->stopTimer(self::TIMER_VALIDATION))
             

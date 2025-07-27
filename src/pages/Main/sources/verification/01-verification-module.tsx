@@ -45,6 +45,7 @@ class VerifyByCode implements HandlerInterface
         $verifyToken = $queryParams['token'];
         $clientCode = $request->getHeader(self::VERIFY_HEADER)[0] ?? '';
 
+        $this->startTimer(self::TIMER_VALIDATION);
         return $this->validator->validate(['code' => $clientCode])
             ->tap(fn() => $this->stopTimer(self::TIMER_VALIDATION))
             

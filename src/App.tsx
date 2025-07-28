@@ -1,6 +1,6 @@
 
 // App entrypoint 
-
+import { Analytics } from '@vercel/analytics/next';
 import { Routes, Route } from 'react-router-dom';
 
 // global styles
@@ -31,6 +31,7 @@ function App() {
             </Route>
           ))}
         </Routes>
+        <Analytics />
       </>
   );
 }

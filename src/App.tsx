@@ -1,6 +1,6 @@
 
 // App entrypoint 
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 import { Routes, Route } from 'react-router-dom';
 
 // global styles
@@ -38,6 +38,3 @@ function App() {
 
 
 export default App
-
-
-// <Route path='video/:id' element={<VideoPage />}/>

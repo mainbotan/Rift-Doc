@@ -1,8 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { docsNav } from './navigation';
+import clsx from 'clsx';
 
-export const SideBar = () => {
+type SideBarProps = {
+  collapsed?: boolean;
+};
+export const SideBar = ({ collapsed = false }: SideBarProps) => {
   const { version = 'v1' } = useParams();
 
   type NavItem = {
@@ -34,7 +38,7 @@ export const SideBar = () => {
   };
 
   return (
-    <div className={styles.sidePanel}>
+    <div className={clsx(styles.sidePanel, { [styles.collapsed]: collapsed })}>
       {docsNav.map(section => (
         <div className={styles.section} key={section.path}>
           {renderItem(section)}

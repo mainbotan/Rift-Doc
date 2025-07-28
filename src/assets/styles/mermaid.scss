@@ -1,8 +1,8 @@
 .mermaid-viewer {
-  --bg-color: #1e1e1e;
+  --bg-color: hsl(0, 0%, 3%);
   --text-color: #e0e0e0;
-  --border-color: #3a3a3a;
-  --control-bg: #252526;
+  --border-color: #1e1e1e;
+  --control-bg: hsl(0, 0%, 3%);
   --control-active: #333;
   --error-bg: #2d1a1a;
   --error-text: #ff6b6b;
@@ -16,7 +16,7 @@
   &[data-theme="light"] {
     --bg-color: #f8f8f8;
     --text-color: #333;
-    --border-color: #ddd;
+    --border-color: hsl(0, 0%, 3%);
     --control-bg: #f0f0f0;
     --control-active: #e0e0e0;
     --error-bg: #ffebee;

@@ -58,9 +58,10 @@
                     @include block-ellipsis();
                     font-size: 18px;
                     color: #ffffff;
-                }
-                .title:hover {
-                    color: #000000;
+
+                    &:hover {
+                        color: var(--rift-color);
+                    }
                 }
             }
         }

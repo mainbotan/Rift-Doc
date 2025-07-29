@@ -50,6 +50,7 @@
     }
 
     @media (max-width: #{$small-screen-max-width}) {
+        display: none;
         width: calc(100% - 70px);
     }
 

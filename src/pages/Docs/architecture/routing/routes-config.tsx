@@ -5,7 +5,7 @@ import { RoutesConfigBoxExample01 } from './example/01-routes-config-box';
 export const RoutingRoutesConfigPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Routes Configuration</div>
+            <h2 id='routes-configuration'><div className='title'><div className='tag'>/</div>Routes Configuration</div></h2>
             <br />
             Route configuration is the place where you register possible routes for your application. <br />
             Initially, Rift was designed for a <div className='code-tag'>RESTful</div> approach to building applications, so the route structure should be consistent.
@@ -13,7 +13,7 @@ export const RoutingRoutesConfigPage = () => {
             The route configuration is considered as part of the configuration of the entire application and is placed in the appropriate directory:
             <CodeBlock code='configs/routes.php' language='swift' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Route Structure</div><br />
+            <h2 id='route-structure'><div className='title middle'><div className='tag'>#</div>Route Structure</div></h2><br />
             Each route from the configuration must contain the following fields:<br /><br />
             <div className='code-tag'>method</div> - request method; <div className='code-tag'>POST</div> / <div className='code-tag'>GET</div> / <div className='code-tag'>PATCH</div> / <div className='code-tag'>PUT</div> / <div className='code-tag'>DELETE</div> 
             <br />
@@ -35,7 +35,7 @@ export const RoutingRoutesConfigPage = () => {
             <br />
             <CodeBlock code={RoutesConfigListExample01} language='php' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Routes Box</div>
+            <h2 id='routes-box'><div className='title middle'><div className='tag'>#</div>Routes Box</div></h2>
             <br />
             If the conciseness of the configuration is more important to you at the moment than the speed of its processing, Rift offers <div className='code-tag'>RoutesBox</div> for registering routes. 
             This is an object that allows you to save routes using methods: <div className='code-tag'>get</div> <div className='code-tag'>post</div> <div className='code-tag'>patch</div> <div className='code-tag'>put</div> <div className='code-tag'>delete</div>.            
@@ -45,7 +45,7 @@ export const RoutingRoutesConfigPage = () => {
             <br />
             <CodeBlock code={RoutesConfigBoxExample01} language='php' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Summary</div>
+            <h2 id='summary'><div className='title middle'><div className='tag'>#</div>Summary</div></h2>
             <br />
             Whatever configuration method you find convenient, the router in Rift can work with both a pure route array and a <div className='code-tag'>RoutesBox</div> object.
         </>

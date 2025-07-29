@@ -10,7 +10,7 @@ import { EnvMysqlExample } from './examples/env-mysql';
 export const DatabasesPDOPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>PDO Connection</div>
+            <h2 id='pdo'><div className='title'><div className='tag'>/</div>PDO Connection</div></h2>
             <br />
             All database operations from the code in Rift take place via PDO. 
             <br />
@@ -19,7 +19,7 @@ export const DatabasesPDOPage = () => {
             <br /><br />
             If you don't understand anything and don't realize the importance of separate PDO connections for different circuits, don't worry, the Databases section will fill in your gaps. 
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>.env</div>
+            <h2 id='env'><div className='title middle'><div className='tag'>#</div>.env</div></h2>
             <br />
             The connection to the database takes place from the settings specified in the .env of your application.
             <br />
@@ -34,7 +34,7 @@ export const DatabasesPDOPage = () => {
 
 
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>If you're interested</div>
+            <h2 id='if-you-are-interested'><div className='title middle'><div className='tag'>#</div>If you're interested</div></h2>
             <br />
             There are times when, for religious reasons or purely out of curiosity, you want to check the correctness of the connection to the database manually.
             <br />

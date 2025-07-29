@@ -9,7 +9,7 @@ import { ThenMermaExample02 } from '../examples/02-then-merma';
 export const ContractThenMethodPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>@</div>then</div>
+            <h2 id='then'><div className='title'><div className='tag'>@</div>then</div></h2>
             <br />
             <div className='code-tag'>-&gt;then(callable $callback)</div> - performs a callback if the result is successful (analogous to then/flatMap)
             <br /><br />

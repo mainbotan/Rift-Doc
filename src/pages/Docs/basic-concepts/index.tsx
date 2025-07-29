@@ -1,7 +1,7 @@
 export const BasicConceptsMainPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Basic Concepts</div>
+            <h2 id='basic-concepts'><div className='title'><div className='tag'>/</div>Basic Concepts</div></h2>
             <br />
             The main idea of creating Rift was to use a "single response contract" as a means of communication between different layers of the application.
             This means that instead of the usual exception syntax in operations where consistency and clarity of the chain of calls are extremely important, we will use
@@ -10,7 +10,7 @@ export const BasicConceptsMainPage = () => {
             Later, we will take a closer look at the structure of this object, as well as its possible actions. Rift is inspired by the JS Promises, and the functional approach in general.
             This means that with the response object, which we have named <div className='code-tag'>OperationOutcome</div>, the functional programming methods familiar to you will be possible.
             <br /><br />
-            <div className='title middle'><div className='tag'>/</div>Scalability</div>
+            <h2 id='scalability'><div className='title middle'><div className='tag'>/</div>Scalability</div></h2>
             <br />
             If you respect yourself and your time when developing complex applications, you will definitely think about how difficult it will be to optimize the created infrastructure for high traffic.
             By doing anything on Laravel and mixing the presentation layer with the logic layer (for example Blade), you risk the ability to scale smoothly.
@@ -21,7 +21,7 @@ export const BasicConceptsMainPage = () => {
             You create a workable instance of the business logic and tell yourself, "if necessary, this can be migrated to something more powerful."
 
             <br /><br />
-            <div className='title middle'><div className='tag'>/</div>Multitenancy</div>
+            <h2 id='multitenancy'><div className='title middle'><div className='tag'>/</div>Multitenancy</div></h2>
             <br />
             Rift components can be used in applications that have nothing to do with multitenancy. However, we have paid a lot of attention to this topic. 
             The problem of isolating data from multiple clients is not simple, but it can be solved (with minimal costs) using various database schemas (Postgres) or their emulation (MySQL) and properly configured access.

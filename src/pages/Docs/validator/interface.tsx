@@ -4,7 +4,7 @@ import { ValidatorExample } from './examples/validator';
 export const ValidatorInterfacePage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Validator Interface</div>
+            <h2 id='validator-interface'><div className='title'><div className='tag'>/</div>Validator Interface</div></h2>
             <br />
             This way you can easily and easily create validators and use
             anywhere in your application, if necessary. 

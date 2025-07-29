@@ -7,7 +7,7 @@ import { InitRequestObjectMethodsResponseExample01 } from './example/01-init-req
 export const RoutingRequestObjectPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Request Object</div>
+            <h2 id='request-object'><div className='title'><div className='tag'>/</div>Request Object</div></h2>
             <br />
             So, the idea of processing a request using a standardized object appeared a long time ago, sometime in 2015, along with the adoption of <div className='code-tag'>PSR-7</div>.
             Previously, when writing an application, the developer had to manually receive the headers, uri, or request body. <br /><br />
@@ -17,7 +17,7 @@ export const RoutingRequestObjectPage = () => {
             <br />
             <CodeBlock code='use Rift\Core\Http\Request;' language='php' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Initialization</div>
+            <h2 id='initialization'><div className='title middle'><div className='tag'>#</div>Initialization</div></h2>
             <br />
             To initialize a request object from global variables, the static method <div className='code-tag'>fromGlobals</div> is used.
             Here is an example of initializing a new object:<br />
@@ -28,7 +28,7 @@ export const RoutingRequestObjectPage = () => {
             Thus, you can work with the request object only after it has been "unpacked" from <div className='code-tag'>OperationOutcome</div>. This approach eliminates possible errors in creating an object 
             and gives you control over even this stage.
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>Structure</div>
+            <h2 id='structure'><div className='title middle'><div className='tag'>#</div>Structure</div></h2>
             <br />
             So, the Rift request object stores a <div className='code-tag'>psrRequest</div> (library <div className='code-tag'>Nyholm\Psr7</div>), for which a number of public methods are available.
             <br />
@@ -51,7 +51,7 @@ export const RoutingRequestObjectPage = () => {
             Output:
             <CodeBlock code={InitRequestObjectMethodsResponseExample01} language='php' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Using</div>
+            <h2 id='using'><div className='title middle'><div className='tag'>#</div>Using</div></h2>
             <br />
             The generated request object is pre-checked for correctness and passed from <div className='code-tag'>entrypoint</div> to <div className='code-tag'>router</div><br />
             Both the router and the middleware work on its basis and using its methods, doing all the necessary actions to ensure that an invalid request does not get into the logic layer. After all the checks and conversions

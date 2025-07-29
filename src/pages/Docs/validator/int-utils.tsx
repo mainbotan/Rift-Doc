@@ -7,7 +7,7 @@ import { IntUtilsConnectExample } from './examples/int-utils-connect';
 export const ValidatorIntUtilsPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Int Utils</div>
+            <h2 id='int-utils'><div className='title'><div className='tag'>/</div>Int Utils</div></h2>
             <br />
             Use
             <CodeBlock code={IntUtilsConnectExample} language='php' />

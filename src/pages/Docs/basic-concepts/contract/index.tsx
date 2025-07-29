@@ -8,7 +8,7 @@ import { ContractMermaExample01 } from './examples/01-contract-merma';
 export const BasicConceptsContractPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Contract</div>
+            <h2 id='contract'><div className='title'><div className='tag'>/</div>Contract</div></h2>
             <br />
             Compliance with the contract in all layers of the application is the main principle of building an application using Rift. 
             You may find using custom exceptions much more convenient, and yes, in some cases they are really
@@ -18,7 +18,7 @@ export const BasicConceptsContractPage = () => {
             <br /> The main rule is that each layer, regardless
             of its content, must return a <div className='code-tag'>OperationOutcome</div>
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>Why?</div>
+            <h2 id='why'><div className='title middle'><div className='tag'>#</div>Why?</div></h2>
             <br />
             If you've dealt with any php project, you're most likely used to exceptions as program execution interrupts in case of unexpected events. 
             Usually, a centralized function for handling all thrown exceptions is used in the application's bootstrap, which "eats" all error messages and converts them
@@ -29,7 +29,7 @@ export const BasicConceptsContractPage = () => {
             by analogy with functional programming (<div className='code-tag'>then</div> <div className='code-tag'>map</div> <div className='code-tag'>catch</div>...)<br/><br />
             But first, let's look at the structure of the response contract.
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>Structure</div>
+            <h2 id='structure'><div className='title middle'><div className='tag'>#</div>Structure</div></h2>
             <br />
             In Rift, it is an object with parameters: code, result, error, meta.
             <br /><br />
@@ -43,7 +43,7 @@ export const BasicConceptsContractPage = () => {
             Possible type of response object:
             <CodeBlock code={OperationOutcomeExample} language='json'/>
             <br />
-            <div className='title middle'><div className='tag'>#</div>Operation Wrapper</div>
+            <h2 id='operation-wrapper'><div className='title middle'><div className='tag'>#</div>Operation Wrapper</div></h2>
             <br />
             Obviously, you're asking how easy it is to use a contract and return it to a higher layer. 
             Rift has a special wrapper class that can be used by inheriting through <div className='code-tag'>extends</div>. 
@@ -54,7 +54,7 @@ export const BasicConceptsContractPage = () => {
             <br />
             In all these cases, the layer returns a single <div className='code-tag'>Operation DTO</div>, ready for verification for a successful result and further logic.
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>Operation codes</div>
+            <h2 id='codes'><div className='title middle'><div className='tag'>#</div>Operation codes</div></h2>
             <br />
             <div className='text'>
                 We strongly recommend against using numeric HTTP codes directly in the code of each layer.  Use <div className='code-tag'>Operation::HTTP_</div> to specify the desired response status.

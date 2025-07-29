@@ -7,7 +7,7 @@ import { MetricsAndDebugMermaExample01 } from './examples/01-metrics-and-debug-m
 export const ContractMetaPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Metadata</div>
+            <h2 id='metadata'><div className='title'><div className='tag'>/</div>Metadata</div></h2>
             <br />
             So, when using <div className='code-tag'>Operation Outcome</div> as an operation response, you may need to add some additional information to the payload.
             It can be anything, even notes for a developer. But we distinguish two main types of meta information: <div className='code-tag'>metrics</div> and <div className='code-tag'>debug</div>.

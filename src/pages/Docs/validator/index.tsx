@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 export const ValidatorPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Rift Validator</div>
+            <h2 id='validator'><div className='title'><div className='tag'>/</div>Rift Validator</div></h2>
             <br />
             So, you are interested in a simple and at the same time flexible validator that perfectly integrates with the <div className='code-tag'>Operation Contract</div>.
             Rift offers it to you. The main concept of the validation module (embedded in the core of the Rift) is to make it possible to validate anything that comes to the input of your application, whether it's nested arrays,

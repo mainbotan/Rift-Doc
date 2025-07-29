@@ -4,7 +4,7 @@ import { ContractProcessingMermaExample01 } from '../examples/01-contract-proces
 export const BasicConceptsContractMethodsPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Contract's Methods</div>
+            <h2 id='methods'><div className='title'><div className='tag'>/</div>Contract's Methods</div></h2>
             <br />
             So, having got acquainted with the <div className='code-tag'>OperationOutcome</div> object and ways to initialize it, let's look at methods for creating logical chains based on it. 
             <br /><br />

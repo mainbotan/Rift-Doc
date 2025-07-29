@@ -9,7 +9,7 @@ import { ThenAndMapMermaExample01 } from '../examples/01-then-and-map-merma';
 export const ContractMapMethodPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>@</div>map</div>
+            <h2 id='map'><div className='title'><div className='tag'>@</div>map</div></h2>
             <br />
             <div className='code-tag'>-&gt;map(callable $callback)</div> - transforms the result if successful (analogous to map)
             <br /><br />

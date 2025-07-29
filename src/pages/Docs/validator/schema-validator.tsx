@@ -7,7 +7,7 @@ import { SchemaValidatorCallingExample } from './examples/schema-validator-calli
 export const ValidatorSchemaValidatorPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Schema Validator</div>
+            <h2 id='schema-validator'><div className='title'><div className='tag'>/</div>Schema Validator</div></h2>
             <br />
             Schema data validation using a simple syntax and a single response contract is possible using <div className='code-tag'>SchemaValidator</div>.
             <br /><br />

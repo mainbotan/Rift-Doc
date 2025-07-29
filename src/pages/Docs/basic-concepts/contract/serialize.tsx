@@ -8,14 +8,14 @@ import { SerializedObjectExample02 } from './examples/02-seriaized-object';
 export const ContractSerializePage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Serialize</div>
+            <h2 id='serialize'><div className='title'><div className='tag'>/</div>Serialize</div></h2>
             <br />
             You already know that each operation that returns a response object is self-contained and independently describes its execution status, result, errors, and meta-information. 
             This allows you to easily serialize the response object in <div className='code-tag'>json</div> according to the scheme you need using the <div className='code-tag'>OperationOutcome</div> method <div className='code-tag'>-&gt;toJson()</div>
             <br /><br />
             Thus, after processing the incoming request and performing all the operations of your application at the exit point, you just need to convert the <div className='code-tag'>OperationOutcome</div> using a special method.
             <br /><br />
-            <div className='title middle'><div className='tag'>-&gt;</div>toJson</div>    
+            <h2 id='toJson'><div className='title middle'><div className='tag'>-&gt;</div>toJson</div></h2>
             <br />
             <div className='code-tag'>-&gt;toJson(?callable $transformer, int $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE</div> - converts the response object to json.
             <br /><br />
@@ -32,7 +32,7 @@ export const ContractSerializePage = () => {
             <br />
             <CodeBlock code={SerializedObjectExample01} language='json' />
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>Custom serializer</div>
+            <h2 id='custom-serializer'><div className='title middle'><div className='tag'>#</div>Custom serializer</div></h2>
             <br />
             Now imagine that you need to convert an object to <div className='code-tag'>json</div>, but according to your custom scheme. 
             Let's play by your rules and give an example of a custom serializer:

@@ -1,0 +1,122 @@
+
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/fonts/mixins' as *;
+@use '../../assets/styles/main.scss' as *;
+
+// Header
+@keyframes ShowModalMessage {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes HideModalMessage {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+}
+.root {
+    @include mulish(500, normal);
+    animation: ShowModalMessage 0.3s forwards;
+    right: 20px;
+    bottom: 20px;
+    color: var(--primary-text-color);
+    font-size: 19px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px 6px;
+    position: fixed;
+    z-index: 100;
+    width: 300px;
+    background: #000000;
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #ededed16;
+    box-shadow: 0 0 1px #666666;
+    transform-origin: bottom right;
+    transition: all 0.4s ease-out;
+
+    &.closing {
+        animation: HideModalMessage 0.2s forwards;
+    }
+
+    @media (max-width: #{$small-screen-max-width}) {
+        width: calc(100% - 70px);
+    }
+
+    .content {
+        display: flex;
+
+        .block {
+            display: block;
+            width: 100%;
+
+            .icoWrap {
+                margin: 10px 0px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin-left: -5px;
+                }
+            }
+            .title {
+                font-size: 19px;
+                color: #eee;
+            }
+            .text {
+                @include mulish(500, normal);
+                font-size: 14px;
+                color: grey;
+                margin: 10px 0px;
+            }
+            pre {
+                padding: 16px 18px;
+            }
+        }
+    }
+    .actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column nowrap;
+        gap: 5px 5px;
+        
+        .action {
+            display: flex;
+            width: 100%;
+
+            .button {
+                @include pointer();
+                @include mulish(600, normal);
+                @include ease-animation(0.2s);
+                display: block;
+                font-size: 16px;
+                color: #eee;
+                text-align: center;
+                justify-content: center;
+                width: 100%;
+                border-radius: 8px;
+                background-color: #222222;
+                padding: 6px 26px;
+                
+                &.active {
+                    background-color: #eee;
+                    color: #000000;
+                }
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+    }
+}

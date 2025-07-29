@@ -1,7 +1,12 @@
 export const IntroductionPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Introduction</div>
+            <h2 id='introduction'>
+                <span className='title'>
+                    <span className='tag'>/</span>
+                    Introduction
+                </span>
+            </h2>
             <br />
             Rift is far from Laravel for quick and easy MVP creation. If you are used to controllers (which in most cases grow into divine objects), ORM and server rendering - run away.
             If you don't want to get out of the habit using Blade, close this documentation. If you are not ready for the pain, the unlearning of exceptions, and a clear contract between the layers, close the tab. If your goal is to create

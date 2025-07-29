@@ -12,6 +12,7 @@ import './assets/styles/docs-markup.scss'; // <- docs markup
 // routes
 import { routes } from './routes/index';
 import ScrollToTop from './utils/ScrollToTop';
+import { ModalMessage } from './components/ModalMessage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             </Route>
           ))}
         </Routes>
+        <ModalMessage />
         <Analytics />
       </>
   );

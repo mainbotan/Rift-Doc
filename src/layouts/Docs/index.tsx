@@ -1,24 +1,23 @@
-
-// Docs layout
-import { useState } from 'react';
+// DocsLayout.tsx
+import { useState, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 import clsx from 'clsx';
-import styles from './styles.module.scss'; // <- layout styles
-import { AppHeader } from '../../components/Header'; // <- header
-import { AppFooter } from '../../components/Footer'; // <- footer
+import styles from './styles.module.scss';
+import { AppHeader } from '../../components/Header';
+import { AppFooter } from '../../components/Footer';
 import { SideBar } from './SideBar';
 import { NavBar } from './NavBar';
 import Split from './../../assets/images/side-bars.png';
 
 export const DocsLayout = () => {
-  // const { version } = useParams();
+  const mainAreaRef = useRef<HTMLDivElement>(null);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarCollapsed(!isSidebarCollapsed);
   };
+
   return (
-    <>
     <div className={styles.winWrap}>
       <AppHeader />
       <div className={styles.root}>
@@ -35,14 +34,18 @@ export const DocsLayout = () => {
             </div>
           </div>
 
-          <div className={clsx(styles.mainArea, 'docs-markup')}>
-            <Outlet />
+          <div 
+            className={clsx(styles.mainArea, 'docs-markup')} 
+            ref={mainAreaRef}
+            id="main-content-area"
+          >
+            <Outlet context={{ mainAreaRef }} />
           </div>
-          <NavBar />
+          
+          <NavBar mainAreaRef={mainAreaRef as React.RefObject<HTMLDivElement>} />
         </div>
       </div>
       <AppFooter />
     </div>
-    </>
   );
-}
+};

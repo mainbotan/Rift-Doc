@@ -205,6 +205,23 @@
         padding-top: 30px;
         border-right: 1px solid var(--border-color);
 
+        .capture {
+          &.active {
+            color: var(--rift-color);
+            font-weight: 600;
+          }
+        }
+
+        .headingsList {
+          .heading-level-3 {
+            padding-left: 12px;
+          }
+          .heading-level-4 {
+            padding-left: 24px;
+          }
+        }
+
+
         &::-webkit-scrollbar {
           width: 0px;
           background: transparent;

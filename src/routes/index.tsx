@@ -43,6 +43,7 @@ import { DatabasesRepositoriesRepositoryPage } from '../pages/Docs/architecture/
 import { DatabasesMainPage } from '../pages/Docs/architecture/databases';
 import { DatabasesConfiguratorsPage } from '../pages/Docs/architecture/databases/configurators';
 import { DirectoryStructurePage } from '../pages/Docs/architecture/directory-structure';
+import { FromTheInsideMainPage } from '../pages/Docs/basic-concepts/from-the-inside';
 
 
 export const routes = [
@@ -59,6 +60,9 @@ export const routes = [
       
       // Basic Concepts
       { path: 'basic-concepts', element: <BasicConceptsMainPage /> },
+      { path: 'basic-concepts/from-the-inside', element: <FromTheInsideMainPage /> },
+      
+      // Contract
       { path: 'basic-concepts/contract', element: <BasicConceptsContractPage /> },
       { path: 'basic-concepts/contract/methods', element: <BasicConceptsContractMethodsPage /> },
       { path: 'basic-concepts/contract/methods/then', element: <ContractThenMethodPage /> },

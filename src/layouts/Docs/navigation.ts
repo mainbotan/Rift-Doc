@@ -9,6 +9,14 @@ export const docsNav = [
     path: "basic-concepts",
     sign: '/',
     children: [
+     {
+      title: "From The Inside",
+      path: "from-the-inside",
+      sign: "",
+      children: [
+        { title: "DI", path: "di", sign: "#" }
+      ]
+     },
      { 
       title: "Contract", 
       path: "contract", 

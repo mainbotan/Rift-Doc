@@ -8,5 +8,27 @@ export const PartOfRouter = `
 class Router implements RouterInterface
 {
     ...
+
+    public function __construct(
+        private RoutesBoxInterface $routesBox, 
+        private ContainerInterface $container
+    ) {
+        $this->routes = $routesBox->getRoutes();
+        $this->compileRoutes();
+    }
+    
+    /**
+     * Handle request
+     * 
+     * @param ServerRequestInterface $request
+     * @return OperationOutcome 
+     */
+    public function execute(ServerRequestInterface $request): OperationOutcome
+    {
+        $path = $request->getUri()->getPath();
+        $method = strtoupper($request->getMethod());
+
+        ...
+    }
 }
 `;

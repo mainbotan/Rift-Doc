@@ -13,9 +13,11 @@ export const docsNav = [
       title: "From The Inside",
       path: "from-the-inside",
       sign: "",
-      // children: [
-      //   { title: "DI", path: "di", sign: "#" }
-      // ]
+      children: [
+        { title: "Interfaces", path: "interfaces", sign: "#" },
+        { title: "Interfaces To Implementations", path: "interfaces-to-implementations", sign: "#" },
+        { title: "Core & Modules", path: "core-modules", sign: "#" }
+      ]
      },
      { 
       title: "Contract", 

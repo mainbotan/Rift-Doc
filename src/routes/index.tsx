@@ -44,6 +44,9 @@ import { DatabasesMainPage } from '../pages/Docs/architecture/databases';
 import { DatabasesConfiguratorsPage } from '../pages/Docs/architecture/databases/configurators';
 import { DirectoryStructurePage } from '../pages/Docs/architecture/directory-structure';
 import { FromTheInsideMainPage } from '../pages/Docs/basic-concepts/from-the-inside';
+import { InterfacesPage } from '../pages/Docs/basic-concepts/from-the-inside/interfaces';
+import { InterfacesToImplementationsPage } from '../pages/Docs/basic-concepts/from-the-inside/interfaces-to-implementations';
+import { CoreModulesPage } from '../pages/Docs/basic-concepts/from-the-inside/core-modules';
 
 
 export const routes = [
@@ -61,6 +64,9 @@ export const routes = [
       // Basic Concepts
       { path: 'basic-concepts', element: <BasicConceptsMainPage /> },
       { path: 'basic-concepts/from-the-inside', element: <FromTheInsideMainPage /> },
+      { path: 'basic-concepts/from-the-inside/interfaces', element: <InterfacesPage /> },
+      { path: 'basic-concepts/from-the-inside/interfaces-to-implementations', element: <InterfacesToImplementationsPage /> },,
+      { path: 'basic-concepts/from-the-inside/core-modules', element: <CoreModulesPage /> },
       
       // Contract
       { path: 'basic-concepts/contract', element: <BasicConceptsContractPage /> },

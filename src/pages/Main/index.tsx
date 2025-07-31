@@ -18,6 +18,8 @@ import { ExampleValidator } from '../../scheme/validator/example-validator';
 import { ValidatorShortDescription } from '../../scheme/validator/short-description.tsx';
 import CodeExample from './code-example.tsx';
 import { Cross } from '../../components/Elements/Cross/index.tsx';
+import { CoreComponentsTable } from '../Docs/basic-concepts/from-the-inside/sources/core-components-table.tsx';
+import { ComponentsArea } from './components-area.tsx';
 
 
 export const MainPage = () => {
@@ -156,7 +158,6 @@ export const MainPage = () => {
         </div>
       </div>
 
-
       <div className={clsx(styles.area, styles.area_0)}>
         <div className={styles.active}>
           <div  className={styles.block}>
@@ -178,6 +179,7 @@ export const MainPage = () => {
           </div>
         </div>
       </div>
+
       <div className={clsx(styles.area, styles.area_1)}>
         <div className={styles.active}>
           <div  className={styles.block}>
@@ -211,6 +213,7 @@ export const MainPage = () => {
           </div>
         </div>
       </div>
+
       <div className={clsx(styles.slide, styles.slide_3)}>
         <div className={styles.adaptive_column_grid}>
           <div className={styles.main_area}>
@@ -229,7 +232,20 @@ export const MainPage = () => {
           </div>
         </div>
       </div>
-      
+
+      <div className={clsx(styles.area, styles.area_2)}>
+        <div className={styles.active}>
+          <div  className={styles.block}>
+            <div className={styles.title}>Core components</div>
+            <div className={styles.description}>The main components of the Rift core.</div>
+            <div className={clsx(styles.tableArea, 'docs-markup')}>
+              <CoreComponentsTable />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ComponentsArea />
     </div>
   );
 };

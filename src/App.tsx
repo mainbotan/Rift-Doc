@@ -22,11 +22,16 @@ function App() {
           <Route key={i} path={route.path} element={route.element}>
             {route.children?.map((child, j) => {
               if (!child) return null;
+              
+              // Явная проверка типа для child
+              const isIndexRoute = 'index' in child && child.index;
+              const isPathRoute = 'path' in child && child.path;
+              
               return (
                 <Route
                   key={j}
-                  index={child.index ? true : undefined}
-                  path={child.path}
+                  index={isIndexRoute ? true : undefined}
+                  path={isPathRoute ? child.path : undefined}
                   element={child.element}
                 />
               );

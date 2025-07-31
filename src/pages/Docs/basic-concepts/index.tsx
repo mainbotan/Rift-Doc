@@ -8,7 +8,7 @@ export const BasicConceptsMainPage = () => {
             a special object for transmitting status, errors, and payload.
             <br />
             Later, we will take a closer look at the structure of this object, as well as its possible actions. Rift is inspired by the JS Promises, and the functional approach in general.
-            This means that with the response object, which we have named <div className='code-tag'>OperationOutcome</div>, the functional programming methods familiar to you will be possible.
+            This means that with the response object, which we have named <div className='code-tag'>ResultType</div>, the functional programming methods familiar to you will be possible.
             <br /><br />
             <h2 id='scalability'><div className='title middle'><div className='tag'>/</div>Scalability</div></h2>
             <br />

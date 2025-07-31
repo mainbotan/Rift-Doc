@@ -3,7 +3,7 @@ export const ValidatorExample = `
 
 namespace App\\Validators;
 
-use Rift\\Core\\Contracts\\OperationOutcome;
+use Rift\\Core\\Contracts\\ResultType;
 use Rift\\Core\\Validators\\ValidatorInterface;
 use Rift\\Core\\Validators\\Utils\\SchemaValidator;
 
@@ -18,7 +18,7 @@ class YourValidator implements ValidatorInterface {
     ];
 
     // All validators accept an array of data
-    public function execute(array $data): OperationOutcome {
+    public function execute(array $data): ResultType {
         return SchemaValidator::validate($this->schema, $data);
     }
 }

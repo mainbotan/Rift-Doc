@@ -6,12 +6,12 @@ public static function checkLength(
     int $min,
     int $max,
     string $fieldName = 'string'
-): OperationOutcome ...
+): ResultType ...
 
 // Checking if it is empty
 
 public static function notEmpty(
     string $value, 
     string $fieldName = 'string'
-): OperationOutcome ...
+): ResultType ...
 `;

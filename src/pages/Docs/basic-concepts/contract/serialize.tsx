@@ -11,15 +11,15 @@ export const ContractSerializePage = () => {
             <h2 id='serialize'><div className='title'><div className='tag'>/</div>Serialize</div></h2>
             <br />
             You already know that each operation that returns a response object is self-contained and independently describes its execution status, result, errors, and meta-information. 
-            This allows you to easily serialize the response object in <div className='code-tag'>json</div> according to the scheme you need using the <div className='code-tag'>OperationOutcome</div> method <div className='code-tag'>-&gt;toJson()</div>
+            This allows you to easily serialize the response object in <div className='code-tag'>json</div> according to the scheme you need using the <div className='code-tag'>ResultType</div> method <div className='code-tag'>-&gt;toJson()</div>
             <br /><br />
-            Thus, after processing the incoming request and performing all the operations of your application at the exit point, you just need to convert the <div className='code-tag'>OperationOutcome</div> using a special method.
+            Thus, after processing the incoming request and performing all the operations of your application at the exit point, you just need to convert the <div className='code-tag'>ResultType</div> using a special method.
             <br /><br />
             <h2 id='toJson'><div className='title middle'><div className='tag'>-&gt;</div>toJson</div></h2>
             <br />
             <div className='code-tag'>-&gt;toJson(?callable $transformer, int $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE</div> - converts the response object to json.
             <br /><br />
-            Let's say the logical part of your application returned such a <div className='code-tag'>OperationOutcome</div>:
+            Let's say the logical part of your application returned such a <div className='code-tag'>ResultType</div>:
             <br />
             <CodeBlock code={SerializeObjectExample01} language='php' />
             <br />

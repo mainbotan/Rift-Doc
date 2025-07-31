@@ -11,13 +11,13 @@ export const RoutingMiddlewaresPage = () => {
             <h2 id='middlewares'><div className='title'><div className='tag'>/</div>Middlewares</div></h2>
             <br />
             So, each route or group of routes can assign to itself a list of <div className='code-tag'>middlewares</div> classes that check <div className='code-tag'>requestObject</div> before addressing <div className='code-tag'>handler</div> payload.<br />
-            When middlewares are detected on the route, the Rift router will start executing the chain and either respond with a negative <div className='code-tag'>OperationOutcome</div> received from middleware, or after executing the entire chain, it will call <div className='code-tag'>handler</div>
+            When middlewares are detected on the route, the Rift router will start executing the chain and either respond with a negative <div className='code-tag'>ResultType</div> received from middleware, or after executing the entire chain, it will call <div className='code-tag'>handler</div>
             <br /><br />
             <h2 id='interface'><div className='title middle'><div className='tag'>#</div>Middleware Interface</div></h2>
             <br />
             The middleware interface is described here:<br />
             <CodeBlock code='use Rift\Core\Middlewares\MiddlewareInterface;' language='php' />
-            It ensures that any middleware in your application contains a single entry point <div className='code-tag'>execute</div>, which accepts the request object and responds <div className='code-tag'>OperationOutcome</div>
+            It ensures that any middleware in your application contains a single entry point <div className='code-tag'>execute</div>, which accepts the request object and responds <div className='code-tag'>ResultType</div>
             <br />
             Here is an example of the simplest middleware that checks the request header:<br />
             <CodeBlock code={MiddlewareExample01} language='php' /> 
@@ -28,7 +28,7 @@ export const RoutingMiddlewaresPage = () => {
             Or:<br/>
             <CodeBlock code='App\Middlewares*::class => autowire()      # PHP-DI 6.0+' language='php' />
             <br />
-            If the first middleware of the route returned a positive <div className='code-tag'>OperationOutcome</div>, but with an empty field <div className='code-tag'>result</div>, the next middleware (if any) will be passed the original request object received in the router. 
+            If the first middleware of the route returned a positive <div className='code-tag'>ResultType</div>, but with an empty field <div className='code-tag'>result</div>, the next middleware (if any) will be passed the original request object received in the router. 
             If the previous middleware returned a positive contract with <div className='code-tag'>result</div> as a modified <div className='code-tag'>resultObject</div>, the new request object will be passed to the next middleware.
             <br /><br />
             <h2 id='dependencies'><div className='title middle'><div className='tag'>#</div>Dependencies</div></h2>

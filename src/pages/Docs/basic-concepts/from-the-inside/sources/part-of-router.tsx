@@ -21,9 +21,9 @@ class Router implements RouterInterface
      * Handle request
      * 
      * @param ServerRequestInterface $request
-     * @return OperationOutcome 
+     * @return ResultType 
      */
-    public function execute(ServerRequestInterface $request): OperationOutcome
+    public function execute(ServerRequestInterface $request): ResultType
     {
         $path = $request->getUri()->getPath();
         $method = strtoupper($request->getMethod());

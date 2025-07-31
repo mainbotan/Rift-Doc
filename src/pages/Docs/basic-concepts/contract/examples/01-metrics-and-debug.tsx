@@ -1,8 +1,8 @@
 export const MetricsAndDebugExample01 = `
-public static function demoMeta(): OperationOutcome
+public static function demoMeta(): ResultType
 {
     // 1. Create successful operation with initial metrics and debug data
-    $operation = Operation::success(
+    $operation = Result::Success(
         result: ['user_id' => 123],
         metrics: ['start_time' => microtime(true)],
         debug: ['init_source' => 'user_service']

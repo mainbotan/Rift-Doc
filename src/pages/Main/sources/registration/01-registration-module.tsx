@@ -34,7 +34,7 @@ class RegistrateByEmail implements HandlerInterface
         private EncryptionManager $encryptionManager
     ) {}
 
-    public function execute(ServerRequestInterface $request): OperationOutcome 
+    public function execute(ServerRequestInterface $request): ResultType 
     {
         $this->stopwatch->start(self::TIMER_TOTAL);
         $requestBody = $request->getParsedBody();
@@ -56,7 +56,7 @@ class RegistrateByEmail implements HandlerInterface
                     return !isset($existing[0]['uid']);
                 },
                 self::ERROR_EMAIL_EXISTS,
-                Operation::HTTP_CONFLICT
+                Result::HTTP_CONFLICT
             )
             ->then(function(TenantRepository $repository) use ($requestBody) {
                 $this->startTimer(self::TIMER_UID_GEN);
@@ -93,7 +93,7 @@ class RegistrateByEmail implements HandlerInterface
                     ->tap(fn() => $this->startTimer(self::TIMER_VERIFY_CODE_SEND))
                     ->then(function($encryptedVerifyCode) use ($requestBody, $verifyCode) {
                         $this->mailer->sendConfirmationEmail($requestBody['email'], $verifyCode);
-                        return Operation::success($encryptedVerifyCode);
+                        return Result::Success($encryptedVerifyCode);
                     })
                     ->tap(fn() => $this->stopTimer(self::TIMER_VERIFY_CODE_SEND))
                     ->then(function ($encryptedVerifyCode) use ($result) {
@@ -110,7 +110,7 @@ class RegistrateByEmail implements HandlerInterface
                     ->withMetric('stopwatch', $this->collectMetrics());
             })
             ->catch(function($error, $code) {
-                return Operation::error($code, self::ERROR_REGISTRATION_FAILED . ": $error")
+                return Result::Failure($code, self::ERROR_REGISTRATION_FAILED . ": $error")
                     ->withMetric('stopwatch', $this->collectMetrics());
             });
     }

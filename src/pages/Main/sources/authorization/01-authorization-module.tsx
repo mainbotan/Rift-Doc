@@ -25,7 +25,7 @@ class AuthByEmail implements HandlerInterface
         private StopwatchManager $stopwatchManager
     ) {}
 
-    public function execute(ServerRequestInterface $request): OperationOutcome 
+    public function execute(ServerRequestInterface $request): ResultType 
     {
         $this->stopwatch->start(self::TIMER_TOTAL);
         $requestBody = $request->getParsedBody();
@@ -45,7 +45,7 @@ class AuthByEmail implements HandlerInterface
                 $this->stopTimer(self::TIMER_HASH_REQUEST);
 
                 if (!isset($tenantData[0]['uid'])) {
-                    return Operation::error(Operation::HTTP_NOT_FOUND, self::ERROR_INVALID_CREDENTIALS);
+                    return Result::Failure(Result::HTTP_NOT_FOUND, self::ERROR_INVALID_CREDENTIALS);
                 }
                 
                 $this->startTimer(self::TIMER_HASH_VERIFY);
@@ -53,10 +53,10 @@ class AuthByEmail implements HandlerInterface
                 $this->stopTimer(self::TIMER_HASH_VERIFY);
                 
                 if (!$isPasswordValid) {
-                    return Operation::error(Operation::HTTP_FORBIDDEN, self::ERROR_INVALID_CREDENTIALS);
+                    return Result::Failure(Result::HTTP_FORBIDDEN, self::ERROR_INVALID_CREDENTIALS);
                 }
 
-                return Operation::success(['uid' => $tenantData[0]['uid']]);
+                return Result::Success(['uid' => $tenantData[0]['uid']]);
             })
             
             ->tap(fn() => $this->startTimer(self::TIMER_JWT_GEN))
@@ -68,7 +68,7 @@ class AuthByEmail implements HandlerInterface
                     ->withMetric('stopwatch', $this->collectMetrics());
             })
             ->catch(function($error, $code) {
-                return Operation::error($code, self::ERROR_AUTH_FAILED)
+                return Result::Failure($code, self::ERROR_AUTH_FAILED)
                     ->withMetric('stopwatch', $this->collectMetrics());
             });
     }

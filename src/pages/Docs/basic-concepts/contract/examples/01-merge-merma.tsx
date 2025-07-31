@@ -5,7 +5,7 @@ flowchart TD
     B --> D[Call merge on userData with userStats]
     C --> D
     D --> E[Merge callback combines data]
-    E --> F[Return merged OperationOutcome]
+    E --> F[Return merged ResultType]
 
     subgraph Merge Process
     D --> D1["Merge function receives:"]

@@ -1,5 +1,5 @@
 import CodeBlock from '../../../../components/CodeBlock';
-import { OperationOutcomeExample } from './examples/response-dto-1';
+import { ResultTypeExample } from './examples/response-dto-1';
 import { UseContractWrapperExample } from './examples/use-contract-wrapper';
 import { OperationCodes } from './examples/response-codes';
 import { MermaidViewer } from '../../../../components/Mermaid';
@@ -16,7 +16,7 @@ export const BasicConceptsContractPage = () => {
             <br /><br />
             For this reason, the first thing we need to take on faith is the <div className='code-tag'>Operation Contract</div>
             <br /> The main rule is that each layer, regardless
-            of its content, must return a <div className='code-tag'>OperationOutcome</div>
+            of its content, must return a <div className='code-tag'>ResultType</div>
             <br /><br />
             <h2 id='why'><div className='title middle'><div className='tag'>#</div>Why?</div></h2>
             <br />
@@ -41,7 +41,7 @@ export const BasicConceptsContractPage = () => {
             The structure of the response object. All methods will be discussed later:
             <MermaidViewer definition={ContractMermaExample01} initialMode='code'/>
             Possible type of response object:
-            <CodeBlock code={OperationOutcomeExample} language='json'/>
+            <CodeBlock code={ResultTypeExample} language='json'/>
             <br />
             <h2 id='operation-wrapper'><div className='title middle'><div className='tag'>#</div>Operation Wrapper</div></h2>
             <br />
@@ -49,7 +49,7 @@ export const BasicConceptsContractPage = () => {
             Rift has a special wrapper class that can be used by inheriting through <div className='code-tag'>extends</div>. 
             <br /><br />
             However, you can easily create your own wrapper class and inherit from it wherever needed. 
-            In short, let's take an example of a layer in your application that returns <div className='code-tag'>OperationOutcome</div>
+            In short, let's take an example of a layer in your application that returns <div className='code-tag'>ResultType</div>
             <CodeBlock code={UseContractWrapperExample} language='php' />
             <br />
             In all these cases, the layer returns a single <div className='code-tag'>Operation DTO</div>, ready for verification for a successful result and further logic.
@@ -57,7 +57,7 @@ export const BasicConceptsContractPage = () => {
             <h2 id='codes'><div className='title middle'><div className='tag'>#</div>Operation codes</div></h2>
             <br />
             <div className='text'>
-                We strongly recommend against using numeric HTTP codes directly in the code of each layer.  Use <div className='code-tag'>Operation::HTTP_</div> to specify the desired response status.
+                We strongly recommend against using numeric HTTP codes directly in the code of each layer.  Use <div className='code-tag'>Result::HTTP_</div> to specify the desired response status.
                 This approach will save you from hemorrhoids in the future. The Rift provides a number of standard HTTP codes stored in the <div className='code-tag'>OperationTrait</div> in the Rift core.
             </div>
             <br />

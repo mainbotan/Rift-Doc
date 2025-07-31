@@ -11,7 +11,7 @@ export const CoreComponentsTable = ()  => {
             </thead>
             <tbody>
                 <tr>
-                    <td>OperationOutcome</td>
+                    <td>ResultType</td>
                     <td>Databus</td>
                     <td>
                         Result monad with support for reactive methods, metrics, and debug information.

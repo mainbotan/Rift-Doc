@@ -22,10 +22,10 @@ export const RoutingRequestObjectPage = () => {
             To initialize a request object from global variables, the static method <div className='code-tag'>fromGlobals</div> is used.
             Here is an example of initializing a new object:<br />
             <CodeBlock code={InitRequestObjectExample01} language='php' />
-            Don't forget that the <div className='code-tag'>fromGlobals</div> method returns <div className='code-tag'>OperationOutcome</div> with the result of object formation:
+            Don't forget that the <div className='code-tag'>fromGlobals</div> method returns <div className='code-tag'>ResultType</div> with the result of object formation:
             <br />
             <CodeBlock code={RequestObjectFormationExample01} language='php' />
-            Thus, you can work with the request object only after it has been "unpacked" from <div className='code-tag'>OperationOutcome</div>. This approach eliminates possible errors in creating an object 
+            Thus, you can work with the request object only after it has been "unpacked" from <div className='code-tag'>ResultType</div>. This approach eliminates possible errors in creating an object 
             and gives you control over even this stage.
             <br /><br />
             <h2 id='structure'><div className='title middle'><div className='tag'>#</div>Structure</div></h2>

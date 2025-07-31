@@ -58,7 +58,7 @@ export const DatabasesRepositoriesPage = () => {
             <CodeBlock code={RepositoriesTenantUsersRequestExample} language='php'/>
             <br />
             At the same time, the implementation of <div className='code-tag'>users.repo</div> does not differ in structure from system repositories. This is a collection of public methods 
-            making up the <div className='code-tag'>$stmt</div> you need, executing the request and returning the <div className='code-tag'>OperationOutcome</div> with the result of the request.
+            making up the <div className='code-tag'>$stmt</div> you need, executing the request and returning the <div className='code-tag'>ResultType</div> with the result of the request.
             <br /><br />
             At the same time, Rift saves you the pain of reconnecting to the database and at the same time gives you control over queries.
         </>

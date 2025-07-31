@@ -12,7 +12,7 @@ export const ModulesTable = ()  => {
                 <tr>
                     <td>Validator</td>
                     <td>
-                        Validation of input data according to the schema with support for <div className='code-tag'>OperationOutcome</div>
+                        Validation of input data according to the schema with support for <div className='code-tag'>ResultType</div>
                     </td>
                 </tr>
                 <tr>

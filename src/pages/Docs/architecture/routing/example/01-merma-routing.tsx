@@ -8,18 +8,18 @@ sequenceDiagram
     Entrypoint->>Router: Request (PSR-7)
     Router->>Router: Find route
     alt Route not found
-        Router-->>Entrypoint: OperationOutcome(error)
+        Router-->>Entrypoint: ResultType(error)
     else
         loop Middleware processing
             Router->>Middleware: Process
             alt Middleware error
-                Middleware-->>Entrypoint: OperationOutcome(error)
+                Middleware-->>Entrypoint: ResultType(error)
             else
                 Middleware-->>Router: Modified Request
             end
         end
         Router->>Handler: execute(payload)
-        Handler-->>Router: OperationOutcome
+        Handler-->>Router: ResultType
         Router-->>Entrypoint: Response
     end
 `;

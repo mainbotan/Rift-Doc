@@ -51,11 +51,11 @@ export const ContractMethodsTable = () => {
                 </tr>
                 <tr>
                     <td><div className="code-tag">merge</div></td>
-                    <td>Combines two OperationOutcome results using a merger function</td>
+                    <td>Combines two ResultType results using a merger function</td>
                 </tr>
                 <tr>
                     <td><div className="code-tag">toJson</div></td>
-                    <td>Converts the OperationOutcome to JSON string, optionally using a transformer</td>
+                    <td>Converts the ResultType to JSON string, optionally using a transformer</td>
                 </tr>
             </tbody>
         </table>

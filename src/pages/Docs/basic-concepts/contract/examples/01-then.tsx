@@ -1,12 +1,12 @@
 export const ThenExample01 = `
-public static function demoThen(): OperationOutcome
+public static function demoThen(): ResultType
 {
-    return Operation::success(['id' => 1, 'name' => 'Alice'])
+    return Result::Success(['id' => 1, 'name' => 'Alice'])
         /**
          * Converting the data and returning a new Operation Outcome
          */
         ->then(function($data) {
-            return Operation::success([
+            return Result::Success([
                 'user' => $data,
                 'timestamp' => time()
             ]);

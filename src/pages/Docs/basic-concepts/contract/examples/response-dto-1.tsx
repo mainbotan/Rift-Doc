@@ -1,5 +1,5 @@
 
-export const OperationOutcomeExample = `
+export const ResultTypeExample = `
 
 // example of the validator's response
 

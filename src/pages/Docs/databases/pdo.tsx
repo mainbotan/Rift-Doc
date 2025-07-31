@@ -50,7 +50,7 @@ export const DatabasesPDOPage = () => {
             <br /><br />
             So, the available methods for obtaining PDO are:
             <CodeBlock code={PDOMethodsExample} language='php' />
-            According to the Rift philosophy, every request, including a request to receive a PDO, returns a <div className='code-tag'>OperationOutcome</div> (check out here: <Link to='../basic-concepts/contract'>Basic Concepts / Contract</Link>).
+            According to the Rift philosophy, every request, including a request to receive a PDO, returns a <div className='code-tag'>ResultType</div> (check out here: <Link to='../basic-concepts/contract'>Basic Concepts / Contract</Link>).
             <br />
             This way, if an unexpected error occurs when requesting a PDO (for example, connecting to an undeveloped schema) you will not get a custom exception, but 
             a contract with the corresponding response status.

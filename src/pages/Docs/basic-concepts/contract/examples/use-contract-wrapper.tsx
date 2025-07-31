@@ -3,26 +3,26 @@ export const UseContractWrapperExample = `
 // somewhere in your app
 
 use Rift\\Core\\Contracts\\Operation; // response wrapper
-use Rift\\Core\\Contracts\\OperationOutcome; // response object
+use Rift\\Core\\Contracts\\ResultType; // response object
 
 class YourUseCase {
 
-    public function execute(array $data): OperationOutcome {
+    public function execute(array $data): ResultType {
     
         // the general version
         return Operation::response($result, self::HTTP_OK);
 
         // positive response - a quick option without a code
-        return Operation::success($result);
+        return Result::Success($result);
 
         // with metrics (only with positive response)
-        return Operation::success($result, $metrics_array)
+        return Result::Success($result, $metrics_array)
 
         // negative response
-        return Operation::error(self::HTTP_INTERNAL_SERVER_ERROR, 'error description: internal error');
+        return Result::Failure(self::HTTP_INTERNAL_SERVER_ERROR, 'error description: internal error');
 
         // with debug info
-        return Operation::error(self::HTTP_INTERNAL_SERVER_ERROR, 'ups error', $debug_array);
+        return Result::Failure(self::HTTP_INTERNAL_SERVER_ERROR, 'ups error', $debug_array);
     }
 }
 `;

@@ -1,4 +1,3 @@
-
 // Main
 import { MainLayout } from '../layouts/Main/index';
 import { MainPage } from '../pages/Main';

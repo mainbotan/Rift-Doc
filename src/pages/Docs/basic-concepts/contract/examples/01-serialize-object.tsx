@@ -1,5 +1,5 @@
 export const SerializeObjectExample01 = `
-object(Rift\\Core\\Contracts\\OperationOutcome)#29 (4) {
+object(Rift\\Core\\Contracts\\ResultType)#29 (4) {
   ["code"]=>
   int(200)
   ["result"]=>

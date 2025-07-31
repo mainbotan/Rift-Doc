@@ -14,8 +14,8 @@ sequenceDiagram
         RepoRouter->>Repository: Tenant/System Repo
         Repository->>DB: SQL Query
         DB-->>Repository: Raw Data
-        Repository-->>UseCase: OperationOutcome
+        Repository-->>UseCase: ResultType
     end
-    UseCase-->>Router: OperationOutcome
+    UseCase-->>Router: ResultType
     Router-->>Client: HTTP Response
 `;

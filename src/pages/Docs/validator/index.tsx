@@ -8,7 +8,7 @@ export const ValidatorPage = () => {
             Rift offers it to you. The main concept of the validation module (embedded in the core of the Rift) is to make it possible to validate anything that comes to the input of your application, whether it's nested arrays,
             prime numbers, strings, or something else, getting rid of raw exceptions and getting only a clear answer according to the contract.
             <br /><br />
-            <div className='text contrast'>If you are not familiar with the concepts <div className='code-tag'>OperationOutcome</div>, we strongly recommend that you return
+            <div className='text contrast'>If you are not familiar with the concepts <div className='code-tag'>ResultType</div>, we strongly recommend that you return
             to <Link to='../basic-concepts/contract'>Basic Concepts/Contract</Link>.
             </div>
             <br />

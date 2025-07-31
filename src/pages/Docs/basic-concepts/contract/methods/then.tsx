@@ -23,7 +23,7 @@ export const ContractThenMethodPage = () => {
             First, we create an object with user data, and then use <div className='code-tag'>then</div> method to add the current timestamp to it. 
             Thus, we use the data obtained from the first operation in the second through the array <div className='code-tag'>$data</div>
             <br /><br />
-            The beauty of this approach is that all the <div className='code-tag'>OperationOutcome</div> methods (including <div className='code-tag'>then</div>) will fail if the previous operation fails.
+            The beauty of this approach is that all the <div className='code-tag'>ResultType</div> methods (including <div className='code-tag'>then</div>) will fail if the previous operation fails.
             Let's imagine such a case:
             <br />
             <CodeBlock code={ThenExample02} language='php' />

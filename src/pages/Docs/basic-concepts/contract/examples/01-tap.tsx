@@ -1,7 +1,7 @@
 export const TapExample01 = `
-public static function demoTap(): OperationOutcome
+public static function demoTap(): ResultType
 {
-    return Operation::success(['value' => 42])
+    return Result::Success(['value' => 42])
         ->tap(function($result) {
             /**
              * Logging without changing the result

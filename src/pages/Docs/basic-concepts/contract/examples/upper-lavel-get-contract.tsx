@@ -3,11 +3,11 @@ export const UpperLavelGetContract = `
 // upper layer
 
 use Rift\\Core\\Contracts\\Operation; // response wrapper
-use Rift\\Core\\Contracts\\OperationOutcome; // response object
+use Rift\\Core\\Contracts\\ResultType; // response object
 
 class UpperLayer extends Operation {
 
-    public function execute(array $data): OperationOutcome {
+    public function execute(array $data): ResultType {
         
         $request = $useCase->execute($data);
         
@@ -21,7 +21,7 @@ class UpperLayer extends Operation {
             return $request;     
         }
 
-        // built-in OperationOutcome method
+        // built-in ResultType method
         if ($request->isSuccess()) {
 
             $requestResult = $request->result;

@@ -166,12 +166,12 @@ export const MainPage = () => {
               We are well aware of the importance of an explicit chain of application requests in matters related to complex logic.
             </div>
             <br />
-            <div className={styles.interTitle}>OperationOutcome</div>
+            <div className={styles.interTitle}>ResultType</div>
             <div className={styles.description}>
               Object for transferring data between different layers of the application. Imagine that you don't have to write a ton of exceptions and handle them.
-              If you have deals with Rust, Java, Kotlin ... with their Result types, you'll find them clearly similar to OperationOutcome.
+              If you have deals with Rust, Java, Kotlin ... with their Result types, you'll find them clearly similar to ResultType.
               <br /><br />
-              If you are familiar with the promises of JS or with functional programming in general, you will like the built-in methods for working with OperationOutcome. With their help, you can rely on explicit error handling and logical chain building.
+              If you are familiar with the promises of JS or with functional programming in general, you will like the built-in methods for working with ResultType. With their help, you can rely on explicit error handling and logical chain building.
               <br /><br /><br />
               <Link to='docs/v1/basic-concepts/contract'><div className={styles.link}>/ read in the documentation</div></Link>
             </div>

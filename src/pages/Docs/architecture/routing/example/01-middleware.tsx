@@ -4,20 +4,20 @@ export const MiddlewareExample01 = `
 namespace App\\Middlewares;
 
 use Rift\\Core\\Contracts\\Operation;
-use Rift\\Core\\Contracts\\OperationOutcome;
+use Rift\\Core\\Contracts\\ResultType;
 use Rift\\Core\\Http\\Request;
 use Rift\\Core\\Middlewares\\MiddlewareInterface;
 
 class CheckHeader implements MiddlewareInterface {
     protected $acceptLanguage = 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.6';
 
-    public function execute(Request $request): OperationOutcome
+    public function execute(Request $request): ResultType
     {
         $header = $request->getHeader('Accept-Language')[0];
         if ($header === $this->acceptLanguage) {
-            return Operation::success(null);
+            return Result::Success(null);
         }
-        return Operation::error(Operation::HTTP_BAD_REQUEST, 'accept language header not allowed');
+        return Result::Failure(Result::HTTP_BAD_REQUEST, 'accept language header not allowed');
     }
 }
 `;

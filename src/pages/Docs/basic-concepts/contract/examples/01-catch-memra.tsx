@@ -8,7 +8,7 @@ flowchart TD
     F --> G[Create new Operation with handled error]
     G --> H[Return result]
     D -- No --> H
-    H --> I[End function, return OperationOutcome]
+    H --> I[End function, return ResultType]
     
     subgraph Error Handler
     E --> F --> G

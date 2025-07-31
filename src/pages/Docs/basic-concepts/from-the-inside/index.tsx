@@ -1,5 +1,6 @@
 import CodeBlock from "../../../../components/CodeBlock";
 import { ComposerNamespaces } from "./sources/composer-namspaces";
+import { CoreComponentsTable } from "./sources/core-components-table";
 import { PartOfAppDiConfig } from "./sources/part-of-app-di-config";
 import { PartOfRiftDiConfig } from "./sources/part-of-rift-di-config";
 import { PartOfRouter } from "./sources/part-of-router";
@@ -53,6 +54,11 @@ export const FromTheInsideMainPage = () => {
             <br /><br />
             <div className='code-tag'>composer.json</div> with namespaces:
             <CodeBlock code={ComposerNamespaces} language="json" />
+            <br />
+            <h2 id='core-components'><div className='title middle'><div className='tag'>#</div>Core Components</div></h2>
+            <br />
+            The main components of the Rift core.
+            <CoreComponentsTable />
         </>
     );
 }

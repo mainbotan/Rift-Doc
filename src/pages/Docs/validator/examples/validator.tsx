@@ -4,8 +4,8 @@ export const ValidatorExample = `
 namespace App\\Validators;
 
 use Rift\\Core\\Databus\\ResultType;
-use Rift\\Core\\Validators\\ValidatorInterface;
-use Rift\\Core\\Validators\\Utils\\SchemaValidator;
+use Rift\\Contracts\\Validators\\ValidatorInterface;
+use Rift\\Validator\\SchemaValidator;
 
 class YourValidator implements ValidatorInterface {
     // Validation scheme

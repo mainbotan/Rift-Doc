@@ -1,6 +1,12 @@
 export const DirectoryStructureExample01 = `
 📦 project/
-├── 📂 configs/                    # configurations
+|
+├── 📂 bootstrap/                  # bootstrap layer
+|   ├── 📜 app.php  
+│   ├── 📜 dependencies.php
+│   └── 📜 environment.php
+|
+├── 📂 config/                     # configurations
 |   ├── 📜 app.php  
 │   ├── 📜 di.php
 │   └── 📜 routes.php
@@ -9,24 +15,31 @@ export const DirectoryStructureExample01 = `
 │   └── 📜 index.php               # entrypoint
 |
 ├── 📂 src/                        # app sources
-│   ├── 📂 Models/       
-│   │   ├── 📂 System/  
+|   |
+│   ├── 📂 Core/                   # the system core of the application
+|   |   |
+│   |   ├── 📜 RepositoriesRouter.php
+│   |   ├── 📜 RepositoriesFactory.php
+|   |   |     
+│   │   ├── 📂 Middlewares/  
 │   │   └── 📂 Tenant/  
+|   |   |   |── 📂 UseCases/
+|   |   |   |── 📜 Model.php
+|   |   |   └── 📜 Repository.php
 |   |
-│   ├── 📂 Repositories/
-│   │   ├── 📂 System/  
-│   │   └── 📂 Tenant/  
-|   |
-│   ├── 📂 Configurators/
-|   |   ├── 📜 AppSystemConfigurator.php
-│   |   ├── 📜 AppTenantConfigurator.php
-|   |
-│   |── 📂 UseCases/               # busines logic
-|   |
-│   |── 📂 Services/               # optional
-│   |── 📂 Factories/              # optional
-│   |── 📂 Validators/             # optional
-│   └── 📂 Middlewares/            # optional
+│   ├── 📂 Tenant/                  # individual client's work modules
+|   |   |
+│   |   ├── 📜 RepositoriesRouter.php
+│   |   ├── 📜 RepositoriesFactory.php
+|   |   |     
+│   │   ├── 📂 Modules/  
+|   |   |   |
+│   │   |   |── 📂 ExampleModule/  
+|   |   |   |   |── 📂 UseCases/
+|   |   |   |   |── 📜 Model.php
+|   |   |   |   └── 📜 Repository.php
+|   |   |   |
+│   │   |   └── 📂 .../  
 |
 ├── 📂 storage/
 │   ├── 📂 cache/      

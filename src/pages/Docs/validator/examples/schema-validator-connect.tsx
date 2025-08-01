@@ -1,3 +1,3 @@
 export const SchemaValidatorConnectExample = `
-use Rift\\Core\\Validators\\Utils\\SchemaValidator;
+use Rift\\Validator\\SchemaValidator;
 `;

@@ -33,13 +33,13 @@ class VerifyByCode implements HandlerInterface
         private DeployTenantSchema $deployTenant
     ) {}
 
-    public function execute(ServerRequestInterface $request): OperationOutcome
+    public function execute(ServerRequestInterface $request): ResultType
     {
         $this->startTimer(self::TIMER_TOTAL);
         $queryParams = $request->getQueryParams();
         
         if (!isset($queryParams['token'])) {
-            return $this->handleError(Operation::HTTP_BAD_REQUEST, self::ERROR_TOKEN_LOST);
+            return $this->handleError(Result::HTTP_BAD_REQUEST, self::ERROR_TOKEN_LOST);
         }
         
         $verifyToken = $queryParams['token'];
@@ -57,7 +57,7 @@ class VerifyByCode implements HandlerInterface
             ->ensure(
                 fn($jwtData) => $this->jwtManager->checkExpiration($jwtData),
                 self::ERROR_TOKEN_EXPIRED,
-                Operation::HTTP_UNAUTHORIZED
+                Result::HTTP_UNAUTHORIZED
             )
             ->tap(fn() => $this->stopTimer(self::TIMER_TOKEN_CHECK_EXP))
             
@@ -68,7 +68,7 @@ class VerifyByCode implements HandlerInterface
             ->catch(fn($error, $code) => $this->handleError($code, $error));
     }
 
-    private function processVerification(array $jwtData, string $clientCode): OperationOutcome
+    private function processVerification(array $jwtData, string $clientCode): ResultType
     {
         $uid = $jwtData['uid'];
 
@@ -78,12 +78,12 @@ class VerifyByCode implements HandlerInterface
             ->tap(fn() => $this->startTimer(self::TIMER_MATCH_CODES))
             ->then(function($decodedCode) use ($clientCode) {
                 if ((string) $decodedCode !== (string) $clientCode) {
-                    return Operation::error(
-                        Operation::HTTP_UNAUTHORIZED, 
+                    return Result::Failure(
+                        Result::HTTP_UNAUTHORIZED, 
                         self::ERROR_CODE_MISMATCH
                     );
                 }
-                return Operation::success();
+                return Result::Success();
             })
             ->tap(fn() => $this->stopTimer(self::TIMER_MATCH_CODES))
             
@@ -120,9 +120,9 @@ class VerifyByCode implements HandlerInterface
         );
     }
 
-    private function handleError(int $code, string $error): OperationOutcome
+    private function handleError(int $code, string $error): ResultType
     {
-        return Operation::error(
+        return Result::Failure(
             $code, 
             self::ERROR_VERIFY_FAILED . ": $error"
         )->withMetric('stopwatch', $this->collectMetrics());

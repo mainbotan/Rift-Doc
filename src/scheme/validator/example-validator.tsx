@@ -35,7 +35,7 @@ class ExampleValidator implements ValidatorInterface {
         ]
     ];
 
-    public function execute(array $data): OperationOutcome {
+    public function execute(array $data): ResultType {
         return SchemaValidator::validate($this->schema, $data);
     }
 }

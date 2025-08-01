@@ -10,7 +10,7 @@ import { RepositoriesTenantUsersRequestExample } from './examples/repositories-t
 export const DatabasesRepositoriesPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Repositories</div>
+            <h2 id='repositories'><div className='title'><div className='tag'>/</div>Repositories</div></h2>
             <br />
             If the models in Rift describe the structure and validation rules of each entity stored in the database, repositories provide the opportunity to interact
             with each table using SQL queries and PDO.
@@ -20,7 +20,7 @@ export const DatabasesRepositoriesPage = () => {
             In your project
             <CodeBlock code={RepositoriesStructureExample} language='php' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Let's get started</div>
+            <h2 id='get-started'><div className='title middle'><div className='tag'>#</div>Let's get started</div></h2>
             <br />
             Let's start with the router of the system repositories. If the reader of this documentation is not lost yet, the system repositories are responsible for 
             data common to all tenants: tariff plans, tenant authorization, all these actions are system repositories.
@@ -42,7 +42,7 @@ export const DatabasesRepositoriesPage = () => {
             Examples of repository responses
             <CodeBlock code={RepositoriesTenantsAnswersExample} language='json' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Tenant Repositories</div>
+            <h2 id='tenant-repositories'><div className='title middle'><div className='tag'>#</div>Tenant Repositories</div></h2>
             <br />
             The difference between system and tenant repositories is that in the case of a tenant repository router, we obviously do not know the scheme in which 
             requests will occur and cannot simply do <div className='code-tag'>$schema = 'system';</div> in the router.
@@ -58,7 +58,7 @@ export const DatabasesRepositoriesPage = () => {
             <CodeBlock code={RepositoriesTenantUsersRequestExample} language='php'/>
             <br />
             At the same time, the implementation of <div className='code-tag'>users.repo</div> does not differ in structure from system repositories. This is a collection of public methods 
-            making up the <div className='code-tag'>$stmt</div> you need, executing the request and returning the <div className='code-tag'>OperationOutcome</div> with the result of the request.
+            making up the <div className='code-tag'>$stmt</div> you need, executing the request and returning the <div className='code-tag'>ResultType</div> with the result of the request.
             <br /><br />
             At the same time, Rift saves you the pain of reconnecting to the database and at the same time gives you control over queries.
         </>

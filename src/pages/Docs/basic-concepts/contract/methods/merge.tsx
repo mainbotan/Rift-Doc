@@ -7,9 +7,9 @@ import { MergeMermaExample01 } from '../examples/01-merge-merma';
 export const ContractMergeMethodPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>@</div>merge</div>
+            <h2 id='merge'><div className='title'><div className='tag'>@</div>merge</div></h2>
             <br />
-            <div className='code-tag'>-&gt;merge(OperationOutcome $other, callable $merger)</div> - combines two operationoutcomes (analogous to zip)
+            <div className='code-tag'>-&gt;merge(ResultType $other, callable $merger)</div> - combines two ResultTypes (analogous to zip)
             <br /><br />
             Usage example:
             <br />

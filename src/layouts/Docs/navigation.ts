@@ -9,6 +9,16 @@ export const docsNav = [
     path: "basic-concepts",
     sign: '/',
     children: [
+     {
+      title: "From The Inside",
+      path: "from-the-inside",
+      sign: "",
+      children: [
+        { title: "Interfaces", path: "interfaces", sign: "#" },
+        { title: "Interfaces To Implementations", path: "interfaces-to-implementations", sign: "#" },
+        { title: "Core & Modules", path: "core-modules", sign: "#" }
+      ]
+     },
      { 
       title: "Contract", 
       path: "contract", 
@@ -29,7 +39,7 @@ export const docsNav = [
         },
         { title: "Metadata", path: "metadata", sign: "" },         
         { title: "Serialize", path: "serialize", sign: "" },
-        { title: "Benchmark", path: "benchmark", sign: "", } 
+        { title: "Over short distances", path: "benchmark", sign: "", } 
       ]
     },
     ]

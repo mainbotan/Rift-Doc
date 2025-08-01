@@ -4,12 +4,12 @@ namespace App\\Repositories\\System;
 
 use PDO;
 use PDOStatement;
-use Rift\\Core\\Contracts\\OperationOutcome;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Repositories\\AbstractRepository;
 
 class TenantsRepository extends AbstractRepository
 {
-    public function selectById(int $tenantId): OperationOutcome {
+    public function selectById(int $tenantId): ResultType {
         $stmt = $this->pdo->prepare("
             SELECT * FROM \`tenants\` 
             WHERE \`id\` = :id
@@ -19,7 +19,7 @@ class TenantsRepository extends AbstractRepository
         return $this->executeQuery($stmt);
     }
 
-    public function selectAll(int $limit = 10, int $offset = 0): OperationOutcome
+    public function selectAll(int $limit = 10, int $offset = 0): ResultType
     {
         $stmt = $this->pdo->prepare("
             SELECT * FROM \`tenants\` 
@@ -33,7 +33,7 @@ class TenantsRepository extends AbstractRepository
         return $this->executeQuery($stmt);
     }
 
-    public function createTenant(array $data): OperationOutcome
+    public function createTenant(array $data): ResultType
     {
         $stmt = $this->pdo->prepare("
             INSERT INTO tenants (email, password) 

@@ -7,7 +7,7 @@ import { CatchMemraExample01 } from '../examples/01-catch-memra';
 export const ContractCatchMethodPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>@</div>catch</div>
+            <h2 id='catch'><div className='title'><div className='tag'>@</div>catch</div></h2>
             <br />
             <div className='code-tag'>-&gt;catch(callable $errorHandler)</div> - handles the error, if there is one (analogous to catch)
             <br /><br />

@@ -1,12 +1,12 @@
 export const OperationCodes = `
-// Operation Codes - use it via Operation:: or self::
+// HTTP Codes - use it via Result::HTTP_...
 
-namespace Rift\\Core\\Contracts;
+namespace Rift\\Core\\Databus;
 
-trait OperationTrait {
-    const HTTP_OK = 200; // it is considered a positive response in the method ->isSuccess
-    const HTTP_CREATED = 201; // it is considered a positive response in the method ->isSuccess
-    const HTTP_ACCEPTED = 202; // it is considered a positive response in the method ->isSuccess
+trait ResultTypeTrait {
+    const HTTP_OK = 200;
+    const HTTP_CREATED = 201;
+    const HTTP_ACCEPTED = 202;
     const HTTP_NO_CONTENT = 204;
     const HTTP_BAD_REQUEST = 400;
     const HTTP_UNAUTHORIZED = 401;

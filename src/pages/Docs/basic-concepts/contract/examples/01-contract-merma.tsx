@@ -1,20 +1,21 @@
 export const ContractMermaExample01 = `
 classDiagram
-    class OperationOutcome {
+    class ResultType {
+        +bool $status
         +int $code
         +mixed $result
         +?string $error
         +?array $meta
         
         +isSuccess() bool
-        +withMetric(string $key, mixed $value) OperationOutcome
-        +addDebugData(string $key, mixed $value) OperationOutcome
-        +then(callable $callback) OperationOutcome
-        +map(callable $callback) OperationOutcome
-        +catch(callable $errorHandler) OperationOutcome
-        +tap(callable $callback) OperationOutcome
-        +ensure(callable $predicate, string $error, int $code) OperationOutcome
-        +merge(OperationOutcome $other, callable $merger) OperationOutcome
+        +withMetric(string $key, mixed $value) ResultType
+        +addDebugData(string $key, mixed $value) ResultType
+        +then(callable $callback) ResultType
+        +map(callable $callback) ResultType
+        +catch(callable $errorHandler) ResultType
+        +tap(callable $callback) ResultType
+        +ensure(callable $predicate, string $error, int $code) ResultType
+        +merge(ResultType $other, callable $merger) ResultType
         +toJson(?callable $transformer) string
     }
 `;

@@ -57,6 +57,7 @@
         &::-webkit-scrollbar {
           width: 5px;
           background: transparent;
+          border: none;
         }
 
         // Сохраненные стили для внутренних элементов
@@ -158,7 +159,11 @@
         }
 
         @media (max-width: #{$small-screen-max-width}) {
-          display: none;
+          display: flex;
+          width: 100%;
+          padding: 15px 15px;
+          border-bottom: 1px solid var(--border-color);
+          justify-content: start;
         }
       }
 
@@ -181,6 +186,8 @@
 
         @media (max-width: #{$small-screen-max-width}) {
           padding-top: 10px;
+          padding-left: 20px;
+          padding-right: 20px;
           font-size: 17px;
           line-height: 1.4;
           height: auto;
@@ -200,26 +207,26 @@
         display: inline-flex;
         flex-flow: column nowrap;
         gap: 10px;
-        padding: 20px;
+        padding: 20px 0px;
+        padding-right: 18px;
         flex: 0.8;
         padding-top: 30px;
         border-right: 1px solid var(--border-color);
 
-        .capture {
-          &.active {
-            color: var(--rift-color);
-            font-weight: 600;
-          }
+
+        @media (max-width: #{$small-screen-max-width}) {
+          padding-left: 20px;
+          padding-right: 20px;
         }
 
-        .headingsList {
-          .heading-level-3 {
-            padding-left: 12px;
-          }
-          .heading-level-4 {
-            padding-left: 24px;
-          }
-        }
+        // .headingsList {
+        //   .heading-level-3 {
+        //     padding-left: 12px;
+        //   }
+        //   .heading-level-4 {
+        //     padding-left: 24px;
+        //   }
+        // }
 
 
         &::-webkit-scrollbar {
@@ -234,12 +241,14 @@
           @include pointer();
           display: block;
           text-align: left;
-          padding: 4px 0px;
+          padding: 3px 0px;
           font-size: 14px;
           color: var(--primary-text-color);
+          border-radius: 5px;
+          color: rgb(208, 208, 208);
           
           &:hover {
-            color: #ffffff;
+            color: var(--rift-color);
           }
         }
         .versionMark {

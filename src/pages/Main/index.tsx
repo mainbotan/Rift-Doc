@@ -18,6 +18,8 @@ import { ExampleValidator } from '../../scheme/validator/example-validator';
 import { ValidatorShortDescription } from '../../scheme/validator/short-description.tsx';
 import CodeExample from './code-example.tsx';
 import { Cross } from '../../components/Elements/Cross/index.tsx';
+import { CoreComponentsTable } from '../Docs/basic-concepts/from-the-inside/sources/core-components-table.tsx';
+import { ComponentsArea } from './components-area.tsx';
 
 
 export const MainPage = () => {
@@ -156,7 +158,6 @@ export const MainPage = () => {
         </div>
       </div>
 
-
       <div className={clsx(styles.area, styles.area_0)}>
         <div className={styles.active}>
           <div  className={styles.block}>
@@ -166,18 +167,19 @@ export const MainPage = () => {
               We are well aware of the importance of an explicit chain of application requests in matters related to complex logic.
             </div>
             <br />
-            <div className={styles.interTitle}>OperationOutcome</div>
+            <div className={styles.interTitle}>ResultType</div>
             <div className={styles.description}>
               Object for transferring data between different layers of the application. Imagine that you don't have to write a ton of exceptions and handle them.
-              If you have deals with Rust, Java, Kotlin ... with their Result types, you'll find them clearly similar to OperationOutcome.
+              If you have deals with Rust, Java, Kotlin ... with their Result types, you'll find them clearly similar to ResultType.
               <br /><br />
-              If you are familiar with the promises of JS or with functional programming in general, you will like the built-in methods for working with OperationOutcome. With their help, you can rely on explicit error handling and logical chain building.
+              If you are familiar with the promises of JS or with functional programming in general, you will like the built-in methods for working with ResultType. With their help, you can rely on explicit error handling and logical chain building.
               <br /><br /><br />
               <Link to='docs/v1/basic-concepts/contract'><div className={styles.link}>/ read in the documentation</div></Link>
             </div>
           </div>
         </div>
       </div>
+
       <div className={clsx(styles.area, styles.area_1)}>
         <div className={styles.active}>
           <div  className={styles.block}>
@@ -211,6 +213,7 @@ export const MainPage = () => {
           </div>
         </div>
       </div>
+
       <div className={clsx(styles.slide, styles.slide_3)}>
         <div className={styles.adaptive_column_grid}>
           <div className={styles.main_area}>
@@ -229,7 +232,29 @@ export const MainPage = () => {
           </div>
         </div>
       </div>
-      
+
+      <div className={clsx(styles.area, styles.area_2)}>
+        <div className={styles.active}>
+          <div  className={styles.block}>
+            <div className={styles.title}>Core components</div>
+            <div className={styles.description}>The main components of the Rift core.</div>
+            <div className={clsx(styles.tableArea, 'docs-markup')}>
+              <CoreComponentsTable />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ComponentsArea />
+
+      <div className={clsx(styles.area, styles.area_3)}>
+        <div className={styles.active}>
+          <div className={styles.block}>
+            <div className={styles.title}>Multitencancy</div>
+            <div className={styles.subtitle}>without global scopes.</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

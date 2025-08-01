@@ -1,6 +1,6 @@
 export const MetricsAndDebugMermaExample01 = `
 flowchart TD
-    A[Start demoMeta] --> B[Create Operation with Operation::success]
+    A[Start demoMeta] --> B[Create ResultType with Result::Success]
     B --> C["Initialize with:
             - result: {user_id: 123}
             - metrics: {start_time}
@@ -26,7 +26,7 @@ flowchart TD
     H --> H1["withMetric('end_time')"]
     H1 --> H2["addDebugData('completed_at')"]
     
-    H2 --> I[Return OperationOutcome]
+    H2 --> I[Return ResultType]
     
     subgraph FinalStructure
     I --> J["{

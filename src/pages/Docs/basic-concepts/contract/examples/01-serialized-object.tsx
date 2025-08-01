@@ -1,6 +1,7 @@
 export const SerializedObjectExample01 = `
-string(279) "{
-    "status": "success",
+{
+    "status": true,
+    "code": 200,
     "result": {
         "id": 10,
         "name": "Alice"
@@ -14,5 +15,5 @@ string(279) "{
             "init_source": "user_service"
         }
     }
-}"
+}
 `;

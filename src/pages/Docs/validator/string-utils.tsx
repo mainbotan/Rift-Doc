@@ -6,7 +6,7 @@ import { StringUtilsConnectExample } from './examples/string-utils-connect';
 export const ValidatorStringUtilsPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>String Utils</div>
+            <h2 id='string-utils'><div className='title'><div className='tag'>/</div>String Utils</div></h2>
             <br />
             Use
             <CodeBlock code={StringUtilsConnectExample} language='php' />

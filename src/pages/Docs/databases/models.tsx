@@ -10,7 +10,7 @@ import { ModelsAnswersExample } from './examples/models-answers';
 export const DatabasesModelsPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>/</div>Models</div>
+            <h2 id='models'><div className='title'><div className='tag'>/</div>Models</div></h2>
             <br />
             Rift assumes a description of all entities stored in any schema of your database, be it a system schema or a tenant schema using special models.
             Each model is responsible for the structure of a separate table, defines validation rules for all its fields, and assigns SQL code to create a specific field.
@@ -26,7 +26,7 @@ export const DatabasesModelsPage = () => {
                 The names of the model files must match the name of the table described by it, for example, the table <div className='code-tag'>users</div> the model will match <div className='code-tag'>Users</div>. This approach will improve the atmosphere in your team.
             </div>
             <br /><br />
-            <div className='title middle'><div className='tag'>#</div>Let's get started</div>
+            <h2 id='get-started'><div className='title middle'><div className='tag'>#</div>Let's get started</div></h2>
             <br />
             Writing any model is not complete without using the <div className='code-tag'>AbstractModel</div> from the Rift core.
             <CodeBlock code={ModelsUseExample} language='php' />
@@ -46,7 +46,7 @@ export const DatabasesModelsPage = () => {
             Possible answers
             <CodeBlock code={ModelsAnswersExample} language='json' />
             <br />
-            <div className='title middle'><div className='tag'>#</div>Why is this necessary?</div>
+            <h2 id='why-is-this-necessary'><div className='title middle'><div className='tag'>#</div>Why is this necessary?</div></h2>
             <br />
             The ability to reproduce a model based on the fields specified by SQL for each field is used in Rift Configurators. 
             <br />

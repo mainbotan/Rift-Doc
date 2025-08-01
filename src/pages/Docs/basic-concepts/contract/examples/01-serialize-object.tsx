@@ -1,5 +1,7 @@
 export const SerializeObjectExample01 = `
-object(Rift\\Core\\Contracts\\OperationOutcome)#29 (4) {
+object(Rift\\Core\\Databus\\ResultType)#29 (5) {
+  ["status"]=>
+  bool(true)
   ["code"]=>
   int(200)
   ["result"]=>

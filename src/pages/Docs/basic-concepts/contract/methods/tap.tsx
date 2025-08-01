@@ -7,7 +7,7 @@ import { TapMermaExample01 } from '../examples/01-tap-merma';
 export const ContractTapMethodPage = () => {
     return (
         <>
-            <div className='title'><div className='tag'>@</div>tap</div>
+            <h2 id='tap'><div className='title'><div className='tag'>@</div>tap</div></h2>
             <br />
             <div className='code-tag'>-&gt;tap(callable $callback)</div> - performs a side effect without changing the result (analogous to tap)
             <br /><br />

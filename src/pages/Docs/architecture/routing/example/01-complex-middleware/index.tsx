@@ -3,18 +3,18 @@ export const ComplexMiddlewareExample01 = `
 
 namespace App\\Middlewares;
 
-use Rift\\Core\\Contracts\\OperationOutcome;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Http\\Request;
 use Rift\\Core\\Middlewares\\MiddlewareInterface;
 use App\\Services\\System\\AuthByTokenService;
-use Rift\\Core\\Contracts\\Operation;
+use Rift\\Core\\Databus\\Result;
 
 class AuthClient implements MiddlewareInterface {
     public function __construct(
         private AuthByTokenService $AuthByTokenService    # auxiliary service
     ) {}        
 
-    public function execute(Request $request): OperationOutcome 
+    public function execute(Request $request): ResultType 
     {   
         # Logic chain
         $result = $this->getToken($request)
@@ -25,12 +25,12 @@ class AuthClient implements MiddlewareInterface {
     /**
      * getToken from requestObject
      */
-    protected function getToken(Request $request): OperationOutcome {
+    protected function getToken(Request $request): ResultType {
         $queryParams = $request->getQueryParams();
         if (!isset($queryParams['token'])) {
-            return Operation::error(Operation::HTTP_UNAUTHORIZED, 'api token lost');   
+            return Result::Failure(Result::HTTP_UNAUTHORIZED, 'api token lost');   
         }
-        return Operation::success($queryParams['token']);
+        return Result::Success($queryParams['token']);
     }
 }
 `;

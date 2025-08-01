@@ -4,7 +4,7 @@ export const RepositoriesSystemRouterExample = `
 namespace App\\Repositories\\System;
 
 use PDO;
-use Rift\\Core\\Contracts\\OperationOutcome;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Database\\Connect;
 use Rift\\Core\\Repositories\\AbstractRouter;
 

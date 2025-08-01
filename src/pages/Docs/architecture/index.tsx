@@ -20,7 +20,7 @@ export const ArchitectureMainPage = () => {
             <br /><br />
             <h2 id='logic-layer'><div className='title middle'><div className='tag'>#</div>Logic layer</div></h2>
             <br />
-            The <div className='code-tag'>UseCases</div> layer is the heart of your application. The logic of a particular route is written here. Thanks to <div className='code-tag'>OperationOutcome</div> the compilation process
+            The <div className='code-tag'>UseCases</div> layer is the heart of your application. The logic of a particular route is written here. Thanks to <div className='code-tag'>ResultType</div> the compilation process
             logical chains becomes an entertaining game, rather than working with a noodle code. The elegance of the use cases approach is that with proper composition (small use cases can be reused in larger ones) self-repetition
             in the process of writing, the logic is reduced to zero. 
             Thanks to <div className='code-tag'>PHP-DI</div>, created in <div className='code-tag'>bootstrap</div> applications, the database layer includes repository routers or any other auxiliary services/factories (you are not limited in their number and tasks) are implemented in each

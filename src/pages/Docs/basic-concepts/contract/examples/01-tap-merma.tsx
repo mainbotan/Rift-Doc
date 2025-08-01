@@ -4,7 +4,7 @@ flowchart TD
     B --> C[Call tap #1: log original value]
     C --> D[Call map: double the value]
     D --> E[Call tap #2: log doubled value]
-    E --> F[Return final OperationOutcome]
+    E --> F[Return final ResultType]
 
     subgraph Tap #1: Initial Log
     C --> C1["error_log('Processing value: 42')"]

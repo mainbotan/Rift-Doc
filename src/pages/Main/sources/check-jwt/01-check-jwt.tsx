@@ -18,13 +18,13 @@ class CheckJwtWithUid implements MiddlewareInterface
         private JwtManager $jwtManager
     ) {}
 
-    public function execute(ServerRequestInterface $request): OperationOutcome
+    public function execute(ServerRequestInterface $request): ResultType
     {
         $authHeader = $request->getHeaderLine('Authorization');
 
         if (!$this->isValidBearerToken($authHeader, $token)) {
-            return Operation::error(
-                Operation::HTTP_UNAUTHORIZED, 
+            return Result::Failure(
+                Result::HTTP_UNAUTHORIZED, 
                 self::ERROR_INVALID_TOKEN_FORMAT
             );
         }
@@ -41,11 +41,11 @@ class CheckJwtWithUid implements MiddlewareInterface
             && ($token = $matches[1]);
     }
 
-    private function validateJwtData(array $jwtData, ServerRequestInterface $request): OperationOutcome
+    private function validateJwtData(array $jwtData, ServerRequestInterface $request): ResultType
     {
         if (empty($jwtData['uid'])) {
-            return Operation::error(
-                Operation::HTTP_UNAUTHORIZED, 
+            return Result::Failure(
+                Result::HTTP_UNAUTHORIZED, 
                 self::ERROR_MISSING_UID
             );
         }
@@ -53,28 +53,28 @@ class CheckJwtWithUid implements MiddlewareInterface
         $currentTime = time();
         
         if (!isset($jwtData['exp']) || $jwtData['exp'] < $currentTime) {
-            return Operation::error(
-                Operation::HTTP_UNAUTHORIZED, 
+            return Result::Failure(
+                Result::HTTP_UNAUTHORIZED, 
                 self::ERROR_TOKEN_EXPIRED
             );
         }
 
         if (isset($jwtData['iat']) && $jwtData['iat'] > $currentTime) {
-            return Operation::error(
-                Operation::HTTP_UNAUTHORIZED, 
+            return Result::Failure(
+                Result::HTTP_UNAUTHORIZED, 
                 self::ERROR_INVALID_ISSUANCE_TIME
             );
         }
         
-        return Operation::success(
+        return Result::Success(
             $request->withAttribute('uid', $jwtData['uid'])
         );
     }
 
-    private function handleTokenError(string $error): OperationOutcome
+    private function handleTokenError(string $error): ResultType
     {
-        return Operation::error(
-            Operation::HTTP_UNAUTHORIZED,
+        return Result::Failure(
+            Result::HTTP_UNAUTHORIZED,
             sprintf(self::ERROR_TOKEN_VERIFICATION_FAILED, $error)
         );
     }

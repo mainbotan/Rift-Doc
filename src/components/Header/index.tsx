@@ -14,7 +14,7 @@ export const AppHeader = () => (
           </div></Link>
         </div>
         <div className={styles.section}>
-          <Link to='/'><div className={styles.wrapper}><div className={styles.title}>Last release</div></div></Link>
+          <Link to='/'><div className={styles.wrapper}><div className={styles.title}>0.0.1x</div></div></Link>
         </div>
         <div className={styles.barSection}></div>
         <div className={styles.section}>

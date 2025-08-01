@@ -1,7 +1,7 @@
 export const MapExample01 = `
-public static function demoMap(): OperationOutcome
+public static function demoMap(): ResultType
 {
-    return Operation::success(['id' => 1, 'name' => 'Alice'])
+    return Result::Success(['id' => 1, 'name' => 'Alice'])
         ->map(function($data) {
             /**
              * Just converting the data

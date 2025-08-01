@@ -4,7 +4,7 @@ namespace App\\Repositories\\System;
 
 use PDO;
 use PDOStatement;
-use Rift\\Core\\Contracts\\ResultType;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Repositories\\AbstractRepository;
 
 class TenantsRepository extends AbstractRepository

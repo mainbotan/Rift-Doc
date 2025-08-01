@@ -5,7 +5,7 @@ public static function demoEnsure(): ResultType
         ->ensure(
             fn($data) => $data['age'] >= 18,
             'User must be at least 18 years old',
-            403
+            Result::HTTP_FORBIDDEN
         );
 }
 

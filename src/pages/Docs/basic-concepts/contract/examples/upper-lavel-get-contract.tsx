@@ -2,8 +2,8 @@
 export const UpperLavelGetContract = `
 // upper layer
 
-use Rift\\Core\\Contracts\\Operation; // response wrapper
-use Rift\\Core\\Contracts\\ResultType; // response object
+use Rift\\Core\\Databus\\Result; // response wrapper
+use Rift\\Core\\Databus\\ResultType; // response object
 
 class UpperLayer extends Operation {
 

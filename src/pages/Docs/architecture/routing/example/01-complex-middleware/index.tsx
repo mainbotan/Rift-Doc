@@ -3,11 +3,11 @@ export const ComplexMiddlewareExample01 = `
 
 namespace App\\Middlewares;
 
-use Rift\\Core\\Contracts\\ResultType;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Http\\Request;
 use Rift\\Core\\Middlewares\\MiddlewareInterface;
 use App\\Services\\System\\AuthByTokenService;
-use Rift\\Core\\Contracts\\Operation;
+use Rift\\Core\\Databus\\Result;
 
 class AuthClient implements MiddlewareInterface {
     public function __construct(

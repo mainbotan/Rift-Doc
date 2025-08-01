@@ -39,7 +39,7 @@ export const docsNav = [
         },
         { title: "Metadata", path: "metadata", sign: "" },         
         { title: "Serialize", path: "serialize", sign: "" },
-        { title: "Benchmark", path: "benchmark", sign: "", } 
+        { title: "Over short distances", path: "benchmark", sign: "", } 
       ]
     },
     ]

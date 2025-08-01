@@ -1,30 +1,32 @@
 
 export const ResultTypeExample = `
 
-// example of the validator's response
+// Result::Failure
 
 {
-    code: 400,
-    result: null,
-    error: 'Missing required field: id',
-    meta {
-        metrics: {},
-        debug: {}
+    "status": false,
+    "code": 400,
+    "result": null,
+    "error": "Missing required field: id",
+    "meta" {
+        "metrics": {},
+        "debug": {}
     }
 }
 
-// example of the repo's response
+// Result::Success
 
 {
-    code: 200,
-    result: {
-        executed: true,
-        affected_rows: 1
+    "status": true,
+    "code": 200,
+    "result": {
+        "executed": true,
+        "affected_rows": 1
     },
-    error: null,
-    meta {
-        metrics: {},
-        debug: {}
+    "error": null,
+    "meta" {
+        "metrics": {},
+        "debug": {}
     }
 }
 `;

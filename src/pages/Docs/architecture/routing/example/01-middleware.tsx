@@ -3,8 +3,8 @@ export const MiddlewareExample01 = `
 
 namespace App\\Middlewares;
 
-use Rift\\Core\\Contracts\\Operation;
-use Rift\\Core\\Contracts\\ResultType;
+use Rift\\Core\\Databus\\Result;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Http\\Request;
 use Rift\\Core\\Middlewares\\MiddlewareInterface;
 

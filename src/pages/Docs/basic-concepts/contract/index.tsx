@@ -29,11 +29,12 @@ export const BasicConceptsContractPage = () => {
             by analogy with functional programming (<div className='code-tag'>then</div> <div className='code-tag'>map</div> <div className='code-tag'>catch</div>...)<br/><br />
             But first, let's look at the structure of the response contract.
             <br /><br />
-            <h2 id='structure'><div className='title middle'><div className='tag'>#</div>Structure</div></h2>
+            <h2 id='result-type'><div className='title middle'><div className='tag'>#</div>ResultType</div></h2>
             <br />
             In Rift, it is an object with parameters: code, result, error, meta.
             <br /><br />
-            <div className='code-tag'>code</div> - is the status of the response, it can be used to check for the success<br />
+            <div className='code-tag'>status</div> - true / false - success and failure of the completed operation<br />
+            <div className='code-tag'>code</div> - is the http code of the response<br />
             <div className='code-tag'>result</div> - any layer response (object, null, number, string, boolean value, anything) is stored here<br />
             <div className='code-tag'>error</div> - error message if available.<br />
             <div className='code-tag'>meta</div> - all your additional wishlist (metrics, debug information...)
@@ -43,7 +44,7 @@ export const BasicConceptsContractPage = () => {
             Possible type of response object:
             <CodeBlock code={ResultTypeExample} language='json'/>
             <br />
-            <h2 id='operation-wrapper'><div className='title middle'><div className='tag'>#</div>Operation Wrapper</div></h2>
+            <h2 id='result-wrapper'><div className='title middle'><div className='tag'>#</div>Result Wrapper</div></h2>
             <br />
             Obviously, you're asking how easy it is to use a contract and return it to a higher layer. 
             Rift has a special wrapper class that can be used by inheriting through <div className='code-tag'>extends</div>. 
@@ -52,9 +53,15 @@ export const BasicConceptsContractPage = () => {
             In short, let's take an example of a layer in your application that returns <div className='code-tag'>ResultType</div>
             <CodeBlock code={UseContractWrapperExample} language='php' />
             <br />
-            In all these cases, the layer returns a single <div className='code-tag'>Operation DTO</div>, ready for verification for a successful result and further logic.
+            In all these cases, the layer returns a single <div className='code-tag'>ResultType</div>, ready for verification for a successful result and further logic.
             <br /><br />
-            <h2 id='codes'><div className='title middle'><div className='tag'>#</div>Operation codes</div></h2>
+            <h2 id='success-failure'><div className='title middle'><div className='tag'>#</div>Success / Failure</div></h2>
+            <br />
+            <div className='code-tag'>ResulType</div> does not have an undefined state. When it is initialized, you are required to set the <div className='code-tag'>status</div>, using the methods 
+            <div className='code-tag'>Result::Success</div> or <div className='code-tag'>Result::Failure</div>.
+            Further processing using the <div className='code-tag'>then</div>, <div className='code-tag'>map</div>, <div className='code-tag'>catch</div>, and other methods refers to the status of the parent <div className='code-tag'>ResultType</div>.
+            <br /><br />
+            <h2 id='http-codes'><div className='title middle'><div className='tag'>#</div>ResultType & HTTP codes</div></h2>
             <br />
             <div className='text'>
                 We strongly recommend against using numeric HTTP codes directly in the code of each layer.  Use <div className='code-tag'>Result::HTTP_</div> to specify the desired response status.

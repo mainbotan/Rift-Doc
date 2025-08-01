@@ -1,6 +1,7 @@
 export const ContractMermaExample01 = `
 classDiagram
     class ResultType {
+        +bool $status
         +int $code
         +mixed $result
         +?string $error

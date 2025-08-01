@@ -17,7 +17,7 @@ export const ContractSerializePage = () => {
             <br /><br />
             <h2 id='toJson'><div className='title middle'><div className='tag'>-&gt;</div>toJson</div></h2>
             <br />
-            <div className='code-tag'>-&gt;toJson(?callable $transformer, int $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE</div> - converts the response object to json.
+            <div className='code-tag'>-&gt;toJson(?callable $transformer, int $flags)</div> - converts the response object to json.
             <br /><br />
             Let's say the logical part of your application returned such a <div className='code-tag'>ResultType</div>:
             <br />

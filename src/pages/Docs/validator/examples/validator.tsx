@@ -3,7 +3,7 @@ export const ValidatorExample = `
 
 namespace App\\Validators;
 
-use Rift\\Core\\Contracts\\ResultType;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Validators\\ValidatorInterface;
 use Rift\\Core\\Validators\\Utils\\SchemaValidator;
 

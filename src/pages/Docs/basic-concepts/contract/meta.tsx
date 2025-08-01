@@ -17,7 +17,7 @@ export const ContractMetaPage = () => {
             <br />
             <CodeBlock code={MetricsAndDebugExample01} language='php' />
             response:
-            <CodeBlock code={MetricsAndDebugResponseExample01} language='php' />
+            <CodeBlock code={MetricsAndDebugResponseExample01} language='json' />
             <br />
             flow:
             <br />

@@ -1,6 +1,6 @@
 export const MetricsAndDebugMermaExample01 = `
 flowchart TD
-    A[Start demoMeta] --> B[Create Operation with Result::Success]
+    A[Start demoMeta] --> B[Create ResultType with Result::Success]
     B --> C["Initialize with:
             - result: {user_id: 123}
             - metrics: {start_time}

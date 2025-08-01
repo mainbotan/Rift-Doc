@@ -4,7 +4,7 @@ export const RepositoriesTenantRouterExample = `
 namespace App\\Repositories\\Tenant;
 
 use PDO;
-use Rift\\Core\\Contracts\\ResultType;
+use Rift\\Core\\Databus\\ResultType;
 use Rift\\Core\\Database\\Connect;
 use Rift\\Core\\Repositories\\AbstractRouter;
 

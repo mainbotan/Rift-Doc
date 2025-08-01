@@ -50,7 +50,7 @@ export const CoreComponentsTable = ()  => {
                     <td>RoutesBox</td>
                     <td>HTTP</td>
                     <td>
-                        RESTful routing with compilation of paths from the <div className='code-tag'>RoutesBox</div> object.
+                        Defining application path configuration. Groups, middlewares, and route limits.
                     </td>
                 </tr>
                 <tr>

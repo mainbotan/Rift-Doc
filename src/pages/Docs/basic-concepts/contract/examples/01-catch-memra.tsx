@@ -16,6 +16,7 @@ flowchart TD
     
     subgraph Result
     I --> J["{
+        status: false,
         code: 404,
         result: null,
         error: 'Handled: User not found',

@@ -246,6 +246,15 @@ export const MainPage = () => {
       </div>
 
       <ComponentsArea />
+
+      <div className={clsx(styles.area, styles.area_3)}>
+        <div className={styles.active}>
+          <div className={styles.block}>
+            <div className={styles.title}>Multitencancy</div>
+            <div className={styles.subtitle}>without global scopes.</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
